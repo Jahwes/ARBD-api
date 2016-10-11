@@ -1,0 +1,11 @@
+# Emacs
+*~
+
+# OS X
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+composer.phar
+vendor/
