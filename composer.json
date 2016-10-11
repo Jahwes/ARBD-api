@@ -1,0 +1,32 @@
+{
+    "name": "ARBD-api",
+    "description": "API Cinema HD",
+    "license": "gnu license",
+    "require": {
+        "php": ">=5.6",
+
+        "silex/silex": "~2.0",
+        "doctrine/dbal":"~2.0",
+        "doctrine/orm": "^2.0",
+        "dflydev/doctrine-orm-service-provider": "^2.0",
+        "saxulum/saxulum-doctrine-orm-manager-registry-provider": "^3.0",
+        "saxulum/saxulum-console": "^3.1",
+        "jdesrosiers/silex-cors-provider": "dev-master",
+
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "require-dev": {
+        "behat/behat": "3.x"
+    },
+    "authors": [
+        {
+            "name": "cinemahd",
+            "email": "cinemahd@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "CinemaHD\\": "app/"
+        }
+    }
+}
