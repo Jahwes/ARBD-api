@@ -76,27 +76,27 @@ class Config implements ServiceProviderInterface
         $app->register(new DoctrineOrmServiceProvider());
 
         // Doctrine (db)
-        $app['db.options'] = array(
+        $app['db.options'] = [
             'driver'   => 'pdo_mysql',
             'charset'  => 'utf8',
             'host'     => $app['db_host'],
             'dbname'   => $app['db_name'],
             'user'     => $app['db_user'],
             'password' => $app['db_password'],
-        );
+        ];
 
         // Doctrine (orm)
         $app['orm.proxies_dir'] = $app['application_path'] . '/cache/doctrine/proxies';
         $app['orm.default_cache'] = 'array';
-        $app['orm.em.options'] = array(
-            'mappings' => array(
-                array(
+        $app['orm.em.options'] = [
+            'mappings' => [
+                [
                     'type' => 'annotation',
                     'path' => $app['application_path'] . '/app',
                     'namespace' => "{$app['application_namespace']}\\Entities",
-                ),
-            ),
-        );
+                ],
+            ],
+        ];
 
         // Connect repositories
         // do $app["repositories"]("MyClass") instead of $app["orm.em"]->getRepository("MyClass")
