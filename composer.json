@@ -16,7 +16,9 @@
         "guzzlehttp/guzzle": "~6.0"
     },
     "require-dev": {
-        "behat/behat": "3.x"
+        "behat/behat": "3.x",
+        "phpunit/php-code-coverage": "3.x",
+        "phpunit/phpcov": "3.x"
     },
     "authors": [
         {

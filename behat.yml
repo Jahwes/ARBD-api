@@ -1,0 +1,24 @@
+default:
+    autoload:
+        '': %paths.base%/Tests/Functional/Context
+    suites:
+        default:
+            paths:
+                - %paths.base%/Tests/Functional/features
+            contexts:
+                - Tests\MainContext
+
+    formatters:
+        progress:
+            decorated:           true
+            verbose:             true
+            time:                true
+            language:            fr
+            output_path:         null
+            multiline_arguments: true
+
+wip:
+    suites:
+        default:
+            filters:
+                tags: '@wip'
