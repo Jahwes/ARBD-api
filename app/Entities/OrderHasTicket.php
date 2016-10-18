@@ -137,7 +137,7 @@ class OrderHasTicket implements \JsonSerializable
     /**
      * Sets the value of order_id.
      *
-     * @param interger $order_id the order id
+     * @param integer $order_id the order id
      *
      * @return self
      */
@@ -151,7 +151,7 @@ class OrderHasTicket implements \JsonSerializable
     /**
      * Sets the value of user_id.
      *
-     * @param interger $user_id the user_id
+     * @param integer $user_id the user_id
      *
      * @return self
      */
@@ -165,11 +165,11 @@ class OrderHasTicket implements \JsonSerializable
     /**
      * Sets the value of ticket_id.
      *
-     * @param interger $ticket_id the ticket_id
+     * @param integer $ticket_id the ticket_id
      *
      * @return self
      */
-    public function setUserId($ticket_id)
+    public function setTicketId($ticket_id)
     {
         $this->ticket_id = $ticket_id;
 
@@ -179,11 +179,11 @@ class OrderHasTicket implements \JsonSerializable
     /**
      * Sets the value of price_id.
      *
-     * @param interger $price_id the price_id
+     * @param integer $price_id the price_id
      *
      * @return self
      */
-    public function setUserId($price_id)
+    public function setPriceId($price_id)
     {
         $this->price_id = $price_id;
 
@@ -193,11 +193,11 @@ class OrderHasTicket implements \JsonSerializable
     /**
      * Sets the value of showing_id.
      *
-     * @param interger $showing_id the showing_id
+     * @param integer $showing_id the showing_id
      *
      * @return self
      */
-    public function setUserId($showing_id)
+    public function setShowingId($showing_id)
     {
         $this->showing_id = $showing_id;
 
@@ -207,11 +207,11 @@ class OrderHasTicket implements \JsonSerializable
     /**
      * Sets the value of spectator_id.
      *
-     * @param interger $spectator_id the spectator_id
+     * @param integer $spectator_id the spectator_id
      *
      * @return self
      */
-    public function setUserId($spectator_id)
+    public function setSpectatorId($spectator_id)
     {
         $this->spectator_id = $spectator_id;
 
