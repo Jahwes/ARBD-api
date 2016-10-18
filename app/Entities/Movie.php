@@ -4,6 +4,8 @@ namespace CinemaHD\Entities;
 
 use Doctrine\ORM\EntityManager;
 
+use Utils\Doctrine\AutoIncrementId;
+
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\MovieRepository")
  * @Table(
@@ -16,19 +18,15 @@ use Doctrine\ORM\EntityManager;
  */
 class Movie implements \JsonSerializable
 {
-    /**
-     * @Id
-     * @JoinColumn(name="movie_id", referencedColumnName="id")
-     */
-    protected $movie_id;
+    use AutoIncrementID;
 
     /**
-     * @Column(type="string", name="title", length=70)
+     * @Column(type="string", name="title", length=70, nullable=true)
      */
     protected $title;
 
     /**
-     * @Column(type="integer", name="duration")
+     * @Column(type="integer", name="duration", nullable=true)
      */
     protected $duration;
 
@@ -45,7 +43,7 @@ class Movie implements \JsonSerializable
     public function toArray()
     {
         return [
-            "movie_id" => $this->getMovieId(),
+            "id"       => $this->getId(),
             "title"    => $this->getTitle(),
             "duration" => $this->getDuration()
         ];
@@ -57,16 +55,6 @@ class Movie implements \JsonSerializable
     }
 
 // ------ Getters ------
-
-    /**
-     * Gets the value of movie_id.
-     *
-     * @return integer
-     */
-    public function getMovieId()
-    {
-        return $this->movie_id;
-    }
 
     /**
      * Gets the value of duration.
@@ -89,20 +77,6 @@ class Movie implements \JsonSerializable
     }
 
 // ------ Setters ------
-
-    /**
-     * Sets the value of movie_id.
-     *
-     * @param interger $movie_id the movie id
-     *
-     * @return self
-     */
-    public function setMovieId($movie_id)
-    {
-    	$this->movie_id = $movie_id;
-
-        return $this;
-    }
 
     /**
      * Sets the value of duration.

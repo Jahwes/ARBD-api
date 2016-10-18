@@ -4,6 +4,8 @@ namespace CinemaHD\Entities;
 
 use Doctrine\ORM\EntityManager;
 
+use Utils\Doctrine\AutoIncrementId;
+
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\OrderRepository")
  * @Table(
@@ -16,19 +18,15 @@ use Doctrine\ORM\EntityManager;
  */
 class Order implements \JsonSerializable
 {
-    /**
-     * @Id
-     * @JoinColumn(name="order_id", referencedColumnName="id")
-     */
-    protected $order_id;
+    use AutoIncrementID;
 
     /**
-     * @Column(type="datetime", name="created_at")
+     * @Column(type="datetime", name="created_at", nullable=true)
      */
     protected $date;
 
     /**
-     * @Column(type="integer", name="User_id")
+     * @Column(type="integer", name="User_id", nullable=false)
      */
     protected $user_id;
 

@@ -5,16 +5,16 @@ namespace CinemaHD\Entities;
 use Doctrine\ORM\EntityManager;
 
 /**
- * @Entity(repositoryClass="CinemaHD\Repositories\MoviesHasTypeRepository")
+ * @Entity(repositoryClass="CinemaHD\Repositories\MoviesHasPeopleRepository")
  * @Table(
- *     name="Movie_has_Type",
+ *     name="Movie_has_People",
  *     indexes={
  *
  *     }
  * )
  * @HasLifecycleCallbacks
  */
-class MovieHasType implements \JsonSerializable
+class MovieHasPeople implements \JsonSerializable
 {
     /**
      * @Id
@@ -25,7 +25,7 @@ class MovieHasType implements \JsonSerializable
     /**
      * @Column(type="integer", name="type_id", nullable=false)
      */
-    protected $type_id;
+    protected $people_id;
 
     public function toArray()
     {
@@ -53,13 +53,13 @@ class MovieHasType implements \JsonSerializable
     }
 
     /**
-     * Gets the value of type_id.
+     * Gets the value of people_id.
      *
      * @return integer
      */
-    public function getTypeId()
+    public function getPeopleId()
     {
-        return $this->type_id;
+        return $this->people_id;
     }
 
 // ------ Setters ------
@@ -73,21 +73,21 @@ class MovieHasType implements \JsonSerializable
      */
     public function setMovieId($movie_id)
     {
-    	$this->movie_id = $movie_id;
+        $this->movie_id = $movie_id;
 
         return $this;
     }
 
     /**
-     * Sets the value of type_id.
+     * Sets the value of people_id.
      *
-     * @param interger $type_id the type_id
+     * @param interger $people_id the people_id
      *
      * @return self
      */
-    public function setTypeId($type_id)
+    public function setPeopleId($people_id)
     {
-    	$this->type_id = $type_id;
+        $this->people_id = $people_id;
 
         return $this;
     }
