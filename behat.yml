@@ -8,6 +8,10 @@ default:
                 - %paths.base%/Tests/Functional/features
             contexts:
                 - Tests\MainContext
+                - Tests\ApiContext
+                - Tests\DoctrineContext
+                - Tests\FixedDateContext:
+                    date: "2016-10-01 12:00:00"
 
     formatters:
         progress:

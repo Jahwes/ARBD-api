@@ -16,7 +16,7 @@ Scénario: GET sur /
         "Hello": 4242,
         "Cinema": "du turfu",
         "Plein de trucs": {
-            "un truc": 1
+            "un truc": 1,
             "deux trucs": "bonjour",
             "trois trucs": 4938475
         }

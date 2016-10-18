@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+$app = require __DIR__ . "/../public/index.php";
+
+$host   = $app["db.options"]["host"];
+$user   = $app["db.options"]["user"];
+$pass   = $app["db.options"]["password"];
+$dbname = $app["db.options"]["dbname"];
+
+array_shift($_SERVER["argv"]);
+foreach ($_SERVER["argv"] as $file) {
+    $cat   = escapeshellcmd("cat {$file}");
+    $mysql = escapeshellcmd("mysql -NrB -u {$user} -h {$host} --password={$pass} {$dbname}");
+    $cmd   = "{$cat} | {$mysql}";
+    passthru($cmd);
+}
