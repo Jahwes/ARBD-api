@@ -11,7 +11,7 @@ use Utils\Doctrine\AutoIncrementId;
  * @Table(
  *     name="Order",
  *     indexes={
- *
+ *          @Index(name="User_id",  columns={"User_id"})
  *     }
  * )
  * @HasLifecycleCallbacks
@@ -26,26 +26,17 @@ class Order implements \JsonSerializable
     protected $date;
 
     /**
-     * @Column(type="integer", name="User_id", nullable=false)
+     * @ManyToOne(targetEntity="User", fetch="EAGER")
+     * @JoinColumn(name="User_id", referencedColumnName="id")
      */
-    protected $user_id;
-
-    /**
-     * @return string
-     */
-    public function __toString()
-    {
-        $order_id = $this->getOrderId();
-
-        return "{$order_id}";
-    }
+    protected $user;
 
     public function toArray()
     {
         return [
-            "order_id" => $this->getOrderId(),
-            "date"     => $this->getDate(),
-            "user_id"  => $this->getUserId()
+            "id"   => $this->getId(),
+            "date" => $this->getDate(),
+            "user" => $this->getUser()
         ];
     }
 
@@ -55,16 +46,6 @@ class Order implements \JsonSerializable
     }
 
 // ------ Getters ------
-
-    /**
-     * Gets the value of order_id.
-     *
-     * @return integer
-     */
-    public function getOrderId()
-    {
-        return $this->order_id;
-    }
 
     /**
      * Gets the value of date.
@@ -77,35 +58,21 @@ class Order implements \JsonSerializable
     }
 
     /**
-     * Gets the value of user_id.
+     * Gets the value of user.
      *
-     * @return integer
+     * @return User
      */
-    public function getUserId()
+    public function getUser()
     {
-        return $this->user_id;
+        return $this->user;
     }
 
 // ------ Setters ------
 
     /**
-     * Sets the value of order_id.
-     *
-     * @param interger $order_id the order id
-     *
-     * @return self
-     */
-    public function setOrderId($order_id)
-    {
-    	$this->order_id = $order_id;
-
-        return $this;
-    }
-
-    /**
      * Sets the value of date.
      *
-     * @param interger $date the date
+     * @param date $date the date
      *
      * @return self
      */
@@ -117,15 +84,15 @@ class Order implements \JsonSerializable
     }
 
     /**
-     * Sets the value of user_id.
+     * Sets the value of user.
      *
-     * @param interger $user_id the user_id
+     * @param User $user the user
      *
      * @return self
      */
-    public function setUserId($user_id)
+    public function setUser(User $user)
     {
-    	$this->user_id = $user_id;
+    	$this->user = $user;
 
         return $this;
     }

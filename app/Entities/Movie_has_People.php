@@ -4,12 +4,16 @@ namespace CinemaHD\Entities;
 
 use Doctrine\ORM\EntityManager;
 
+use CinemaHD\Entities\People;
+use CinemaHD\Entities\Movie;
+
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\MoviesHasPeopleRepository")
  * @Table(
  *     name="Movie_has_People",
  *     indexes={
- *
+ *          @Index(name="People_id", columns={"People_id"}),
+ *          @Index(name="Movie_id",  columns={"Movie_id"})
  *     }
  * )
  * @HasLifecycleCallbacks
@@ -17,21 +21,22 @@ use Doctrine\ORM\EntityManager;
 class MovieHasPeople implements \JsonSerializable
 {
     /**
-     * @Id
-     * @JoinColumn(name="movie_id", referencedColumnName="id", nullable=false)
+     * @ManyToOne(targetEntity="Movie", fetch="EAGER")
+     * @JoinColumn(name="Movie_id", referencedColumnName="id")
      */
-    protected $movie_id;
+    protected $movie;
 
     /**
-     * @Column(type="integer", name="type_id", nullable=false)
+     * @ManyToOne(targetEntity="People", fetch="EAGER")
+     * @JoinColumn(name="People_id", referencedColumnName="id")
      */
-    protected $people_id;
+    protected $people;
 
     public function toArray()
     {
         return [
-            "movie_id" => $this->getMovieId(),
-            "type_id"  => $this->getTypeId()
+            "movie" => $this->getMovie(),
+            "type"  => $this->getType()
         ];
     }
 
@@ -43,51 +48,51 @@ class MovieHasPeople implements \JsonSerializable
 // ------ Getters ------
 
     /**
-     * Gets the value of movie_id.
+     * Gets the value of movie.
      *
-     * @return integer
+     * @return Movie
      */
-    public function getMovieId()
+    public function getMovie()
     {
-        return $this->movie_id;
+        return $this->movie;
     }
 
     /**
-     * Gets the value of people_id.
+     * Gets the value of people.
      *
-     * @return integer
+     * @return People
      */
-    public function getPeopleId()
+    public function getPeople()
     {
-        return $this->people_id;
+        return $this->people;
     }
 
 // ------ Setters ------
 
     /**
-     * Sets the value of movie_id.
+     * Sets the value of movie.
      *
-     * @param interger $movie_id the movie id
+     * @param Movie $movie the movie
      *
      * @return self
      */
-    public function setMovieId($movie_id)
+    public function setMovie(Movie $movie)
     {
-        $this->movie_id = $movie_id;
+        $this->movie = $movie;
 
         return $this;
     }
 
     /**
-     * Sets the value of people_id.
+     * Sets the value of people.
      *
-     * @param interger $people_id the people_id
+     * @param People $people the people
      *
      * @return self
      */
-    public function setPeopleId($people_id)
+    public function setPeople(People $people)
     {
-        $this->people_id = $people_id;
+        $this->people = $people;
 
         return $this;
     }

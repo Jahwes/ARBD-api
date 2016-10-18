@@ -27,17 +27,20 @@ class Ticket implements \JsonSerializable
     use AutoIncrementID;
 
     /**
-     * @Column(type="string", name="name", length=45, nullable=true)
+     * @ManyToOne(targetEntity="Price", fetch="EAGER")
+     * @JoinColumn(name="Price_id", referencedColumnName="id")
      */
     protected $price;
 
     /**
-     * @Column(type="string", name="name", length=45, nullable=true)
+     * @ManyToOne(targetEntity="Showing", fetch="EAGER")
+     * @JoinColumn(name="Showing_id", referencedColumnName="id")
      */
     protected $showing;
 
     /**
-     * @Column(type="string", name="name", length=45, nullable=true)
+     * @ManyToOne(targetEntity="Spectator", fetch="EAGER")
+     * @JoinColumn(name="Spectator_id", referencedColumnName="id")
      */
     protected $spectator;
 
@@ -91,15 +94,43 @@ class Ticket implements \JsonSerializable
 // ------ Setters ------
 
     /**
-     * Sets the value of name
+     * Sets the value of price
      *
-     * @param string $name
+     * @param Price $price
      *
      * @return self
      */
-    public function setName($name)
+    public function setPrice(Price $price)
     {
-        $this->name = $name;
+        $this->price = $price;
+
+        return $this;
+    }
+
+    /**
+     * Sets the value of showing
+     *
+     * @param Showing $showing
+     *
+     * @return self
+     */
+    public function setShowing(Showing $showing)
+    {
+        $this->showing = $showing;
+
+        return $this;
+    }
+
+    /**
+     * Sets the value of spectator
+     *
+     * @param Spectator $spectator
+     *
+     * @return self
+     */
+    public function setSpectator(Spectator $spectator)
+    {
+        $this->spectator = $spectator;
 
         return $this;
     }
