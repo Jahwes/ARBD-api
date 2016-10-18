@@ -30,5 +30,9 @@
         "psr-4": {
             "CinemaHD\\": "app/"
         }
+    },
+    "scripts": {
+        "test": "behat",
+        "behat": "behat"
     }
 }
