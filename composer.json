@@ -28,7 +28,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "CinemaHD\\": "app/"
+            "CinemaHD\\": "app/",
+            "Tests\\": "Tests/Functional/Context/"
         }
     },
     "scripts": {
