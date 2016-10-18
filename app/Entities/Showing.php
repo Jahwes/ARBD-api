@@ -12,7 +12,7 @@ use Entities\Movie;
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\ShowingRepository")
  * @Table(
- *     name="Tickets",
+ *     name="Showing",
  *     indexes={
  *         @Index(name="Room_id",  columns={"Room_id"}),
  *         @Index(name="Movie_id", columns={"Movie_id"})

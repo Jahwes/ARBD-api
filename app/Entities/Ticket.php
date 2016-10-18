@@ -13,7 +13,7 @@ use Entities\Spectator;
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\TicketRepository")
  * @Table(
- *     name="Tickets",
+ *     name="Ticket",
  *     indexes={
  *         @Index(name="Price_id",     columns={"Price_id"}),
  *         @Index(name="Showing_id",   columns={"Showing_id"}),
