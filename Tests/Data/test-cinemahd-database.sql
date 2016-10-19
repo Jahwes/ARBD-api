@@ -57,7 +57,7 @@ CREATE TABLE IF NOT EXISTS `test_cinemahd`.`Order` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `created_at` DATE NULL,
   `User_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `User_id`),
+  PRIMARY KEY (`id`),
   INDEX `fk_Order_User_idx` (`User_id` ASC),
   CONSTRAINT `fk_Order_User`
     FOREIGN KEY (`User_id`)
@@ -140,7 +140,7 @@ CREATE TABLE IF NOT EXISTS `test_cinemahd`.`Showing` (
   `3D` TINYINT(1) NULL,
   `Room_id` INT NOT NULL,
   `Movie_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `Room_id`, `Movie_id`),
+  PRIMARY KEY (`id`),
   INDEX `fk_Showing_Room1_idx` (`Room_id` ASC),
   INDEX `fk_Showing_Movie1_idx` (`Movie_id` ASC),
   CONSTRAINT `fk_Showing_Room1`
@@ -182,7 +182,7 @@ CREATE TABLE IF NOT EXISTS `test_cinemahd`.`Ticket` (
   `Showing_id` INT NOT NULL,
   `Spectator_id` INT NOT NULL,
   `Order_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `Price_id`, `Showing_id`, `Spectator_id`, `Order_id`),
+  PRIMARY KEY (`id`),
   INDEX `fk_Ticket_Price1_idx` (`Price_id` ASC),
   INDEX `fk_Ticket_Showing1_idx` (`Showing_id` ASC),
   INDEX `fk_Ticket_Spectator1_idx` (`Spectator_id` ASC),

@@ -38,6 +38,46 @@ Scénario: Get les orders d'un user
     Et          je devrais avoir un résultat d'API en JSON
     Et          le résultat devrait être identique au JSON suivant :
     """
-    {
-    }
+    [
+        {
+            "id": 1,
+            "date": {
+                "date": "2016-10-18 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "Europe\/Paris"
+            },
+            "user": {
+                "id": 1,
+                "lastname": "HEART",
+                "firstname": "Kingston",
+                "date_of_birth": {
+                    "date": "1994-02-15 00:00:00.000000",
+                    "timezone_type": 3,
+                    "timezone": "Europe\/Paris"
+                },
+                "title": "Monsieur",
+                "email": "heart_k@etna.io"
+            }
+        },
+        {
+            "id": 2,
+            "date": {
+                "date": "2016-09-28 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "Europe\/Paris"
+            },
+            "user": {
+                "id": 1,
+                "lastname": "HEART",
+                "firstname": "Kingston",
+                "date_of_birth": {
+                    "date": "1994-02-15 00:00:00.000000",
+                    "timezone_type": 3,
+                    "timezone": "Europe\/Paris"
+                },
+                "title": "Monsieur",
+                "email": "heart_k@etna.io"
+            }
+        }
+    ]
     """
