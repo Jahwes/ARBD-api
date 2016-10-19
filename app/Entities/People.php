@@ -11,7 +11,7 @@ use CinemaHD\Utils\Doctrine\AutoIncrementId;
  * @Table(name="People")
  * @HasLifecycleCallbacks
  */
-class User implements \JsonSerializable
+class People implements \JsonSerializable
 {
     use AutoIncrementID;
 

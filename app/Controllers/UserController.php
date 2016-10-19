@@ -26,6 +26,10 @@ class UserController implements ControllerProviderInterface
             ->assert("user", "\d+")
             ->convert("user", $app["findOneOr404"]('User', 'id'));
 
+        $controllers->get('/users/{user}/orders', [$this, 'getOrdersForUser'])
+            ->assert("user", "\d+")
+            ->convert("user", $app["findOneOr404"]('User', 'id'));
+
         return $controllers;
     }
 
@@ -45,6 +49,19 @@ class UserController implements ControllerProviderInterface
 
     /**
      * Récupère un user via son ID
+     *
+     * @param  Application   $app     Silex application
+     * @param  User          $user    L'entité du user
+     *
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     */
+    public function getUser(Application $app, User $user)
+    {
+        return $app->json($user, 200);
+    }
+
+    /**
+     * Récupère les orders d'un user
      *
      * @param  Application   $app     Silex application
      * @param  User          $user    L'entité du user
