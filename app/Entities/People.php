@@ -56,8 +56,7 @@ class User implements \JsonSerializable
             "firstname"     => $this->getFirstname(),
             "date_of_birth" => $this->getDateOfBirth(),
             "role"          => $this->getRole(),
-            "nationality"   => $this->getNationality(),
-            "email"         => $this->getEmail()
+            "nationality"   => $this->getNationality()
         ];
     }
 
