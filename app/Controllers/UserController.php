@@ -70,6 +70,10 @@ class UserController implements ControllerProviderInterface
      */
     public function getOrdersForUser(Application $app, User $user)
     {
-        return $app->json($user, 200);
+        $orders = $app["repositories"]("Order")->findBy([
+            "user" => $user
+        ]);
+
+        return $app->json($orders, 200);
     }
 }
