@@ -4,11 +4,11 @@ namespace CinemaHD\Entities;
 
 use Doctrine\ORM\EntityManager;
 
-use Utils\Doctrine\AutoIncrementId;
+use CinemaHD\Utils\Doctrine\AutoIncrementId;
 
-use Entities\Price;
-use Entities\Showing;
-use Entities\Spectator;
+use CinemaHD\Entities\Price;
+use CinemaHD\Entities\Showing;
+use CinemaHD\Entities\Spectator;
 
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\TicketRepository")
