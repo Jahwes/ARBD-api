@@ -4,14 +4,14 @@ namespace CinemaHD\Entities;
 
 use Doctrine\ORM\EntityManager;
 
-use Utils\Doctrine\AutoIncrementId;
+use CinemaHD\Utils\Doctrine\AutoIncrementId;
 
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\PeopleRepository")
  * @Table(name="People")
  * @HasLifecycleCallbacks
  */
-class User implements \JsonSerializable
+class People implements \JsonSerializable
 {
     use AutoIncrementID;
 
@@ -57,7 +57,6 @@ class User implements \JsonSerializable
             "date_of_birth" => $this->getDateOfBirth(),
             "role"          => $this->getRole(),
             "nationality"   => $this->getNationality()
-            "email"         => $this->getEmail()
         ];
     }
 

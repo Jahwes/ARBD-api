@@ -4,10 +4,10 @@ namespace CinemaHD\Entities;
 
 use Doctrine\ORM\EntityManager;
 
-use Utils\Doctrine\AutoIncrementId;
+use CinemaHD\Utils\Doctrine\AutoIncrementId;
 
-use Entities\Room;
-use Entities\Movie;
+use CinemaHD\Entities\Room;
+use CinemaHD\Entities\Movie;
 
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\ShowingRepository")

@@ -61,6 +61,22 @@ class Config implements ServiceProviderInterface
         $app['db_name']     = getenv("CINEMAHD_DATABASE_NAME");
         $app['db_user']     = getenv("CINEMAHD_DATABASE_USER");
         $app['db_password'] = getenv("CINEMAHD_DATABASE_PWD");
+
+        switch ($app['application_env']) {
+            case 'production':
+                ini_set('display_errors', false);
+                $app['controllers']->requireHttps();
+                break;
+
+            default:
+                ini_set('display_errors', true);
+                ini_set('xdebug.var_display_max_depth', 100);
+                ini_set('xdebug.var_display_max_children', 100);
+                ini_set('xdebug.var_display_max_data', 100);
+                error_reporting(E_ALL);
+                $app["debug"] = true;
+                break;
+        }
     }
 
     /**
@@ -71,6 +87,10 @@ class Config implements ServiceProviderInterface
     private function registerServiceProviders(Application $app)
     {
         $app->register(new Provider\ServiceControllerServiceProvider());
+
+        if ($app['debug']) {
+            $app->register(new DebugConfig());
+        }
 
         $app->register(new DoctrineServiceProvider());
         $app->register(new DoctrineOrmServiceProvider());

@@ -4,7 +4,7 @@ namespace CinemaHD\Entities;
 
 use Doctrine\ORM\EntityManager;
 
-use Utils\Doctrine\AutoIncrementId;
+use CinemaHD\Utils\Doctrine\AutoIncrementId;
 
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\SpectatorRepository")
