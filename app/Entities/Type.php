@@ -13,7 +13,7 @@ use CinemaHD\Utils\Doctrine\AutoIncrementId;
  */
 class Type implements \JsonSerializable
 {
-    use AutoIncrementID;
+    use AutoIncrementId;
 
     /**
      * @Column(type="string", name="name", length=45, nullable=true)

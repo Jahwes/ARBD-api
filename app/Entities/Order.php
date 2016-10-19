@@ -18,7 +18,7 @@ use CinemaHD\Utils\Doctrine\AutoIncrementId;
  */
 class Order implements \JsonSerializable
 {
-    use AutoIncrementID;
+    use AutoIncrementId;
 
     /**
      * @Column(type="datetime", name="created_at", nullable=true)

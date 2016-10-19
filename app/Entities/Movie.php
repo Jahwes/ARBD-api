@@ -18,7 +18,7 @@ use CinemaHD\Utils\Doctrine\AutoIncrementId;
  */
 class Movie implements \JsonSerializable
 {
-    use AutoIncrementID;
+    use AutoIncrementId;
 
     /**
      * @Column(type="string", name="title", length=70, nullable=true)

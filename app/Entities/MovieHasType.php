@@ -23,6 +23,7 @@ class MovieHasType implements \JsonSerializable
     protected $movie_id;
 
     /**
+     * @Id
      * @Column(type="integer", name="type_id", nullable=false)
      */
     protected $type_id;

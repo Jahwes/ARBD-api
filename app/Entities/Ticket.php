@@ -24,7 +24,7 @@ use CinemaHD\Entities\Spectator;
  */
 class Ticket implements \JsonSerializable
 {
-    use AutoIncrementID;
+    use AutoIncrementId;
 
     /**
      * @ManyToOne(targetEntity="Price", fetch="EAGER")

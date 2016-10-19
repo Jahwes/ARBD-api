@@ -22,7 +22,7 @@ use CinemaHD\Entities\Movie;
  */
 class Showing implements \JsonSerializable
 {
-    use AutoIncrementID;
+    use AutoIncrementId;
 
     /**
      * @Column(type="date", name="date")

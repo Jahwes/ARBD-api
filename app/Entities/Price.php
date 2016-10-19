@@ -13,7 +13,7 @@ use CinemaHD\Utils\Doctrine\AutoIncrementId;
  */
 class Price implements \JsonSerializable
 {
-    use AutoIncrementID;
+    use AutoIncrementId;
 
     /**
      * @Column(type="string", name="type_name", nullable=true)
@@ -28,8 +28,9 @@ class Price implements \JsonSerializable
     public function toArray()
     {
         return [
-            "id"   => $this->getId(),
-            "name" => $this->getName()
+            "id"    => $this->getId(),
+            "name"  => $this->getName(),
+            "value" => $this->getValue()
         ];
     }
 
@@ -78,7 +79,7 @@ class Price implements \JsonSerializable
     /**
      * Sets the value of value
      *
-     * @param string $value
+     * @param integer $value
      *
      * @return self
      */

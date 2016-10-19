@@ -17,31 +17,37 @@ use Doctrine\ORM\EntityManager;
 class OrderHasTicket implements \JsonSerializable
 {
     /**
+     * @Id
      * @Column(name="order_id", name="Order_id", nullable=false)
      */
     protected $order_id;
 
     /**
+     * @Id
      * @Column(type="integer", name="Order_User_id", nullable=false)
      */
     protected $user_id;
 
     /**
+     * @Id
      * @Column(type="integer", name="Ticket_id", nullable=false)
      */
     protected $ticket_id;
 
     /**
+     * @Id
      * @Column(type="integer", name="Ticket_Price_id", nullable=false)
      */
     protected $price_id;
 
     /**
+     * @Id
      * @Column(type="integer", name="Ticket_Showing_id", nullable=false)
      */
     protected $showing_id;
 
     /**
+     * @Id
      * @Column(type="integer", name="Ticket_Spectator_id", nullable=false)
      */
     protected $spectator_id;

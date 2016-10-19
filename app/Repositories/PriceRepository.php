@@ -10,5 +10,14 @@ namespace CinemaHD\Repositories;
  */
 class PriceRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function getPrices()
+    {
+        $dql   = "SELECT price
+            FROM CinemaHD\Entities\Price price
+            WHERE 1 = 1
+        ";
+        $query = $this->_em->createQuery($dql);
 
+        return $query->getResult();
+    }
 }

@@ -21,12 +21,14 @@ use CinemaHD\Entities\Movie;
 class MovieHasPeople implements \JsonSerializable
 {
     /**
+     * @Id
      * @ManyToOne(targetEntity="Movie", fetch="EAGER")
      * @JoinColumn(name="Movie_id", referencedColumnName="id")
      */
     protected $movie;
 
     /**
+     * @Id
      * @ManyToOne(targetEntity="People", fetch="EAGER")
      * @JoinColumn(name="People_id", referencedColumnName="id")
      */
