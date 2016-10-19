@@ -249,31 +249,6 @@ CREATE TABLE IF NOT EXISTS `test_cinemahd`.`Movie_has_People` (
     ON UPDATE NO ACTION
 ) ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
--- Table `test_cinemahd`.`Order_has_Ticket`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `test_cinemahd`.`Order_has_Ticket` ;
-
-CREATE TABLE IF NOT EXISTS `test_cinemahd`.`Order_has_Ticket` (
-  `Order_id` INT NOT NULL,
-  `Ticket_id` INT NOT NULL,
-  PRIMARY KEY (`Order_id`, `Ticket_id`),
-  INDEX `fk_Order_has_Ticket_Ticket1_idx` (`Ticket_id` ASC),
-  INDEX `fk_Order_has_Ticket_Order1_idx` (`Order_id` ASC),
-  CONSTRAINT `fk_Order_has_Ticket_Order1`
-    FOREIGN KEY (`Order_id`)
-    REFERENCES `test_cinemahd`.`Order` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Order_has_Ticket_Ticket1`
-    FOREIGN KEY (`Ticket_id`)
-    REFERENCES `test_cinemahd`.`Ticket` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
-) ENGINE = InnoDB;
-
-
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
