@@ -16,7 +16,9 @@
         "guzzlehttp/guzzle": "~6.0"
     },
     "require-dev": {
-        "behat/behat": "3.x"
+        "behat/behat": "3.x",
+        "phpunit/php-code-coverage": "3.x",
+        "phpunit/phpcov": "3.x"
     },
     "authors": [
         {
@@ -26,7 +28,12 @@
     ],
     "autoload": {
         "psr-4": {
-            "CinemaHD\\": "app/"
+            "CinemaHD\\": "app/",
+            "Tests\\": "Tests/Functional/Context/"
         }
+    },
+    "scripts": {
+        "test": "behat",
+        "behat": "behat"
     }
 }
