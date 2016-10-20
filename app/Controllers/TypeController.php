@@ -8,9 +8,9 @@ use Silex\Api\ControllerProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-use CinemaHD\Entities\Price;
+use CinemaHD\Entities\Type;
 
-class PriceController implements ControllerProviderInterface
+class TypeController implements ControllerProviderInterface
 {
     /**
      * {@inheritdoc}
@@ -20,23 +20,23 @@ class PriceController implements ControllerProviderInterface
         /* @var $controllers ControllerCollection */
         $controllers = $app['controllers_factory'];
 
-        $controllers->get('/prices', [$this, 'getPrices']);
+        $controllers->get('/types', [$this, 'getTypes']);
 
         return $controllers;
     }
 
 
     /**
-     * Récupère tous les prices
+     * Récupère tous les types
      *
      * @param  Application   $app     Silex application
      *
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
-    public function getPrices(Application $app)
+    public function getTypes(Application $app)
     {
-        $prices = $app["repositories"]("Price")->findAll();
+        $types = $app["repositories"]("Type")->findAll();
 
-        return $app->json($prices, 200);
+        return $app->json($types, 200);
     }
 }

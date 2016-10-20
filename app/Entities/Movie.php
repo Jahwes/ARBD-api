@@ -9,7 +9,7 @@ use CinemaHD\Utils\Doctrine\AutoIncrementId;
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\MovieRepository")
  * @Table(
- *     name="movies",
+ *     name="Movie",
  *     indexes={
  *
  *     }

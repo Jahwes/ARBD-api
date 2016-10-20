@@ -1,26 +1,36 @@
 # language: fr
 
-@feature/home
-Fonctionnalité: GET sur / pour tester behat
+@feature/prices
+Fonctionnalité: GET sur /prices
 
 @GET
-Scénario: GET sur /price
+Scénario: GET sur /prices
     Quand je fais un GET sur /prices
-    Alors je devrais avoir un résultat d'API en JSON
-    Et    le status HTTP devrait être 200
-    Et    je devrais avoir un résultat d'API en JSON
+    Alors       le status HTTP devrait être 200
+    Et          je devrais avoir un résultat d'API en JSON
     Et    le résultat devrait être identique au JSON suivant :
     """
     [
         {
-            "Bonjour": "Je suis un test",
-            "Hello": 4242,
-            "Cinema": "du turfu",
-            "Plein de trucs": {
-                "un truc": 1,
-                "deux trucs": "bonjour",
-                "trois trucs": 4938475
-            }
+             "id": 1,
+             "type": "plein",
+             "value": 9.4
+        },
+        {
+             "id": 2,
+             "type": "réduit",
+             "value": 7.4
+        },
+        {
+             "id": 3,
+             "type": "sénior",
+             "value": 6.8
+        },
+        {
+             "id": 4,
+             "type": "étudiant",
+             "value": 6.8
         }
     ]
+
     """

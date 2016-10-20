@@ -29,7 +29,7 @@ class Price implements \JsonSerializable
     {
         return [
             "id"    => $this->getId(),
-            "name"  => $this->getName(),
+            "type"  => $this->getType(),
             "value" => $this->getValue()
         ];
     }

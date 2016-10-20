@@ -1,0 +1,113 @@
+[
+    {
+        "id": 1,
+        "price": {
+            "id": 1,
+            "type": "plein",
+            "value": 9.4
+        },
+        "showing": {
+            "id": 1,
+            "date": {
+                "date": "2016-11-18 10:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "Europe\/Paris"
+            },
+            "is_3D": true,
+            "room": {
+                "id": 1,
+                "nb_places": 50
+            },
+            "movie": {
+                "id": 1,
+                "title": "Miss Peregrine et les enfants particuliers",
+                "duration": 127
+            }
+        },
+        "spectator": {
+            "id": 1,
+            "lastname": "HEART",
+            "firstname": "Kingston",
+            "date_of_birth": {
+                "date": "1994-02-15 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "Europe\/Paris"
+            },
+            "title": "Monsieur"
+        }
+    },
+    {
+        "id": 2,
+        "price": {
+            "id": 2,
+            "type": "r\u00e9duit",
+            "value": 7.4
+        },
+        "showing": {
+            "id": 1,
+            "date": {
+                "date": "2016-11-18 10:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "Europe\/Paris"
+            },
+            "is_3D": true,
+            "room": {
+                "id": 1,
+                "nb_places": 50
+            },
+            "movie": {
+                "id": 1,
+                "title": "Miss Peregrine et les enfants particuliers",
+                "duration": 127
+            }
+        },
+        "spectator": {
+            "id": 3,
+            "lastname": "TALON",
+            "firstname": "Faure",
+            "date_of_birth": {
+                "date": "1986-04-06 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "Europe\/Paris"
+            },
+            "title": "Monsieur"
+        }
+    },
+    {
+        "id": 3,
+        "price": {
+            "id": 3,
+            "type": "s\u00e9nior",
+            "value": 6.8
+        },
+        "showing": {
+            "id": 3,
+            "date": {
+                "date": "2016-11-24 14:50:00.000000",
+                "timezone_type": 3,
+                "timezone": "Europe\/Paris"
+            },
+            "is_3D": true,
+            "room": {
+                "id": 3,
+                "nb_places": 78
+            },
+            "movie": {
+                "id": 2,
+                "title": "Deepwater",
+                "duration": 107
+            }
+        },
+        "spectator": {
+            "id": 4,
+            "lastname": "NOUEL",
+            "firstname": "Soucy",
+            "date_of_birth": {
+                "date": "1941-06-17 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "Europe\/Paris"
+            },
+            "title": "Madame"
+        }
+    }
+]

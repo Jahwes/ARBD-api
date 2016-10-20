@@ -9,6 +9,7 @@ use CinemaHD\Utils\Doctrine\AutoIncrementId;
 use CinemaHD\Entities\Price;
 use CinemaHD\Entities\Showing;
 use CinemaHD\Entities\Spectator;
+use CinemaHD\Entities\Order;
 
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\TicketRepository")
@@ -17,7 +18,8 @@ use CinemaHD\Entities\Spectator;
  *     indexes={
  *         @Index(name="Price_id",     columns={"Price_id"}),
  *         @Index(name="Showing_id",   columns={"Showing_id"}),
- *         @Index(name="Spectator_id", columns={"Spectator_id"})
+ *         @Index(name="Spectator_id", columns={"Spectator_id"}),
+ *         @Index(name="Order_id",     columns={"Order_id"})
  *     }
  * )
  * @HasLifecycleCallbacks

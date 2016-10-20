@@ -133,6 +133,9 @@ class Config implements ServiceProviderInterface
         $app->register(new ConsoleProvider());
         $app->register(new DoctrineOrmManagerRegistryProvider());
         $app->register(new CorsServiceProvider());
+
+        $platform = $app["orm.em"]->getConnection()->getDatabasePlatform();
+        $platform->registerDoctrineTypeMapping('enum', 'string');
     }
 
     /**

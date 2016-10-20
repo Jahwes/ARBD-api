@@ -18,13 +18,15 @@ class MovieHasType implements \JsonSerializable
 {
     /**
      * @Id
+     * @ManyToOne(targetEntity="Movie", fetch="EAGER")
      * @JoinColumn(name="movie_id", referencedColumnName="id", nullable=false)
      */
     protected $movie_id;
 
     /**
      * @Id
-     * @Column(type="integer", name="type_id", nullable=false)
+     * @ManyToOne(targetEntity="Type", fetch="EAGER")
+     * @JoinColumn(name="type_id", referencedColumnName="id", nullable=false)
      */
     protected $type_id;
 
