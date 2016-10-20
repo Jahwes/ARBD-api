@@ -70,7 +70,7 @@ class OrderController implements ControllerProviderInterface
      */
     public function getTicketsForOrder(Application $app, Order $order)
     {
-        $tickets = "oups";
+        $tickets = $app["repositories"]("Ticket")->findByOrder($order);
 
         return $app->json($tickets, 200);
     }
