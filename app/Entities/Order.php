@@ -12,7 +12,7 @@ use CinemaHD\Entities\User;
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\OrderRepository")
  * @Table(
- *     name="Order",
+ *     name="`Order`",
  *     indexes={
  *          @Index(name="User_id",  columns={"User_id"})
  *     }

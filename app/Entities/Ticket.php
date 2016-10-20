@@ -46,13 +46,20 @@ class Ticket implements \JsonSerializable
      */
     protected $spectator;
 
+    /**
+     * @ManyToOne(targetEntity="Order", fetch="EAGER")
+     * @JoinColumn(name="Order_id", referencedColumnName="id")
+     */
+    protected $order;
+
     public function toArray()
     {
         return [
             "id"        => $this->getId(),
             "price"     => $this->getPrice(),
             "showing"   => $this->getShowing(),
-            "spectator" => $this->getSpectator()
+            "spectator" => $this->getSpectator(),
+            "order"     => $this->getOrder()
         ];
     }
 
@@ -91,6 +98,16 @@ class Ticket implements \JsonSerializable
     public function getSpectator()
     {
         return $this->spectator;
+    }
+
+    /**
+     * Gets the value of order
+     *
+     * @return Order
+     */
+    public function getOrder()
+    {
+        return $this->order;
     }
 
 // ------ Setters ------
@@ -133,6 +150,20 @@ class Ticket implements \JsonSerializable
     public function setSpectator(Spectator $spectator)
     {
         $this->spectator = $spectator;
+
+        return $this;
+    }
+
+    /**
+     * Sets the value of order
+     *
+     * @param Order $order
+     *
+     * @return self
+     */
+    public function setOrder(Order $order)
+    {
+        $this->order = $order;
 
         return $this;
     }
