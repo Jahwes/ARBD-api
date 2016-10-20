@@ -6,8 +6,8 @@ Fonctionnalité: GET sur /type
 @GET
 Scénario: GET sur /types
     Quand je fais un GET sur /types
-    Alors       le status HTTP devrait être 200
-    Et          je devrais avoir un résultat d'API en JSON
+    Alors le status HTTP devrait être 200
+    Et    je devrais avoir un résultat d'API en JSON
     Et    le résultat devrait être identique au JSON suivant :
     """
     [
@@ -56,5 +56,4 @@ Scénario: GET sur /types
             "name": "romantique"
         }
     ]
-
     """

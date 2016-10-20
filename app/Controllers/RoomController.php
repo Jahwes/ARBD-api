@@ -29,7 +29,6 @@ class RoomController implements ControllerProviderInterface
         return $controllers;
     }
 
-
     /**
      * Récupère tous les Rooms
      *

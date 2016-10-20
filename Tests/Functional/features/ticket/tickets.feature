@@ -11,7 +11,7 @@ Scénario: Get tous les tickets du monde
     Et          le résultat devrait être identique au fichier "get_all_tickets.json"
 
 @GET
-Scénario: Get un user par son ID
+Scénario: Get un ticket par son ID
     Quand       je fais un GET sur /tickets/1
     Alors       le status HTTP devrait être 200
     Et          je devrais avoir un résultat d'API en JSON

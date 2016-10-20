@@ -13,7 +13,7 @@
     {
         "id": 2,
         "lastname": "BELANGER",
-        "firstname": "Ang\u00e9lique",
+        "firstname": "Angélique",
         "date_of_birth": {
             "date": "1970-04-11 00:00:00.000000",
             "timezone_type": 3,
@@ -57,7 +57,7 @@
     {
         "id": 6,
         "lastname": "IGNACE",
-        "firstname": "B\u00e9land",
+        "firstname": "Béland",
         "date_of_birth": {
             "date": "1944-10-18 00:00:00.000000",
             "timezone_type": 3,

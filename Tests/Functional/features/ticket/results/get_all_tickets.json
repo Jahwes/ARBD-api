@@ -40,7 +40,7 @@
         "id": 2,
         "price": {
             "id": 2,
-            "type": "r\u00e9duit",
+            "type": "réduit",
             "value": 7.4
         },
         "showing": {
@@ -77,7 +77,7 @@
         "id": 3,
         "price": {
             "id": 3,
-            "type": "s\u00e9nior",
+            "type": "sénior",
             "value": 6.8
         },
         "showing": {

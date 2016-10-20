@@ -11,7 +11,7 @@ Scénario: Get tous les spectators du monde
     Et          le résultat devrait être identique au fichier "get_all_spectators.json"
 
 @GET
-Scénario: Get un user par son ID
+Scénario: Get un spectator par son ID
     Quand       je fais un GET sur /spectators/1
     Alors       le status HTTP devrait être 200
     Et          je devrais avoir un résultat d'API en JSON

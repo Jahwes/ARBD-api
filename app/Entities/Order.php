@@ -7,6 +7,8 @@ use Doctrine\ORM\EntityManager;
 use CinemaHD\Utils\Doctrine\AutoIncrementId;
 use CinemaHD\Utils\Doctrine\CreatedAt;
 
+use CinemaHD\Entities\User;
+
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\OrderRepository")
  * @Table(
