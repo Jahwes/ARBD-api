@@ -68,7 +68,7 @@ class UserController implements ControllerProviderInterface
      *
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
-    public function getUser(Application $app, User $user)
+    public function getOrdersForUser(Application $app, User $user)
     {
         return $app->json($user, 200);
     }

@@ -9,6 +9,7 @@ use CinemaHD\Utils\Doctrine\AutoIncrementId;
 use CinemaHD\Entities\Price;
 use CinemaHD\Entities\Showing;
 use CinemaHD\Entities\Spectator;
+use CinemaHD\Entities\Order;
 
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\TicketRepository")
@@ -17,14 +18,15 @@ use CinemaHD\Entities\Spectator;
  *     indexes={
  *         @Index(name="Price_id",     columns={"Price_id"}),
  *         @Index(name="Showing_id",   columns={"Showing_id"}),
- *         @Index(name="Spectator_id", columns={"Spectator_id"})
+ *         @Index(name="Spectator_id", columns={"Spectator_id"}),
+ *         @Index(name="Order_id",     columns={"Order_id"})
  *     }
  * )
  * @HasLifecycleCallbacks
  */
 class Ticket implements \JsonSerializable
 {
-    use AutoIncrementID;
+    use AutoIncrementId;
 
     /**
      * @ManyToOne(targetEntity="Price", fetch="EAGER")
@@ -44,13 +46,20 @@ class Ticket implements \JsonSerializable
      */
     protected $spectator;
 
+    /**
+     * @ManyToOne(targetEntity="Order", fetch="EAGER")
+     * @JoinColumn(name="Order_id", referencedColumnName="id")
+     */
+    protected $order;
+
     public function toArray()
     {
         return [
             "id"        => $this->getId(),
             "price"     => $this->getPrice(),
             "showing"   => $this->getShowing(),
-            "spectator" => $this->getSpectator()
+            "spectator" => $this->getSpectator(),
+            "order"     => $this->getOrder()
         ];
     }
 
@@ -89,6 +98,16 @@ class Ticket implements \JsonSerializable
     public function getSpectator()
     {
         return $this->spectator;
+    }
+
+    /**
+     * Gets the value of order
+     *
+     * @return Order
+     */
+    public function getOrder()
+    {
+        return $this->order;
     }
 
 // ------ Setters ------
@@ -131,6 +150,20 @@ class Ticket implements \JsonSerializable
     public function setSpectator(Spectator $spectator)
     {
         $this->spectator = $spectator;
+
+        return $this;
+    }
+
+    /**
+     * Sets the value of order
+     *
+     * @param Order $order
+     *
+     * @return self
+     */
+    public function setOrder(Order $order)
+    {
+        $this->order = $order;
 
         return $this;
     }

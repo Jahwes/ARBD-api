@@ -13,7 +13,7 @@ use CinemaHD\Utils\Doctrine\AutoIncrementId;
  */
 class Spectator implements \JsonSerializable
 {
-    use AutoIncrementID;
+    use AutoIncrementId;
 
     /**
      * @Column(type="string", name="lastname", length=50, nullable=true)
@@ -31,10 +31,7 @@ class Spectator implements \JsonSerializable
     protected $date_of_birth;
 
     /**
-     * @Column(
-     *     type="string", name="title",
-     *     columnDefinition="ENUM('Monsieur','Madame','Mademoiselle') DEFAULT NULL", nullable=true
-     * )
+     * @Column(type="string", name="title", columnDefinition="ENUM('Monsieur','Madame','Mademoiselle') DEFAULT NULL"), nullable=true
      */
     protected $title;
 

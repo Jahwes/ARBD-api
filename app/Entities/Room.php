@@ -13,7 +13,7 @@ use CinemaHD\Utils\Doctrine\AutoIncrementId;
  */
 class Room implements \JsonSerializable
 {
-    use AutoIncrementID;
+    use AutoIncrementId;
 
     /**
      * @Column(type="integer", name="nb_places")

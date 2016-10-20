@@ -13,7 +13,7 @@ use CinemaHD\Utils\Doctrine\AutoIncrementId;
  */
 class People implements \JsonSerializable
 {
-    use AutoIncrementID;
+    use AutoIncrementId;
 
     /**
      * @Column(type="string", name="lastname", length=50, nullable=true)
@@ -31,10 +31,7 @@ class People implements \JsonSerializable
     protected $date_of_birth;
 
     /**
-     * @Column(
-     *     type="string", name="title",
-     *     columnDefinition="ENUM('Monsieur','Madame','Mademoiselle') DEFAULT NULL", nullable=true
-     * )
+     * @Column(type="string", name="title", columnDefinition="ENUM('Monsieur','Madame','Mademoiselle') DEFAULT NULL"), nullable=true
      */
     protected $title;
 
@@ -108,16 +105,6 @@ class People implements \JsonSerializable
     }
 
     /**
-     * Gets the value of email
-     *
-     * @return string
-     */
-    public function getEmail()
-    {
-        return $this->email;
-    }
-
-    /**
      * Gets the value of nationality
      *
      * @return string
@@ -181,20 +168,6 @@ class People implements \JsonSerializable
     public function setTitle($title)
     {
         $this->title = $title;
-
-        return $this;
-    }
-
-    /**
-     * Gets the value of email
-     *
-     * @param string $email
-     *
-     * @return self
-     */
-    public function setEmail($email)
-    {
-        $this->email = $email;
 
         return $this;
     }

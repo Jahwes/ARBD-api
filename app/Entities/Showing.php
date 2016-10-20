@@ -22,10 +22,10 @@ use CinemaHD\Entities\Movie;
  */
 class Showing implements \JsonSerializable
 {
-    use AutoIncrementID;
+    use AutoIncrementId;
 
     /**
-     * @Column(type="date", name="date")
+     * @Column(type="datetime", name="date")
      */
     protected $date;
 
@@ -52,7 +52,7 @@ class Showing implements \JsonSerializable
             "id"    => $this->getId(),
             "date"  => $this->getDate(),
             "is_3D" => $this->getIs3D(),
-            "room"  => $this->getSpectator(),
+            "room"  => $this->getRoom(),
             "movie" => $this->getMovie()
         ];
     }

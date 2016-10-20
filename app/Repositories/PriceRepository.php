@@ -10,5 +10,4 @@ namespace CinemaHD\Repositories;
  */
 class PriceRepository extends \Doctrine\ORM\EntityRepository
 {
-
 }

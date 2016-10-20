@@ -5,11 +5,14 @@ namespace CinemaHD\Entities;
 use Doctrine\ORM\EntityManager;
 
 use CinemaHD\Utils\Doctrine\AutoIncrementId;
+use CinemaHD\Utils\Doctrine\CreatedAt;
+
+use CinemaHD\Entities\User;
 
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\OrderRepository")
  * @Table(
- *     name="Order",
+ *     name="`Order`",
  *     indexes={
  *          @Index(name="User_id",  columns={"User_id"})
  *     }
@@ -18,12 +21,8 @@ use CinemaHD\Utils\Doctrine\AutoIncrementId;
  */
 class Order implements \JsonSerializable
 {
-    use AutoIncrementID;
-
-    /**
-     * @Column(type="datetime", name="created_at", nullable=true)
-     */
-    protected $date;
+    use AutoIncrementId;
+    use CreatedAt;
 
     /**
      * @ManyToOne(targetEntity="User", fetch="EAGER")
@@ -34,9 +33,9 @@ class Order implements \JsonSerializable
     public function toArray()
     {
         return [
-            "id"   => $this->getId(),
-            "date" => $this->getDate(),
-            "user" => $this->getUser()
+            "id"         => $this->getId(),
+            "created_at" => $this->getCreatedAt('c'),
+            "user"       => $this->getUser()
         ];
     }
 
@@ -46,16 +45,6 @@ class Order implements \JsonSerializable
     }
 
 // ------ Getters ------
-
-    /**
-     * Gets the value of date.
-     *
-     * @return date
-     */
-    public function getDate()
-    {
-        return $this->date;
-    }
 
     /**
      * Gets the value of user.
@@ -68,20 +57,6 @@ class Order implements \JsonSerializable
     }
 
 // ------ Setters ------
-
-    /**
-     * Sets the value of date.
-     *
-     * @param date $date the date
-     *
-     * @return self
-     */
-    public function setDate($date)
-    {
-    	$this->date = $date;
-
-        return $this;
-    }
 
     /**
      * Sets the value of user.
