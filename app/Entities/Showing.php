@@ -50,7 +50,7 @@ class Showing implements \JsonSerializable
     {
         return [
             "id"    => $this->getId(),
-            "date"  => $this->getDate(),
+            "date"  => $this->getDate('c'),
             "is_3D" => $this->getIs3D(),
             "room"  => $this->getRoom(),
             "movie" => $this->getMovie()

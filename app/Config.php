@@ -136,6 +136,18 @@ class Config implements ServiceProviderInterface
 
         $platform = $app["orm.em"]->getConnection()->getDatabasePlatform();
         $platform->registerDoctrineTypeMapping('enum', 'string');
+
+        // $configuration = $app["orm.em"]->getConfiguration();
+
+        // $configuration->addCustomDatetimeFunction('DATE',       'DoctrineExtensions\Query\Mysql\Date');
+        // $configuration->addCustomDatetimeFunction('DATEDIFF',   'DoctrineExtensions\Query\Mysql\DateDiff');
+        // $configuration->addCustomDatetimeFunction('DATEADD',    'DoctrineExtensions\Query\Mysql\DateAdd');
+        // $configuration->addCustomDatetimeFunction('DATEFORMAT', 'DoctrineExtensions\Query\Mysql\DateFormat');
+        // $configuration->addCustomDatetimeFunction('HOUR',       'DoctrineExtensions\Query\Mysql\Hour');
+        // $configuration->addCustomDatetimeFunction('DAY',        'DoctrineExtensions\Query\Mysql\Day');
+        // $configuration->addCustomDatetimeFunction('WEEK',       'DoctrineExtensions\Query\Mysql\Week');
+        // $configuration->addCustomDatetimeFunction('MONTH',      'DoctrineExtensions\Query\Mysql\Month');
+        // $configuration->addCustomDatetimeFunction('YEAR',       'DoctrineExtensions\Query\Mysql\Year');
     }
 
     /**
