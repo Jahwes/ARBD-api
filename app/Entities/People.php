@@ -31,11 +31,6 @@ class People implements \JsonSerializable
     protected $date_of_birth;
 
     /**
-     * @Column(type="string", name="title", columnDefinition="ENUM('Monsieur','Madame','Mademoiselle') DEFAULT NULL"), nullable=true
-     */
-    protected $title;
-
-    /**
      * @Column(type="string", name="nationality", length=50, nullable=true)
      */
     protected $nationality;

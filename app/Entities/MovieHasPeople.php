@@ -8,7 +8,7 @@ use CinemaHD\Entities\People;
 use CinemaHD\Entities\Movie;
 
 /**
- * @Entity(repositoryClass="CinemaHD\Repositories\MoviesHasPeopleRepository")
+ * @Entity(repositoryClass="CinemaHD\Repositories\MovieHasPeopleRepository")
  * @Table(
  *     name="Movie_has_People",
  *     indexes={
