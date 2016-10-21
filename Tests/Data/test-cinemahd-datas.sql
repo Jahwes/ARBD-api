@@ -83,26 +83,26 @@ VALUES
 --
 -- Dumping data for table `People`
 --
-INSERT INTO `People` (`id`, `firstname`, `lastname`, `date_of_birth`, `nationality`, `role`)
+INSERT INTO `People` (`id`, `firstname`, `lastname`, `date_of_birth`, `nationality`)
 VALUES
-    (1 , 'Eva'      , 'GREEN'      , '1980-07-06', 'française'    , 'actrice'    ),
-    (2 , 'Asa'      , 'BUTTERFIELD', '1997-04-01', 'britannique'  , 'acteur'     ),
-    (3 , 'Samuel'   , 'JACKSON'    , '1948-12-21', 'américaine'   , 'acteur'     ),
-    (4 , 'Tim'      , 'BURTON'     , '1958-08-25', 'américaine'   , 'réalisateur'),
-    (5 , 'Peter'    , 'BERG'       , '1964-03-11', 'américaine'   , 'réalisateur'),
-    (6 , 'Marc'     , 'WAHLBERG'   , '1971-06-05', 'américaine'   , 'acteur'     ),
-    (7 , 'Kate'     , 'HUDSON'     , '1979-04-19', 'américaine'   , 'actrice'    ),
-    (8 , 'Dylan'    , 'O\'BRIAN'   , '1991-08-26', 'américaine'   , 'acteur'     ),
-    (9 , 'Travis'   , 'KNIGHT'     , '1978-11-07', 'américaine'   , 'producteur' ),
-    (10, 'Charlize' , 'THERON'     , '1975-08-07', 'sud-africaine', 'actrice'    ),
-    (11, 'Art'      , 'PARKINSON'  , '2001-10-19', 'irlandaise'   , 'acteur'     ),
-    (12, 'Denis'    , 'GANSEL'     , '1973-10-04', 'allemande'    , 'réalisateur'),
-    (13, 'Jason'    , 'STATHAM'    , '1967-07-26', 'britannique'  , 'acteur'     ),
-    (14, 'Jessica'  , 'ALBA'       , '1981-04-28', 'américaine'   , 'actrice'    ),
-    (15, 'Tommy'    , 'LEE JONES'  , '1946-09-15', 'américaine'   , 'acteur'     ),
-    (16, 'Guillermo', 'DEL TORO'   , '1964-10-09', 'mexicaine'    , 'réalisateur'),
-    (17, 'Charlie'  , 'HUNNAM'     , '1980-04-10', 'britannique'  , 'acteur'     ),
-    (18, 'Rinko'    , 'KIKUCHI'    , '1981-01-06', 'japonaise'    , 'actrice'    );
+    (1 , 'Eva'      , 'GREEN'      , '1980-07-06', 'française'    ),
+    (2 , 'Asa'      , 'BUTTERFIELD', '1997-04-01', 'britannique'  ),
+    (3 , 'Samuel'   , 'JACKSON'    , '1948-12-21', 'américaine'   ),
+    (4 , 'Tim'      , 'BURTON'     , '1958-08-25', 'américaine'   ),
+    (5 , 'Peter'    , 'BERG'       , '1964-03-11', 'américaine'   ),
+    (6 , 'Marc'     , 'WAHLBERG'   , '1971-06-05', 'américaine'   ),
+    (7 , 'Kate'     , 'HUDSON'     , '1979-04-19', 'américaine'   ),
+    (8 , 'Dylan'    , 'O\'BRIAN'   , '1991-08-26', 'américaine'   ),
+    (9 , 'Travis'   , 'KNIGHT'     , '1978-11-07', 'américaine'   ),
+    (10, 'Charlize' , 'THERON'     , '1975-08-07', 'sud-africaine'),
+    (11, 'Art'      , 'PARKINSON'  , '2001-10-19', 'irlandaise'   ),
+    (12, 'Denis'    , 'GANSEL'     , '1973-10-04', 'allemande'    ),
+    (13, 'Jason'    , 'STATHAM'    , '1967-07-26', 'britannique'  ),
+    (14, 'Jessica'  , 'ALBA'       , '1981-04-28', 'américaine'   ),
+    (15, 'Tommy'    , 'LEE JONES'  , '1946-09-15', 'américaine'   ),
+    (16, 'Guillermo', 'DEL TORO'   , '1964-10-09', 'mexicaine'    ),
+    (17, 'Charlie'  , 'HUNNAM'     , '1980-04-10', 'britannique'  ),
+    (18, 'Rinko'    , 'KIKUCHI'    , '1981-01-06', 'japonaise'    );
 
 --
 -- Dumping data for table `Movie_has_Type`
@@ -124,26 +124,26 @@ VALUES
 --
 -- Dumping data for table `Movie_has_People`
 --
-INSERT INTO `Movie_has_People` (`Movie_id`, `People_id`)
+INSERT INTO `Movie_has_People` (`Movie_id`, `People_id`, `role`)
 VALUES
-    (1, 1 ),
-    (1, 2 ),
-    (1, 3 ),
-    (1, 4 ),
-    (2, 5 ),
-    (2, 6 ),
-    (2, 7 ),
-    (2, 8 ),
-    (3, 9 ),
-    (3, 10),
-    (3, 11),
-    (4, 12),
-    (4, 13),
-    (4, 14),
-    (4, 15),
-    (5, 16),
-    (5, 17),
-    (5, 18);
+    (1, 1 , 'actrice'    ),
+    (1, 2 , 'acteur'     ),
+    (1, 3 , 'acteur'     ),
+    (1, 4 , 'réalisateur'),
+    (2, 5 , 'réalisateur'),
+    (2, 6 , 'acteur'     ),
+    (2, 7 , 'actrice'    ),
+    (2, 8 , 'acteur'     ),
+    (3, 9 , 'producteur' ),
+    (3, 10, 'actrice'    ),
+    (3, 11, 'acteur'     ),
+    (4, 12, 'réalisateur'),
+    (4, 13, 'acteur'     ),
+    (4, 14, 'actrice'    ),
+    (4, 15, 'acteur'     ),
+    (5, 16, 'réalisateur'),
+    (5, 17, 'acteur'     ),
+    (5, 18, 'actrice'    );
 
 --
 -- Dumping data for table `Order`

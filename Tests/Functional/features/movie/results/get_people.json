@@ -1,0 +1,58 @@
+[
+    {
+        "people": {
+            "id": 1,
+            "lastname": "GREEN",
+            "firstname": "Eva",
+            "date_of_birth": {
+                "date": "1980-07-06 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "Europe/Paris"
+            },
+            "nationality": "française"
+        },
+        "role": "actrice"
+    },
+    {
+        "people": {
+            "id": 2,
+            "lastname": "BUTTERFIELD",
+            "firstname": "Asa",
+            "date_of_birth": {
+                "date": "1997-04-01 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "Europe/Paris"
+            },
+            "nationality": "britannique"
+        },
+        "role": "acteur"
+    },
+    {
+        "people": {
+            "id": 3,
+            "lastname": "JACKSON",
+            "firstname": "Samuel",
+            "date_of_birth": {
+                "date": "1948-12-21 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "Europe/Paris"
+            },
+            "nationality": "américaine"
+        },
+        "role": "acteur"
+    },
+    {
+        "people": {
+            "id": 4,
+            "lastname": "BURTON",
+            "firstname": "Tim",
+            "date_of_birth": {
+                "date": "1958-08-25 00:00:00.000000",
+                "timezone_type": 3,
+                "timezone": "Europe/Paris"
+            },
+            "nationality": "américaine"
+        },
+        "role": "réalisateur"
+    }
+]

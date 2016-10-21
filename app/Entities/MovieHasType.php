@@ -4,8 +4,11 @@ namespace CinemaHD\Entities;
 
 use Doctrine\ORM\EntityManager;
 
+use CinemaHD\Entities\Movie;
+use CinemaHD\Entities\Type;
+
 /**
- * @Entity(repositoryClass="CinemaHD\Repositories\MoviesHasTypeRepository")
+ * @Entity(repositoryClass="CinemaHD\Repositories\MovieHasTypeRepository")
  * @Table(
  *     name="Movie_has_Type",
  *     indexes={
@@ -21,20 +24,20 @@ class MovieHasType implements \JsonSerializable
      * @ManyToOne(targetEntity="Movie", fetch="EAGER")
      * @JoinColumn(name="movie_id", referencedColumnName="id", nullable=false)
      */
-    protected $movie_id;
+    protected $movie;
 
     /**
      * @Id
      * @ManyToOne(targetEntity="Type", fetch="EAGER")
      * @JoinColumn(name="type_id", referencedColumnName="id", nullable=false)
      */
-    protected $type_id;
+    protected $type;
 
     public function toArray()
     {
         return [
-            "movie_id" => $this->getMovieId(),
-            "type_id"  => $this->getTypeId()
+            "movie" => $this->getMovie(),
+            "type"  => $this->getType()
         ];
     }
 
@@ -46,51 +49,51 @@ class MovieHasType implements \JsonSerializable
 // ------ Getters ------
 
     /**
-     * Gets the value of movie_id.
+     * Gets the value of movie.
      *
-     * @return integer
+     * @return Movie
      */
-    public function getMovieId()
+    public function getMovie()
     {
-        return $this->movie_id;
+        return $this->movie;
     }
 
     /**
-     * Gets the value of type_id.
+     * Gets the value of type.
      *
-     * @return integer
+     * @return Type
      */
-    public function getTypeId()
+    public function getType()
     {
-        return $this->type_id;
+        return $this->type;
     }
 
 // ------ Setters ------
 
     /**
-     * Sets the value of movie_id.
+     * Sets the value of movie.
      *
-     * @param interger $movie_id the movie id
+     * @param Movie $movie the movie
      *
      * @return self
      */
-    public function setMovieId($movie_id)
+    public function setMovie($movie)
     {
-    	$this->movie_id = $movie_id;
+    	$this->movie = $movie;
 
         return $this;
     }
 
     /**
-     * Sets the value of type_id.
+     * Sets the value of type.
      *
-     * @param interger $type_id the type_id
+     * @param Type $type the type
      *
      * @return self
      */
-    public function setTypeId($type_id)
+    public function setType($type)
     {
-    	$this->type_id = $type_id;
+    	$this->type = $type;
 
         return $this;
     }

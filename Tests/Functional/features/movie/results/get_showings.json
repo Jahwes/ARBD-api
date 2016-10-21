@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "date": {
+            "date": "2016-11-18 10:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe/Paris"
+        },
+        "is_3D": true,
+        "room": {
+            "id": 1,
+            "nb_places": 50
+        },
+        "movie": {
+            "id": 1,
+            "title": "Miss Peregrine et les enfants particuliers",
+            "duration": 127
+        }
+    }
+]
