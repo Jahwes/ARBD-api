@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "date": {
+            "date": "2016-11-18 10:00:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe\/Paris"
+        },
+        "is_3D": true,
+        "room": {
+            "id": 1,
+            "nb_places": 50
+        },
+        "movie": {
+            "id": 1,
+            "title": "Miss Peregrine et les enfants particuliers",
+            "duration": 127
+        }
+    },
+    {
+        "id": 2,
+        "date": {
+            "date": "2016-11-16 09:35:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe\/Paris"
+        },
+        "is_3D": false,
+        "room": {
+            "id": 2,
+            "nb_places": 35
+        },
+        "movie": {
+            "id": 2,
+            "title": "Deepwater",
+            "duration": 107
+        }
+    },
+    {
+        "id": 3,
+        "date": {
+            "date": "2016-11-24 14:50:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe\/Paris"
+        },
+        "is_3D": true,
+        "room": {
+            "id": 3,
+            "nb_places": 78
+        },
+        "movie": {
+            "id": 2,
+            "title": "Deepwater",
+            "duration": 107
+        }
+    },
+    {
+        "id": 4,
+        "date": {
+            "date": "2016-11-28 15:45:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe\/Paris"
+        },
+        "is_3D": false,
+        "room": {
+            "id": 4,
+            "nb_places": 90
+        },
+        "movie": {
+            "id": 3,
+            "title": "Kubo et l'armure magique",
+            "duration": 102
+        }
+    },
+    {
+        "id": 5,
+        "date": {
+            "date": "2016-12-01 13:35:00.000000",
+            "timezone_type": 3,
+            "timezone": "Europe\/Paris"
+        },
+        "is_3D": true,
+        "room": {
+            "id": 5,
+            "nb_places": 25
+        },
+        "movie": {
+            "id": 4,
+            "title": "Mechanic Résurrection",
+            "duration": 99
+        }
+    }
+]
