@@ -33,7 +33,7 @@ Scénario: Get les showings d'un movie
 
 @GET
 Scénario: Get les people d'un movie
-    Quand       je fais un GET sur /movies/1/people
+    Quand       je fais un GET sur /movies/1/peoples
     Alors       le status HTTP devrait être 200
     Et          je devrais avoir un résultat d'API en JSON
     Et          le résultat devrait être identique au fichier "get_people.json"

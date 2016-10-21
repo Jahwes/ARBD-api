@@ -35,11 +35,6 @@ class People implements \JsonSerializable
      */
     protected $nationality;
 
-    /**
-     * @Column(type="string", name="role", length=50, nullable=true)
-     */
-    protected $role;
-
     public function toArray()
     {
         return [
@@ -47,7 +42,6 @@ class People implements \JsonSerializable
             "lastname"      => $this->getLastname(),
             "firstname"     => $this->getFirstname(),
             "date_of_birth" => $this->getDateOfBirth(),
-            "role"          => $this->getRole(),
             "nationality"   => $this->getNationality()
         ];
     }
@@ -87,16 +81,6 @@ class People implements \JsonSerializable
     public function getDateOfBirth()
     {
         return $this->date_of_birth;
-    }
-
-    /**
-     * Gets the value of role
-     *
-     * @return string
-     */
-    public function getRole()
-    {
-        return $this->role;
     }
 
     /**
@@ -149,20 +133,6 @@ class People implements \JsonSerializable
     public function setDateOfBirth($birth_date)
     {
         $this->date_of_birth = $birth_date;
-
-        return $this;
-    }
-
-    /**
-     * Gets the value of title
-     *
-     * @param string $title
-     *
-     * @return self
-     */
-    public function setTitle($title)
-    {
-        $this->title = $title;
 
         return $this;
     }

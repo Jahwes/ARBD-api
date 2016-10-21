@@ -30,7 +30,7 @@ class MovieController implements ControllerProviderInterface
             ->assert("movie", "\d+")
             ->convert("movie", $app["findOneOr404"]('Movie', 'id'));
 
-        $controllers->get('/movies/{movie}/people', [$this, 'getPeopleForMovie'])
+        $controllers->get('/movies/{movie}/peoples', [$this, 'getPeoplesForMovie'])
             ->assert("movie", "\d+")
             ->convert("movie", $app["findOneOr404"]('Movie', 'id'));
 
@@ -91,17 +91,20 @@ class MovieController implements ControllerProviderInterface
      *
      * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
-    public function getPeopleForMovie(Application $app, Movie $movie)
+    public function getPeoplesForMovie(Application $app, Movie $movie)
     {
         $movie_has_people = $app["repositories"]("MovieHasPeople")->findByMovie($movie);
-        $people = array_map(
+        $peoples = array_map(
             function ($mhp) {
-                return $mhp->getPeople();
+                return [
+                    "people" => $mhp->getPeople(),
+                    "role"   => $mhp->getRole()
+                ];
             },
             $movie_has_people
         );
 
-        return $app->json($people, 200);
+        return $app->json($peoples, 200);
     }
 
     /**

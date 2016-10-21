@@ -34,6 +34,15 @@ class MovieHasPeople implements \JsonSerializable
      */
     protected $people;
 
+    /**
+     * @Column(type="string",
+     *      name="role",
+     *      columnDefinition="ENUM('producteur','réalisateur','actrice','acteur') DEFAULT NULL"),
+     *      nullable=true
+     * )
+     */
+    protected $role;
+
     public function toArray()
     {
         return [
@@ -69,6 +78,16 @@ class MovieHasPeople implements \JsonSerializable
         return $this->people;
     }
 
+    /**
+     * Gets the value of role
+     *
+     * @return string
+     */
+    public function getRole()
+    {
+        return $this->role;
+    }
+
 // ------ Setters ------
 
     /**
@@ -95,6 +114,20 @@ class MovieHasPeople implements \JsonSerializable
     public function setPeople(People $people)
     {
         $this->people = $people;
+
+        return $this;
+    }
+
+    /**
+     * Sets the value of role.
+     *
+     * @param string $role the role
+     *
+     * @return self
+     */
+    public function setRole(Role $role)
+    {
+        $this->role = $role;
 
         return $this;
     }
