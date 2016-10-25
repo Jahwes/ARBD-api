@@ -12,25 +12,24 @@ Scénario: GET sur /prices
     """
     [
         {
-             "id": 1,
-             "type": "plein",
-             "value": 9.4
+            "id": 1,
+            "type": "Plein tarif",
+            "value": 9.4
         },
         {
-             "id": 2,
-             "type": "réduit",
-             "value": 7.4
+            "id": 2,
+            "type": "Tarif reduit",
+            "value": 7.4
         },
         {
-             "id": 3,
-             "type": "sénior",
-             "value": 6.8
+            "id": 3,
+            "type": "Senior",
+            "value": 6.8
         },
         {
-             "id": 4,
-             "type": "étudiant",
-             "value": 6.8
+            "id": 4,
+            "type": "Tarif etudiant",
+            "value": 6.8
         }
     ]
-
     """

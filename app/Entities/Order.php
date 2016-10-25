@@ -34,7 +34,7 @@ class Order implements \JsonSerializable
     {
         return [
             "id"         => $this->getId(),
-            "created_at" => $this->getCreatedAt('c'),
+            "created_at" => $this->getCreatedAt('Y-m-d'),
             "user"       => $this->getUser()
         ];
     }

@@ -3,7 +3,7 @@
         "id": 1,
         "price": {
             "id": 1,
-            "type": "plein",
+            "type": "Plein tarif",
             "value": 9.4
         },
         "showing": {
@@ -28,25 +28,17 @@
             "id": 1,
             "lastname": "HEART",
             "firstname": "Kingston",
-            "date_of_birth": {
-                "date": "1994-02-15 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "Europe\/Paris"
-            },
+            "age": 25,
             "title": "Monsieur"
         },
         "order": {
             "id": 1,
-            "created_at": "2016-10-18T00:00:00+02:00",
+            "created_at": "2016-10-18",
             "user": {
                 "id": 1,
                 "lastname": "HEART",
                 "firstname": "Kingston",
-                "date_of_birth": {
-                    "date": "1994-02-15 00:00:00.000000",
-                    "timezone_type": 3,
-                    "timezone": "Europe\/Paris"
-                },
+                "date_of_birth": "1994-02-15",
                 "title": "Monsieur",
                 "email": "heart_k@etna.io"
             }
@@ -56,7 +48,7 @@
         "id": 2,
         "price": {
             "id": 2,
-            "type": "réduit",
+            "type": "Tarif reduit",
             "value": 7.4
         },
         "showing": {
@@ -81,25 +73,17 @@
             "id": 3,
             "lastname": "TALON",
             "firstname": "Faure",
-            "date_of_birth": {
-                "date": "1986-04-06 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "Europe\/Paris"
-            },
+            "age": 25,
             "title": "Monsieur"
         },
         "order": {
             "id": 2,
-            "created_at": "2016-09-28T00:00:00+02:00",
+            "created_at": "2016-09-28",
             "user": {
                 "id": 1,
                 "lastname": "HEART",
                 "firstname": "Kingston",
-                "date_of_birth": {
-                    "date": "1994-02-15 00:00:00.000000",
-                    "timezone_type": 3,
-                    "timezone": "Europe\/Paris"
-                },
+                "date_of_birth": "1994-02-15",
                 "title": "Monsieur",
                 "email": "heart_k@etna.io"
             }
@@ -109,7 +93,7 @@
         "id": 3,
         "price": {
             "id": 3,
-            "type": "sénior",
+            "type": "Senior",
             "value": 6.8
         },
         "showing": {
@@ -134,25 +118,17 @@
             "id": 4,
             "lastname": "NOUEL",
             "firstname": "Soucy",
-            "date_of_birth": {
-                "date": "1941-06-17 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "Europe\/Paris"
-            },
-            "title": "Madame"
+            "age": 25,
+            "title": ""
         },
         "order": {
             "id": 3,
-            "created_at": "2016-09-27T00:00:00+02:00",
+            "created_at": "2016-09-27",
             "user": {
                 "id": 2,
                 "lastname": "BELANGER",
-                "firstname": "Angélique",
-                "date_of_birth": {
-                    "date": "1970-04-11 00:00:00.000000",
-                    "timezone_type": 3,
-                    "timezone": "Europe\/Paris"
-                },
+                "firstname": "Ang\u00e9lique",
+                "date_of_birth": "1970-04-11",
                 "title": "Madame",
                 "email": "AngeliqueBelanger@jourrapide.com"
             }

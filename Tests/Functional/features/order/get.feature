@@ -19,16 +19,12 @@ Scénario: Get un order par son ID
     """
     {
         "id": 1,
-        "created_at": "2016-10-18T00:00:00+02:00",
+        "created_at": "2016-10-18",
         "user": {
             "id": 1,
             "lastname": "HEART",
             "firstname": "Kingston",
-            "date_of_birth": {
-                "date": "1994-02-15 00:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "Europe/Paris"
-            },
+            "date_of_birth": "1994-02-15",
             "title": "Monsieur",
             "email": "heart_k@etna.io"
         }

@@ -21,11 +21,7 @@ Scénario: Get un spectator par son ID
         "id": 1,
         "lastname": "HEART",
         "firstname": "Kingston",
-        "date_of_birth": {
-            "date": "1994-02-15 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe\/Paris"
-        },
+        "age": 25,
         "title": "Monsieur"
     }
     """

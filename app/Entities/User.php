@@ -46,7 +46,7 @@ class User implements \JsonSerializable
             "id"            => $this->getId(),
             "lastname"      => $this->getLastname(),
             "firstname"     => $this->getFirstname(),
-            "date_of_birth" => $this->getDateOfBirth('c'),
+            "date_of_birth" => $this->getDateOfBirth('Y-m-d'),
             "title"         => $this->getTitle(),
             "email"         => $this->getEmail()
         ];
