@@ -110,7 +110,7 @@ class OrderController implements ControllerProviderInterface
 
         $app['orm.em']->refresh($order);
 
-        return $app->json($order, 200);
+        return $app->json($order, 201);
     }
 
     /**
