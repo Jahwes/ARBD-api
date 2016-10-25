@@ -46,7 +46,7 @@ class User implements \JsonSerializable
             "id"            => $this->getId(),
             "lastname"      => $this->getLastname(),
             "firstname"     => $this->getFirstname(),
-            "date_of_birth" => $this->getDateOfBirth(),
+            "date_of_birth" => $this->getDateOfBirth('c'),
             "title"         => $this->getTitle(),
             "email"         => $this->getEmail()
         ];
@@ -84,9 +84,18 @@ class User implements \JsonSerializable
      *
      * @return date
      */
-    public function getDateOfBirth()
+    public function getDateOfBirth($format = null)
     {
-        return $this->date_of_birth;
+        switch (true) {
+            case is_string($this->date_of_birth):
+            case is_object($this->date_of_birth) && get_class($this->date_of_birth) !== 'DateTime':
+                throw new \Exception("date_of_birth is not a datetime", 400);
+            case $this->date_of_birth === null:
+            case $format === null:
+                return $this->date_of_birth;
+            default:
+                return $this->date_of_birth->format($format);
+        }
     }
 
     /**
@@ -146,9 +155,14 @@ class User implements \JsonSerializable
      *
      * @return self
      */
-    public function setDateOfBirth($birth_date)
+    public function setDateOfBirth($age)
     {
-        $this->date_of_birth = $birth_date;
+        if (is_int($age)) {
+            $date       = date('Y');
+            $birth_date = $date - $age;
+            $birth_date = new \DateTime("{$birth_date}-01-01");
+            $this->date_of_birth = $birth_date;
+        }
 
         return $this;
     }
