@@ -164,7 +164,7 @@ CREATE TABLE IF NOT EXISTS `test_cinemahd`.`Spectator` (
   `lastname` VARCHAR(50) NULL,
   `firstname` VARCHAR(50) NULL,
   `age` INT NULL,
-  `title` ENUM('Monsieur', 'finMadame', 'Mademoiselle') NULL,
+  `title` ENUM('Monsieur', 'Madame', 'Mademoiselle') NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
@@ -242,30 +242,6 @@ CREATE TABLE IF NOT EXISTS `test_cinemahd`.`Movie_has_People` (
   CONSTRAINT `fk_Movie_has_People_People1`
     FOREIGN KEY (`People_id`)
     REFERENCES `test_cinemahd`.`People` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `test_cinemahd`.`Order_has_Ticket`
--- -----------------------------------------------------
-DROP TABLE IF EXISTS `test_cinemahd`.`Order_has_Ticket` ;
-
-CREATE TABLE IF NOT EXISTS `test_cinemahd`.`Order_has_Ticket` (
-  `Order_id` INT NOT NULL,
-  `Ticket_id` INT NOT NULL,
-  PRIMARY KEY (`Order_id`, `Ticket_id`),
-  INDEX `fk_Order_has_Ticket_Ticket1_idx` (`Ticket_id` ASC),
-  INDEX `fk_Order_has_Ticket_Order1_idx` (`Order_id` ASC),
-  CONSTRAINT `fk_Order_has_Ticket_Order1`
-    FOREIGN KEY (`Order_id`)
-    REFERENCES `test_cinemahd`.`Order` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Order_has_Ticket_Ticket1`
-    FOREIGN KEY (`Ticket_id`)
-    REFERENCES `test_cinemahd`.`Ticket` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
