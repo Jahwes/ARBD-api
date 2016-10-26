@@ -8,11 +8,7 @@
         },
         "showing": {
             "id": 1,
-            "date": {
-                "date": "2016-11-18 10:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "Europe\/Paris"
-            },
+            "date": "2016-11-18 10:00:00",
             "is_3D": true,
             "room": {
                 "id": 1,
@@ -53,11 +49,7 @@
         },
         "showing": {
             "id": 1,
-            "date": {
-                "date": "2016-11-18 10:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "Europe\/Paris"
-            },
+            "date": "2016-11-18 10:00:00",
             "is_3D": true,
             "room": {
                 "id": 1,
@@ -98,11 +90,7 @@
         },
         "showing": {
             "id": 3,
-            "date": {
-                "date": "2016-11-24 14:50:00.000000",
-                "timezone_type": 3,
-                "timezone": "Europe\/Paris"
-            },
+            "date": "2016-11-24 14:50:00",
             "is_3D": true,
             "room": {
                 "id": 3,
@@ -119,7 +107,7 @@
             "lastname": "NOUEL",
             "firstname": "Soucy",
             "age": 25,
-            "title": ""
+            "title": "Madame"
         },
         "order": {
             "id": 3,

@@ -6,6 +6,7 @@
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+SET NAMES utf8;
 
 -- -----------------------------------------------------
 -- Schema test_cinemahd
@@ -31,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `test_cinemahd`.`User` (
   `email` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC))
-ENGINE = InnoDB;
+ENGINE = InnoDB AUTO_INCREMENT=6;
 
 
 -- -----------------------------------------------------
@@ -43,7 +44,7 @@ CREATE TABLE IF NOT EXISTS `test_cinemahd`.`Type` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NULL,
   PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+ENGINE = InnoDB AUTO_INCREMENT=12;
 
 
 -- -----------------------------------------------------
@@ -62,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `test_cinemahd`.`Order` (
     REFERENCES `test_cinemahd`.`User` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB AUTO_INCREMENT=7;
 
 
 -- -----------------------------------------------------
@@ -75,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `test_cinemahd`.`Movie` (
   `title` VARCHAR(70) NULL,
   `duration` INT NULL,
   PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+ENGINE = InnoDB AUTO_INCREMENT=15;
 
 
 -- -----------------------------------------------------
@@ -112,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `test_cinemahd`.`Price` (
   `type_name` VARCHAR(100) NULL,
   `value` DOUBLE NULL,
   PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+ENGINE = InnoDB AUTO_INCREMENT=5;
 
 
 -- -----------------------------------------------------
@@ -124,7 +125,7 @@ CREATE TABLE IF NOT EXISTS `test_cinemahd`.`Room` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nb_places` INT NULL,
   PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+ENGINE = InnoDB AUTO_INCREMENT=8;
 
 
 -- -----------------------------------------------------
@@ -151,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `test_cinemahd`.`Showing` (
     REFERENCES `test_cinemahd`.`Movie` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB AUTO_INCREMENT=6;
 
 
 -- -----------------------------------------------------
@@ -166,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `test_cinemahd`.`Spectator` (
   `age` INT NULL,
   `title` ENUM('Monsieur', 'Madame', 'Mademoiselle') NULL,
   PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+ENGINE = InnoDB AUTO_INCREMENT=10;
 
 
 -- -----------------------------------------------------
@@ -180,7 +181,7 @@ CREATE TABLE IF NOT EXISTS `test_cinemahd`.`Ticket` (
   `Showing_id` INT NOT NULL,
   `Spectator_id` INT NOT NULL,
   `Order_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `Price_id`, `Showing_id`, `Spectator_id`, `Order_id`),
+  PRIMARY KEY (`id`),
   INDEX `fk_Ticket_Price1_idx` (`Price_id` ASC),
   INDEX `fk_Ticket_Showing1_idx` (`Showing_id` ASC),
   INDEX `fk_Ticket_Spectator1_idx` (`Spectator_id` ASC),
@@ -205,7 +206,7 @@ CREATE TABLE IF NOT EXISTS `test_cinemahd`.`Ticket` (
     REFERENCES `test_cinemahd`.`Order` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB AUTO_INCREMENT=4;
 
 
 -- -----------------------------------------------------
@@ -220,7 +221,7 @@ CREATE TABLE IF NOT EXISTS `test_cinemahd`.`People` (
   `date_of_birth` DATE NULL,
   `nationality` VARCHAR(50) NULL,
   PRIMARY KEY (`id`))
-ENGINE = InnoDB;
+ENGINE = InnoDB AUTO_INCREMENT=19;
 
 -- -----------------------------------------------------
 -- Table `test_cinemahd`.`Movie_has_People`

@@ -57,7 +57,7 @@ Scénario: Post un order
     Et          le résultat devrait être identique au JSON suivant :
     """
     {
-        "id": 7,
+        "id": "#^\\d+$#",
         "created_at": "2016-10-01",
         "user": {
             "id": 6,

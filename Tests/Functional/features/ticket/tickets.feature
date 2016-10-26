@@ -26,11 +26,7 @@ Scénario: Get un ticket par son ID
         },
         "showing": {
             "id": 1,
-            "date": {
-                "date": "2016-11-18 10:00:00.000000",
-                "timezone_type": 3,
-                "timezone": "Europe\/Paris"
-            },
+            "date": "2016-11-18 10:00:00",
             "is_3D": true,
             "room": {
                 "id": 1,

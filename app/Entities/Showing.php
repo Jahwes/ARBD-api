@@ -50,7 +50,7 @@ class Showing implements \JsonSerializable
     {
         return [
             "id"    => $this->getId(),
-            "date"  => $this->getDate('Y-m-d'),
+            "date"  => $this->getDate('Y-m-d H:i:s'),
             "is_3D" => $this->getIs3D(),
             "room"  => $this->getRoom(),
             "movie" => $this->getMovie()
@@ -69,9 +69,18 @@ class Showing implements \JsonSerializable
      *
      * @return Date
      */
-    public function getDate()
+    public function getDate($format = null)
     {
-        return $this->date;
+        switch (true) {
+            case is_string($this->date):
+            case is_object($this->date) && 'DateTime' !== get_class($this->date):
+                throw new \Exception("date is not a datetime", 400);
+            case null === $this->date:
+            case null === $format:
+                return $this->date;
+            default:
+                return $this->date->format($format);
+        }
     }
 
     /**
