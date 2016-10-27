@@ -88,10 +88,10 @@ class User implements \JsonSerializable
     {
         switch (true) {
             case is_string($this->date_of_birth):
-            case is_object($this->date_of_birth) && get_class($this->date_of_birth) !== 'DateTime':
+            case is_object($this->date_of_birth) && 'DateTime' !== get_class($this->date_of_birth):
                 throw new \Exception("date_of_birth is not a datetime", 400);
-            case $this->date_of_birth === null:
-            case $format === null:
+            case null === $this->date_of_birth:
+            case null === $format:
                 return $this->date_of_birth;
             default:
                 return $this->date_of_birth->format($format);
@@ -151,16 +151,16 @@ class User implements \JsonSerializable
     /**
      * Gets the value of date_of_birth
      *
-     * @param date
+     * @param integer
      *
      * @return self
      */
     public function setDateOfBirth($age)
     {
         if (is_int($age)) {
-            $date       = date('Y');
-            $birth_date = $date - $age;
-            $birth_date = new \DateTime("{$birth_date}-01-01");
+            $date                = date('Y');
+            $birth_date          = $date - $age;
+            $birth_date          = new \DateTime("{$birth_date}-01-01");
             $this->date_of_birth = $birth_date;
         }
 
