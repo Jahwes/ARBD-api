@@ -1,11 +1,7 @@
 [
     {
         "id": 1,
-        "date": {
-            "date": "2016-11-18 10:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe\/Paris"
-        },
+        "date": "2016-11-18 10:00:00",
         "is_3D": true,
         "room": {
             "id": 1,
@@ -19,11 +15,7 @@
     },
     {
         "id": 2,
-        "date": {
-            "date": "2016-11-16 09:35:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe\/Paris"
-        },
+        "date": "2016-11-16 09:35:00",
         "is_3D": false,
         "room": {
             "id": 2,
@@ -37,11 +29,7 @@
     },
     {
         "id": 3,
-        "date": {
-            "date": "2016-11-24 14:50:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe\/Paris"
-        },
+        "date": "2016-11-24 14:50:00",
         "is_3D": true,
         "room": {
             "id": 3,
@@ -55,11 +43,7 @@
     },
     {
         "id": 4,
-        "date": {
-            "date": "2016-11-28 15:45:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe\/Paris"
-        },
+        "date": "2016-11-28 15:45:00",
         "is_3D": false,
         "room": {
             "id": 4,
@@ -73,11 +57,7 @@
     },
     {
         "id": 5,
-        "date": {
-            "date": "2016-12-01 13:35:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe\/Paris"
-        },
+        "date": "2016-12-01 13:35:00",
         "is_3D": true,
         "room": {
             "id": 5,
@@ -85,7 +65,7 @@
         },
         "movie": {
             "id": 4,
-            "title": "Mechanic Résurrection",
+            "title": "Mechanic R\u00e9surrection",
             "duration": 99
         }
     }

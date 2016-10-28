@@ -3,99 +3,63 @@
         "id": 1,
         "lastname": "HEART",
         "firstname": "Kingston",
-        "date_of_birth": {
-            "date": "1994-02-15 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe\/Paris"
-        },
+        "age": 25,
         "title": "Monsieur"
     },
     {
         "id": 2,
         "lastname": "BELANGER",
-        "firstname": "Angélique",
-        "date_of_birth": {
-            "date": "1970-04-11 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe\/Paris"
-        },
+        "firstname": "Ang\u00e9lique",
+        "age": 25,
         "title": "Madame"
     },
     {
         "id": 3,
         "lastname": "TALON",
         "firstname": "Faure",
-        "date_of_birth": {
-            "date": "1986-04-06 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe\/Paris"
-        },
+        "age": 25,
         "title": "Monsieur"
     },
     {
         "id": 4,
         "lastname": "NOUEL",
         "firstname": "Soucy",
-        "date_of_birth": {
-            "date": "1941-06-17 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe\/Paris"
-        },
+        "age": 25,
         "title": "Madame"
     },
     {
         "id": 5,
         "lastname": "MELVILLE",
         "firstname": "Lamy",
-        "date_of_birth": {
-            "date": "1957-12-04 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe\/Paris"
-        },
+        "age": 25,
         "title": "Mademoiselle"
     },
     {
         "id": 6,
         "lastname": "IGNACE",
-        "firstname": "Béland",
-        "date_of_birth": {
-            "date": "1944-10-18 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe\/Paris"
-        },
+        "firstname": "B\u00e9land",
+        "age": 25,
         "title": "Monsieur"
     },
     {
         "id": 7,
         "lastname": "AUCLAIR",
         "firstname": "Diane",
-        "date_of_birth": {
-            "date": "1990-10-20 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe\/Paris"
-        },
+        "age": 25,
         "title": "Mademoiselle"
     },
     {
         "id": 8,
         "lastname": "FOREST",
         "firstname": "Barry",
-        "date_of_birth": {
-            "date": "1988-02-12 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe\/Paris"
-        },
+        "age": 25,
         "title": "Monsieur"
     },
     {
         "id": 9,
         "lastname": "CLOUTIER",
         "firstname": "Minette",
-        "date_of_birth": {
-            "date": "1996-03-09 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe\/Paris"
-        },
+        "age": 25,
         "title": "Mademoiselle"
     }
 ]

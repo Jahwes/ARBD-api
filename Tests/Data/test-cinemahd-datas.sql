@@ -8,11 +8,20 @@
 --
 INSERT INTO `Movie` (`id`, `title`, `duration`)
 VALUES
-    (1, 'Miss Peregrine et les enfants particuliers', 127),
-    (2, 'Deepwater'                                 , 107),
-    (3, 'Kubo et l\'armure magique'                 , 102),
-    (4, 'Mechanic Résurrection'                     , 99 ),
-    (5, 'Pacific Rim'                               , 130);
+    (1,  'Miss Peregrine et les enfants particuliers', 127),
+    (2,  'Deepwater'                                 , 107),
+    (3,  'Kubo et l\'armure magique'                 , 102),
+    (4,  'Mechanic Résurrection'                     , 99 ),
+    (5,  'Pacific Rim'                               , 130),
+    (6,  'Fatal Punishment'                          , 120),
+    (7,  'Sudden Blood'                              , 120),
+    (8,  'Le Grand Vert'                             , 120),
+    (9,  'Coup de foudre à Shanghai'                 , 120),
+    (10, 'Star Fight'                                , 120),
+    (11, 'Le Donjon de la mort 4'                    , 120),
+    (12, 'Master of Assassination'                   , 120),
+    (13, 'Microcosmos'                               , 120),
+    (14, 'L\'horreur dans le miroir'                  , 120);
 
 --
 -- Dumping data for table `User`
@@ -45,17 +54,17 @@ VALUES
 --
 -- Dumping data for table `Spectator`
 --
-INSERT INTO `Spectator` (`id`, `lastname`, `firstname`, `date_of_birth`, `title`)
+INSERT INTO `Spectator` (`id`, `lastname`, `firstname`, `age`, `title`)
 VALUES
-    (1, 'HEART'   , 'Kingston' , '1994-02-15', 'Monsieur'    ),
-    (2, 'BELANGER', 'Angélique', '1970-04-11', 'Madame'      ),
-    (3, 'TALON'   , 'Faure'    , '1986-04-06', 'Monsieur'    ),
-    (4, 'NOUEL'   , 'Soucy'    , '1941-06-17', 'Madame'      ),
-    (5, 'MELVILLE', 'Lamy'     , '1957-12-04', 'Mademoiselle'),
-    (6, 'IGNACE'  , 'Béland'   , '1944-10-18', 'Monsieur'    ),
-    (7, 'AUCLAIR' , 'Diane'    , '1990-10-20', 'Mademoiselle'),
-    (8, 'FOREST'  , 'Barry'    , '1988-02-12', 'Monsieur'    ),
-    (9, 'CLOUTIER', 'Minette'  , '1996-03-09', 'Mademoiselle');
+    (1, 'HEART'   , 'Kingston' , 25, 'Monsieur'    ),
+    (2, 'BELANGER', 'Angélique', 25, 'Madame'      ),
+    (3, 'TALON'   , 'Faure'    , 25, 'Monsieur'    ),
+    (4, 'NOUEL'   , 'Soucy'    , 25, 'Madame'      ),
+    (5, 'MELVILLE', 'Lamy'     , 25, 'Mademoiselle'),
+    (6, 'IGNACE'  , 'Béland'   , 25, 'Monsieur'    ),
+    (7, 'AUCLAIR' , 'Diane'    , 25, 'Mademoiselle'),
+    (8, 'FOREST'  , 'Barry'    , 25, 'Monsieur'    ),
+    (9, 'CLOUTIER', 'Minette'  , 25, 'Mademoiselle');
 
 --
 -- Dumping data for table `Room`
@@ -75,10 +84,10 @@ VALUES
 --
 INSERT INTO `Price` (`id`, `type_name`, `value`)
 VALUES
-    (1, 'plein'   , 9.4),
-    (2, 'réduit'  , 7.4),
-    (3, 'sénior'  , 6.8),
-    (4, 'étudiant', 6.8);
+    (1, 'Plein tarif'   , 9.4),
+    (2, 'Tarif reduit'  , 7.4),
+    (3, 'Senior'        , 6.8),
+    (4, 'Tarif etudiant', 6.8);
 
 --
 -- Dumping data for table `People`

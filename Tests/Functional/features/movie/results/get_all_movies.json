@@ -23,5 +23,50 @@
         "id": 5,
         "title": "Pacific Rim",
         "duration": 130
+    },
+    {
+        "id": 6,
+        "title": "Fatal Punishment",
+        "duration": 120
+    },
+    {
+        "id": 7,
+        "title": "Sudden Blood",
+        "duration": 120
+    },
+    {
+        "id": 8,
+        "title": "Le Grand Vert",
+        "duration": 120
+    },
+    {
+        "id": 9,
+        "title": "Coup de foudre à Shanghai",
+        "duration": 120
+    },
+    {
+        "id": 10,
+        "title": "Star Fight",
+        "duration": 120
+    },
+    {
+        "id": 11,
+        "title": "Le Donjon de la mort 4",
+        "duration": 120
+    },
+    {
+        "id": 12,
+        "title": "Master of Assassination",
+        "duration": 120
+    },
+    {
+        "id": 13,
+        "title": "Microcosmos",
+        "duration": 120
+    },
+    {
+        "id": 14,
+        "title": "L'horreur dans le miroir",
+        "duration": 120
     }
 ]

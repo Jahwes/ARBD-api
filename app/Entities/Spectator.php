@@ -26,9 +26,9 @@ class Spectator implements \JsonSerializable
     protected $firstname;
 
     /**
-     * @Column(type="date", name="date_of_birth", nullable=true)
+     * @Column(type="integer", name="age", nullable=true)
      */
-    protected $date_of_birth;
+    protected $age;
 
     /**
      * @Column(type="string", name="title", columnDefinition="ENUM('Monsieur','Madame','Mademoiselle') DEFAULT NULL"), nullable=true
@@ -38,11 +38,11 @@ class Spectator implements \JsonSerializable
     public function toArray()
     {
         return [
-            "id"            => $this->getId(),
-            "lastname"      => $this->getLastname(),
-            "firstname"     => $this->getFirstname(),
-            "date_of_birth" => $this->getDateOfBirth(),
-            "title"         => $this->getTitle()
+            "id"        => $this->getId(),
+            "lastname"  => $this->getLastname(),
+            "firstname" => $this->getFirstname(),
+            "age"       => $this->getAge(),
+            "title"     => $this->getTitle()
         ];
     }
 
@@ -74,13 +74,13 @@ class Spectator implements \JsonSerializable
     }
 
     /**
-     * Gets the value of date_of_birth
+     * Gets the value of age
      *
-     * @return date
+     * @return integer
      */
-    public function getDateOfBirth()
+    public function getAge()
     {
-        return $this->date_of_birth;
+        return $this->age;
     }
 
     /**
@@ -124,15 +124,15 @@ class Spectator implements \JsonSerializable
     }
 
     /**
-     * Gets the value of date_of_birth
+     * Gets the value of age
      *
-     * @param date
+     * @param integer
      *
      * @return self
      */
-    public function setDateOfBirth($birth_date)
+    public function setAge($age)
     {
-        $this->date_of_birth = $birth_date;
+        $this->age = $age;
 
         return $this;
     }
