@@ -139,7 +139,7 @@ CREATE TABLE IF NOT EXISTS `test_cinemahd`.`Showing` (
   `3D` TINYINT(1) NULL,
   `Room_id` INT NOT NULL,
   `Movie_id` INT NOT NULL,
-  PRIMARY KEY (`id`, `Room_id`, `Movie_id`),
+  PRIMARY KEY (`id`),
   INDEX `fk_Showing_Room1_idx` (`Room_id` ASC),
   INDEX `fk_Showing_Movie1_idx` (`Movie_id` ASC),
   CONSTRAINT `fk_Showing_Room1`
