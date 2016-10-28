@@ -126,7 +126,7 @@ class Spectator implements \JsonSerializable
     /**
      * Gets the value of age
      *
-     * @param date
+     * @param integer
      *
      * @return self
      */
