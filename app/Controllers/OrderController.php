@@ -124,7 +124,7 @@ class OrderController implements ControllerProviderInterface
      */
     private function findOrCreateShowing(Application $app, array $movie)
     {
-        $is_3D        = "oui" === $movie["3D"] ? true : false;
+        $is_3D        = "oui" === $movie["3D"];
         $date         = new \DateTime("{$movie["Jour"]} {$movie["Horaire"]}:00");
         $movie_entity = $app["repositories"]("Movie")->findOneBy(["title" => $movie["Titre"]]);
 
