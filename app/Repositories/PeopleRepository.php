@@ -102,4 +102,39 @@ class PeopleRepository extends \Doctrine\ORM\EntityRepository
 
         return $score;
     }
+
+    /**
+     * Calcule le score pour un people
+     *
+     * @param People     $people
+     *
+     * @return int
+     */
+    public function getPeoplesByRole($role = "both")
+    {
+        $params = [];
+
+        $dql = "SELECT p
+            FROM CinemaHD\Entities\People p
+            LEFT JOIN CinemaHD\Entities\MovieHasPeople mhp
+                WITH mhp.people = p
+        ";
+
+        if ("both" === $role) {
+            $dql .= " AND (mhp.role = 'acteur' OR mhp.role = 'actrice')";
+        } else {
+            $dql .= " AND mhp.role = :role";
+            $params["role"] = $role;
+        }
+
+        $dql .= "
+            WHERE mhp.role IS NOT NULL
+            GROUP BY p.id
+        ";
+
+        $query = $this->_em->createQuery($dql);
+        $query->setParameters($params);
+
+        return $query->getResult();
+    }
 }

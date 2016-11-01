@@ -46,3 +46,46 @@ Scénario: Get le score d'un people
     """
     4
     """
+
+@GET
+Scénario: Get le top des acteurs
+    Quand       je fais un GET sur /peoples/top?type=acteur
+    Alors       le status HTTP devrait être 200
+    Et          je devrais avoir un résultat d'API en JSON
+    Et          le résultat devrait être identique au JSON suivant :
+    """
+    {
+        "BUTTERFIELD Asa": 4,
+        "JACKSON Samuel": 2,
+        "WAHLBERG Marc": 2,
+        "O'BRIAN Dylan": 1,
+        "PARKINSON Art": 0,
+        "STATHAM Jason": 0,
+        "LEE JONES Tommy": 0,
+        "HUNNAM Charlie": 0
+    }
+    """
+
+@GET
+Scénario: Get le top mixte
+    Quand       je fais un GET sur /peoples/top?type=both
+    Alors       le status HTTP devrait être 200
+    Et          je devrais avoir un résultat d'API en JSON
+    Et          le résultat devrait être identique au JSON suivant :
+    """
+    {
+        "GREEN Eva": 4,
+        "BUTTERFIELD Asa": 4,
+        "JACKSON Samuel": 2,
+        "WAHLBERG Marc": 2,
+        "HUDSON Kate": 2,
+        "O'BRIAN Dylan": 1,
+        "THERON Charlize": 0,
+        "PARKINSON Art": 0,
+        "STATHAM Jason": 0,
+        "ALBA Jessica": 0,
+        "LEE JONES Tommy": 0,
+        "HUNNAM Charlie": 0,
+        "KIKUCHI Rinko": 0
+    }
+    """

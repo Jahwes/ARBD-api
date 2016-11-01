@@ -107,7 +107,7 @@ class PeopleController implements ControllerProviderInterface
     }
 
     /**
-     * Calcule le score d'un acteur
+     * Fait un classement des acteurs, actrices ou les deux
      *
      * @param  Application   $app         Silex application
      * @param  Request       $req
@@ -116,6 +116,22 @@ class PeopleController implements ControllerProviderInterface
      */
     public function getTopForType(Application $app, Request $req)
     {
+        // $type doit être both, acteur ou actrice
         $type = $req->query->get("type", "both");
+
+        $peoples = $app["repositories"]("People")->getPeoplesByRole($type);
+
+        $scores = [];
+        foreach ($peoples as $people) {
+            $ln  = $people->getLastname();
+            $fn  = $people->getFirstname();
+            $key = "{$ln} {$fn}";
+
+            $scores[$key] = $app["repositories"]("People")->getScoreForPeople($people);
+        }
+
+        arsort($scores);
+
+        return $app->json($scores, 200);
     }
 }
