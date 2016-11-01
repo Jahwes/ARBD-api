@@ -30,9 +30,19 @@ Scénario: Get un people par son ID
     }
     """
 
-@GET @wip
+@GET
 Scénario: Get les movies d'un people
     Quand       je fais un GET sur /peoples/1/movies
     Alors       le status HTTP devrait être 200
     Et          je devrais avoir un résultat d'API en JSON
     Et          le résultat devrait être identique au fichier "get_movies.json"
+
+@GET
+Scénario: Get le score d'un people
+    Quand       je fais un GET sur /peoples/1/score
+    Alors       le status HTTP devrait être 200
+    Et          je devrais avoir un résultat d'API en JSON
+    Et          le résultat devrait être identique au JSON suivant :
+    """
+    4
+    """

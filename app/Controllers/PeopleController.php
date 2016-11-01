@@ -30,6 +30,12 @@ class PeopleController implements ControllerProviderInterface
             ->assert("people", "\d+")
             ->convert("people", $app["findOneOr404"]('People', 'id'));
 
+        $controllers->get('/peoples/{people}/score', [$this, 'getScoreForPeople'])
+            ->assert("people", "\d+")
+            ->convert("people", $app["findOneOr404"]('People', 'id'));
+
+        $controllers->get('/peoples/top', [$this, 'getTopForType']);
+
         return $controllers;
     }
 
@@ -82,6 +88,34 @@ class PeopleController implements ControllerProviderInterface
             $movie_has_people
         );
 
-        return $app->json($movies);
+        return $app->json($movies, 200);
+    }
+
+    /**
+     * Calcule le score d'un acteur
+     *
+     * @param  Application   $app         Silex application
+     * @param  People        $people      L'entité du people
+     *
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     */
+    public function getScoreForPeople(Application $app, People $people)
+    {
+        $score = $app["repositories"]("People")->getScoreForPeople($people);
+
+        return $app->json($score, 200);
+    }
+
+    /**
+     * Calcule le score d'un acteur
+     *
+     * @param  Application   $app         Silex application
+     * @param  Request       $req
+     *
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     */
+    public function getTopForType(Application $app, Request $req)
+    {
+        $type = $req->query->get("type", "both");
     }
 }

@@ -2,6 +2,8 @@
 
 namespace CinemaHD\Repositories;
 
+use CinemaHD\Entities\People;
+
 /**
  * PeopleRepository
  *
@@ -10,5 +12,94 @@ namespace CinemaHD\Repositories;
  */
 class PeopleRepository extends \Doctrine\ORM\EntityRepository
 {
+    /**
+     * Récupère les tickets pour les films d'un acteur donné avec un rôle et une importance
+     *
+     * @param People     $people
+     * @param string     $role            le role du people dans le film
+     * @param string     $significance    l'importance du people dans le film
+     *
+     * @return array
+     */
+    public function getTicketsForPeople(People $people, $role = null, $significance = null)
+    {
+        $params = [
+            "people_id" => $people->getId()
+        ];
 
+        $dql = "SELECT t
+            FROM CinemaHD\Entities\Ticket t
+            LEFT JOIN CinemaHD\Entities\Showing s
+                WITH t.showing = s
+            LEFT JOIN CinemaHD\Entities\Movie m
+                WITH s.movie = m
+            LEFT JOIN CinemaHD\Entities\MovieHasPeople mhp
+                WITH mhp.movie = m
+        ";
+
+        if (null !== $significance) {
+            $params["significance"] = $significance;
+            $dql                   .= " AND mhp.significance = :significance";
+        }
+
+        if (null !== $role) {
+            $params["role"] = $role;
+            $dql           .= " AND mhp.role = :role";
+        }
+
+        $dql .= "
+            LEFT JOIN CinemaHD\Entities\People pp
+                WITH pp = mhp.people
+            WHERE pp.id = :people_id
+            GROUP BY t.id
+        ";
+
+        $query = $this->_em->createQuery($dql);
+        $query->setParameters($params);
+
+        return $query->getResult();
+    }
+
+    /**
+     * Calcule le score pour un people
+     *
+     * @param People     $people
+     *
+     * @return int
+     */
+    public function getScoreForPeople(People $people)
+    {
+        $params = [
+            "people_id" => $people->getId()
+        ];
+
+        $dql = "SELECT mhp.significance
+            FROM CinemaHD\Entities\Ticket t
+            LEFT JOIN CinemaHD\Entities\Showing s
+                WITH t.showing = s
+            LEFT JOIN CinemaHD\Entities\Movie m
+                WITH s.movie = m
+            LEFT JOIN CinemaHD\Entities\MovieHasPeople mhp
+                WITH (
+                    mhp.movie = m
+                    AND (mhp.role = 'actrice' OR mhp.role = 'acteur')
+                )
+            LEFT JOIN CinemaHD\Entities\People pp
+                WITH pp = mhp.people
+            WHERE pp.id = :people_id
+            GROUP BY t.id
+        ";
+
+        $query = $this->_em->createQuery($dql);
+        $query->setParameters($params);
+
+        $tickets = $query->getResult();
+
+        $score = 0;
+        foreach ($tickets as $ticket) {
+            $score += 'principal' === $ticket["significance"] ? 2 : 1;
+        }
+
+        return $score;
+    }
 }
