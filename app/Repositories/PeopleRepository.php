@@ -104,11 +104,11 @@ class PeopleRepository extends \Doctrine\ORM\EntityRepository
     }
 
     /**
-     * Calcule le score pour un people
+     * Récupère tous les acteurs/actrices, ou acteurs, ou actrices
      *
-     * @param People     $people
+     * @param string     $role      both, acteur, actrice
      *
-     * @return int
+     * @return array
      */
     public function getPeoplesByRole($role = "both")
     {
