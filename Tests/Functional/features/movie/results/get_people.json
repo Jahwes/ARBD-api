@@ -11,7 +11,8 @@
             },
             "nationality": "française"
         },
-        "role": "actrice"
+        "role": "actrice",
+        "significance": "principal"
     },
     {
         "people": {
@@ -25,7 +26,8 @@
             },
             "nationality": "britannique"
         },
-        "role": "acteur"
+        "role": "acteur",
+        "significance": "principal"
     },
     {
         "people": {
@@ -39,7 +41,8 @@
             },
             "nationality": "américaine"
         },
-        "role": "acteur"
+        "role": "acteur",
+        "significance": "secondaire"
     },
     {
         "people": {
@@ -53,6 +56,7 @@
             },
             "nationality": "américaine"
         },
-        "role": "réalisateur"
+        "role": "réalisateur",
+        "significance": null
     }
 ]

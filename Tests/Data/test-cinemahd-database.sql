@@ -233,6 +233,7 @@ CREATE TABLE IF NOT EXISTS `test_cinemahd`.`Movie_has_People` (
   `Movie_id` INT NOT NULL,
   `People_id` INT NOT NULL,
   `role` ENUM('producteur', 'réalisateur', 'actrice', 'acteur') NULL,
+  `significance` ENUM('principal', 'secondaire') NULL,
   PRIMARY KEY (`Movie_id`, `People_id`),
   INDEX `fk_Movie_has_People_People1_idx` (`People_id` ASC),
   INDEX `fk_Movie_has_People_Movie1_idx` (`Movie_id` ASC),

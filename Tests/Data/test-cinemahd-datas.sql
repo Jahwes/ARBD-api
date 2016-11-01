@@ -137,26 +137,27 @@ VALUES
 --
 -- Dumping data for table `Movie_has_People`
 --
-INSERT INTO `Movie_has_People` (`Movie_id`, `People_id`, `role`)
+INSERT INTO `Movie_has_People` (`Movie_id`, `People_id`, `role`, `significance`)
 VALUES
-    (1, 1 , 'actrice'    ),
-    (1, 2 , 'acteur'     ),
-    (1, 3 , 'acteur'     ),
-    (1, 4 , 'réalisateur'),
-    (2, 5 , 'réalisateur'),
-    (2, 6 , 'acteur'     ),
-    (2, 7 , 'actrice'    ),
-    (2, 8 , 'acteur'     ),
-    (3, 9 , 'producteur' ),
-    (3, 10, 'actrice'    ),
-    (3, 11, 'acteur'     ),
-    (4, 12, 'réalisateur'),
-    (4, 13, 'acteur'     ),
-    (4, 14, 'actrice'    ),
-    (4, 15, 'acteur'     ),
-    (5, 16, 'réalisateur'),
-    (5, 17, 'acteur'     ),
-    (5, 18, 'actrice'    );
+    (1, 1 , 'actrice'    , 'principal' ),
+    (1, 2 , 'acteur'     , 'principal' ),
+    (1, 3 , 'acteur'     , 'secondaire'),
+    (1, 4 , 'réalisateur', null        ),
+    (2, 5 , 'réalisateur', null        ),
+    (2, 6 , 'acteur'     , 'principal' ),
+    (2, 7 , 'actrice'    , 'principal' ),
+    (2, 8 , 'acteur'     , 'secondaire'),
+    (3, 9 , 'producteur' , null        ),
+    (3, 10, 'actrice'    , 'principal' ),
+    (3, 11, 'acteur'     , 'secondaire'),
+    (4, 12, 'réalisateur', null        ),
+    (4, 13, 'acteur'     , 'principal' ),
+    (4, 14, 'actrice'    , 'principal' ),
+    (4, 15, 'acteur'     , 'secondaire'),
+    (5, 16, 'réalisateur', null        ),
+    (5, 17, 'acteur'     , 'principal' ),
+    (5, 18, 'actrice'    , 'principal' ),
+    (5, 1 , 'producteur' , null        );
 
 --
 -- Dumping data for table `Order`

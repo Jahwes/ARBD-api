@@ -97,8 +97,9 @@ class MovieController implements ControllerProviderInterface
         $peoples = array_map(
             function ($mhp) {
                 return [
-                    "people" => $mhp->getPeople(),
-                    "role"   => $mhp->getRole()
+                    "people"       => $mhp->getPeople(),
+                    "role"         => $mhp->getRole(),
+                    "significance" => $mhp->getSignificance()
                 ];
             },
             $movie_has_people
