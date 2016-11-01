@@ -22,7 +22,8 @@ Scénario: Get un ticket par son ID
         "price": {
             "id": 1,
             "type": "Plein tarif",
-            "value": 9.4
+            "value": 9.4,
+            "current": false
         },
         "showing": {
             "id": 1,

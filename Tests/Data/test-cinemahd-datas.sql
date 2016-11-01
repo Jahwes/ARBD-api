@@ -82,12 +82,16 @@ VALUES
 --
 -- Dumping data for table `Price`
 --
-INSERT INTO `Price` (`id`, `type_name`, `value`)
+INSERT INTO `Price` (`id`, `type_name`, `value`, `current`)
 VALUES
-    (1, 'Plein tarif'   , 9.4),
-    (2, 'Tarif reduit'  , 7.4),
-    (3, 'Senior'        , 6.8),
-    (4, 'Tarif etudiant', 6.8);
+    (1, 'Plein tarif'   , 9.4, 0),
+    (2, 'Tarif reduit'  , 7.4, 0),
+    (3, 'Senior'        , 6.8, 0),
+    (4, 'Tarif etudiant', 6.8, 0),
+    (5, 'Plein tarif'   , 10 , 1),
+    (6, 'Tarif reduit'  , 8  , 1),
+    (7, 'Senior'        , 7  , 1),
+    (8, 'Tarif etudiant', 7  , 1);
 
 --
 -- Dumping data for table `People`

@@ -243,7 +243,7 @@ class OrderController implements ControllerProviderInterface
         foreach ($tickets as $ticket) {
             $newTicket = new Ticket;
             $spectator = self::createSpectator($app, $ticket["Spectateur"]);
-            $price     = $app["repositories"]("Price")->findOneBy(["type" => $ticket["Tarif"]]);
+            $price     = $app["repositories"]("Price")->findOneBy(["type" => $ticket["Tarif"], "current" => true]);
 
             $newTicket->setPrice($price);
             $newTicket->setShowing($showing);

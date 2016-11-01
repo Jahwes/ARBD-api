@@ -112,6 +112,7 @@ CREATE TABLE IF NOT EXISTS `test_cinemahd`.`Price` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `type_name` VARCHAR(100) NULL,
   `value` DOUBLE NULL,
+  `current` TINYINT(1) NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB AUTO_INCREMENT=5;
 
