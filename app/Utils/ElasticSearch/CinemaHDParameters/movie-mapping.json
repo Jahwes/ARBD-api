@@ -1,0 +1,45 @@
+{
+    "movie": {
+        "dynamic": "strict",
+        "properties": {
+            "id": {
+                "type": "multi_field",
+                "fields": {
+                    "id": {
+                        "type": "long"
+                    },
+                    "raw": {
+                        "type": "long",
+                        "index": "not_analyzed"
+                    }
+                }
+            },
+            "title": {
+                "type": "multi_field",
+                "fields": {
+                    "title": {
+                        "type": "string",
+                        "index_analyzer": "custom_analyzer",
+                        "search_analyzer": "custom_search_analyzer"
+                    },
+                    "raw": {
+                        "type": "string",
+                        "index": "not_analyzed"
+                    }
+                }
+            },
+            "duration": {
+                "type": "multi_field",
+                "fields": {
+                    "type": {
+                        "type": "integer"
+                    },
+                    "raw": {
+                        "type": "integer",
+                        "index": "not_analyzed"
+                    }
+                }
+            }
+        }
+    }
+}

@@ -14,6 +14,12 @@ use Dflydev\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
 use Saxulum\Console\Provider\ConsoleProvider;
 use Saxulum\DoctrineOrmManagerRegistry\Provider\DoctrineOrmManagerRegistryProvider;
 
+use CinemaHD\Utils\Elasticsearch\Elasticsearch;
+use CinemaHD\Utils\Elasticsearch\CinemaHDElasticsearchIndexer;
+
+use CinemaHD\ElasticsearchCommand\SpecificIndexCommand;
+use CinemaHD\ElasticsearchCommand\SpecificIndexTypeCommand;
+
 /**
  * Configuration principale de l'application
  */
@@ -62,6 +68,10 @@ class Config implements ServiceProviderInterface
         $app['db_user']     = getenv("CINEMAHD_DATABASE_USER");
         $app['db_password'] = getenv("CINEMAHD_DATABASE_PWD");
 
+        $app["elasticsearch_cinemahd_parameters_path"] = realpath(
+            __DIR__ . "/Utils/Elasticsearch/CinemaHDParameters"
+        );
+
         switch ($app['application_env']) {
             case 'production':
                 ini_set('display_errors', false);
@@ -106,13 +116,13 @@ class Config implements ServiceProviderInterface
         ];
 
         // Doctrine (orm)
-        $app['orm.proxies_dir'] = $app['application_path'] . '/cache/doctrine/proxies';
+        $app['orm.proxies_dir']   = $app['application_path'] . '/cache/doctrine/proxies';
         $app['orm.default_cache'] = 'array';
-        $app['orm.em.options'] = [
+        $app['orm.em.options']    = [
             'mappings' => [
                 [
-                    'type' => 'annotation',
-                    'path' => $app['application_path'] . '/app',
+                    'type'      => 'annotation',
+                    'path'      => $app['application_path'] . '/app',
                     'namespace' => "{$app['application_namespace']}\\Entities",
                 ],
             ],
@@ -130,24 +140,31 @@ class Config implements ServiceProviderInterface
             }
         );
 
+        $app["elasticsearch.cinemahd.indexer"] = new CinemaHDElasticsearchIndexer($app);
+        $app->register(new Elasticsearch(['cinemahd']));
+
+        $app['console.commands'] = $app->extend('console.commands', function ($commands) use ($app) {
+            // Ajout des commandes Elasticsearch
+            foreach ($app["elasticsearch.names"] as $index_name) {
+                $command = new SpecificIndexCommand($index_name);
+                $command->setContainer($app);
+                $commands[] = $command;
+                foreach ($app["elasticsearch.{$index_name}.types"] as $type) {
+                    $command = new SpecificIndexTypeCommand($index_name, $type);
+                    $command->setContainer($app);
+                    $commands[] = $command;
+                }
+            }
+
+            return $commands;
+        });
+
         $app->register(new ConsoleProvider());
         $app->register(new DoctrineOrmManagerRegistryProvider());
         $app->register(new CorsServiceProvider());
 
         $platform = $app["orm.em"]->getConnection()->getDatabasePlatform();
         $platform->registerDoctrineTypeMapping('enum', 'string');
-
-        // $configuration = $app["orm.em"]->getConfiguration();
-
-        // $configuration->addCustomDatetimeFunction('DATE',       'DoctrineExtensions\Query\Mysql\Date');
-        // $configuration->addCustomDatetimeFunction('DATEDIFF',   'DoctrineExtensions\Query\Mysql\DateDiff');
-        // $configuration->addCustomDatetimeFunction('DATEADD',    'DoctrineExtensions\Query\Mysql\DateAdd');
-        // $configuration->addCustomDatetimeFunction('DATEFORMAT', 'DoctrineExtensions\Query\Mysql\DateFormat');
-        // $configuration->addCustomDatetimeFunction('HOUR',       'DoctrineExtensions\Query\Mysql\Hour');
-        // $configuration->addCustomDatetimeFunction('DAY',        'DoctrineExtensions\Query\Mysql\Day');
-        // $configuration->addCustomDatetimeFunction('WEEK',       'DoctrineExtensions\Query\Mysql\Week');
-        // $configuration->addCustomDatetimeFunction('MONTH',      'DoctrineExtensions\Query\Mysql\Month');
-        // $configuration->addCustomDatetimeFunction('YEAR',       'DoctrineExtensions\Query\Mysql\Year');
     }
 
     /**
