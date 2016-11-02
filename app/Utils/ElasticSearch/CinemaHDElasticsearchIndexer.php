@@ -25,7 +25,7 @@ class CinemaHDElasticsearchIndexer extends AbstractIndexer
         if (null === $entity) {
             throw new \Exception("Cannot index {$entity_name} {$id} because it does not exist");
         }
-        self::putDocument($es_type);
+        self::putDocument($es_type, $entity);
     }
 
     protected function indexOneMovie($id)
@@ -96,7 +96,7 @@ class CinemaHDElasticsearchIndexer extends AbstractIndexer
 
             foreach ($paginator as $entity) {
                 $count++;
-                $result = $this->putDocument($type);
+                $result = $this->putDocument($type, $entity);
                 if (!isset($result) || true !== $result["created"]) {
                     print_r($result);
                 }
@@ -211,7 +211,7 @@ class CinemaHDElasticsearchIndexer extends AbstractIndexer
         self::index($dql, "user");
     }
 
-    public function putDocument($type)
+    public function putDocument($type, $entity)
     {
         if (false === in_array($type, $this->app["elasticsearch.cinemahd.types"])) {
             throw new \Exception("Cannot put document on unconfigured type {$type} in index cinemahd");

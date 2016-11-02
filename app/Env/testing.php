@@ -3,7 +3,7 @@
 putenv("APPLICATION_ENV=testing");
 
 putenv("CINEMAHD_ELASTICSEARCH_HOST=http://127.0.0.1:9200/cinemahd.test");
-putenv("CINEMAHD_ELASTICSEARCH_TYPES=movie, order, people, price, room, spectator, user, ticket");
+putenv("CINEMAHD_ELASTICSEARCH_TYPES=movie,order,people,price,room,spectator,user,ticket");
 
 putenv("CINEMAHD_DATABASE_HOST=127.0.0.1");
 putenv("CINEMAHD_DATABASE_NAME=test_cinemahd");

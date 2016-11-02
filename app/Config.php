@@ -58,6 +58,9 @@ class Config implements ServiceProviderInterface
     {
         include "Utils/Silex/Middlewares.php";
 
+        $app['version'] = '1.0.0';
+        $app['locale']  = 'fr';
+
         $app['application_name']      = 'cinemahd-api';
         $app['application_env']       = $this->env;
         $app['application_path']      = realpath(__DIR__ . "/../");
@@ -104,6 +107,10 @@ class Config implements ServiceProviderInterface
 
         $app->register(new DoctrineServiceProvider());
         $app->register(new DoctrineOrmServiceProvider());
+        $app->register(new ConsoleProvider());
+        $app->register(new DoctrineOrmManagerRegistryProvider());
+        $app->register(new CorsServiceProvider());
+
 
         // Doctrine (db)
         $app['db.options'] = [
@@ -140,6 +147,16 @@ class Config implements ServiceProviderInterface
             }
         );
 
+        $app['console.command.paths'] = $app->extend('console.command.paths', function ($paths) {
+            $paths[] = __DIR__ . '/Command';
+
+            return $paths;
+        });
+
+        $app['console.commands'] = $app->extend('console.commands', function ($commands) {
+            return $commands;
+        });
+
         $app["elasticsearch.cinemahd.indexer"] = new CinemaHDElasticsearchIndexer($app);
         $app->register(new Elasticsearch(['cinemahd']));
 
@@ -159,9 +176,6 @@ class Config implements ServiceProviderInterface
             return $commands;
         });
 
-        $app->register(new ConsoleProvider());
-        $app->register(new DoctrineOrmManagerRegistryProvider());
-        $app->register(new CorsServiceProvider());
 
         $platform = $app["orm.em"]->getConnection()->getDatabasePlatform();
         $platform->registerDoctrineTypeMapping('enum', 'string');
