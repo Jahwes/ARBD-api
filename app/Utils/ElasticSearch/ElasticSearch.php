@@ -6,8 +6,6 @@ use Silex\Application;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
-use Elasticsearch\ClientBuilder;
-
 /**
 *
 */
@@ -71,7 +69,7 @@ class Elasticsearch implements ServiceProviderInterface
             $app["elasticsearch.{$name}.index"]  = $index;
             $app["elasticsearch.{$name}.types"]  = $es_option['types'];
 
-            $app["elasticsearch.{$name}"] = ClientBuilder::create()
+            $app["elasticsearch.{$name}"] = \Elasticsearch\ClientBuilder::create()
                 ->setHosts([$app["elasticsearch.{$name}.server"]])
                 ->build();
         }
