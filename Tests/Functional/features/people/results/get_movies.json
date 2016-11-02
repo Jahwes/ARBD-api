@@ -1,0 +1,38 @@
+[
+    {
+        "movie": {
+            "id": 1,
+            "title": "Miss Peregrine et les enfants particuliers",
+            "duration": 127
+        },
+        "role": "actrice",
+        "significance": "principal"
+    },
+    {
+        "movie": {
+            "id": 1,
+            "title": "Miss Peregrine et les enfants particuliers",
+            "duration": 127
+        },
+        "role": "acteur",
+        "significance": "principal"
+    },
+    {
+        "movie": {
+            "id": 1,
+            "title": "Miss Peregrine et les enfants particuliers",
+            "duration": 127
+        },
+        "role": "acteur",
+        "significance": "secondaire"
+    },
+    {
+        "movie": {
+            "id": 1,
+            "title": "Miss Peregrine et les enfants particuliers",
+            "duration": 127
+        },
+        "role": "réalisateur",
+        "significance": null
+    }
+]

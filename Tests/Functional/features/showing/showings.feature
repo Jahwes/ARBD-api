@@ -34,7 +34,7 @@ Scénario: Get un showing par son ID
     """
 
 @GET
-Scénario: Get un showing par son ID
+Scénario: Get les tickets d'un showing
     Quand       je fais un GET sur /showings/1/tickets
     Alors       le status HTTP devrait être 200
     Et          je devrais avoir un résultat d'API en JSON

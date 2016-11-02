@@ -43,11 +43,22 @@ class MovieHasPeople implements \JsonSerializable
      */
     protected $role;
 
+    /**
+     * @Column(type="string",
+     *      name="significance",
+     *      columnDefinition="ENUM('principal', 'secondaire') DEFAULT NULL"),
+     *      nullable=true
+     * )
+     */
+    protected $significance;
+
     public function toArray()
     {
         return [
-            "movie" => $this->getMovie(),
-            "type"  => $this->getType()
+            "movie"        => $this->getMovie(),
+            "type"         => $this->getType(),
+            "role"         => $this->getRole(),
+            "significance" => $this->getSignificance()
         ];
     }
 
@@ -88,6 +99,16 @@ class MovieHasPeople implements \JsonSerializable
         return $this->role;
     }
 
+    /**
+     * Gets the value of significance
+     *
+     * @return string
+     */
+    public function getSignificance()
+    {
+        return $this->significance;
+    }
+
 // ------ Setters ------
 
     /**
@@ -125,9 +146,23 @@ class MovieHasPeople implements \JsonSerializable
      *
      * @return self
      */
-    public function setRole(Role $role)
+    public function setRole($role)
     {
         $this->role = $role;
+
+        return $this;
+    }
+
+    /**
+     * Sets the value of significance.
+     *
+     * @param string $significance the significance
+     *
+     * @return self
+     */
+    public function setSignificance($significance)
+    {
+        $this->significance = $significance;
 
         return $this;
     }

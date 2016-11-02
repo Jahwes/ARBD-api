@@ -82,12 +82,16 @@ VALUES
 --
 -- Dumping data for table `Price`
 --
-INSERT INTO `Price` (`id`, `type_name`, `value`)
+INSERT INTO `Price` (`id`, `type_name`, `value`, `current`)
 VALUES
-    (1, 'Plein tarif'   , 9.4),
-    (2, 'Tarif reduit'  , 7.4),
-    (3, 'Senior'        , 6.8),
-    (4, 'Tarif etudiant', 6.8);
+    (1, 'Plein tarif'   , 9.4, 0),
+    (2, 'Tarif reduit'  , 7.4, 0),
+    (3, 'Senior'        , 6.8, 0),
+    (4, 'Tarif etudiant', 6.8, 0),
+    (5, 'Plein tarif'   , 10 , 1),
+    (6, 'Tarif reduit'  , 8  , 1),
+    (7, 'Senior'        , 7  , 1),
+    (8, 'Tarif etudiant', 7  , 1);
 
 --
 -- Dumping data for table `People`
@@ -111,7 +115,19 @@ VALUES
     (15, 'Tommy'    , 'LEE JONES'  , '1946-09-15', 'américaine'   ),
     (16, 'Guillermo', 'DEL TORO'   , '1964-10-09', 'mexicaine'    ),
     (17, 'Charlie'  , 'HUNNAM'     , '1980-04-10', 'britannique'  ),
-    (18, 'Rinko'    , 'KIKUCHI'    , '1981-01-06', 'japonaise'    );
+    (18, 'Rinko'    , 'KIKUCHI'    , '1981-01-06', 'japonaise'    ),
+    (19, 'Norman'   , 'GRANT'      , '1980-09-10', 'américaine'   ),
+    (20, 'Rhonda'   , 'BRADY'      , '1965-06-23', 'américaine'   ),
+    (21, 'Frankie'  , 'PAYNE'      , '1976-12-12', 'britannique'  ),
+    (22, 'Kayla'    , 'WELCH'      , '1987-10-26', 'allemande'    ),
+    (23, 'Dean'     , 'HOPKINS'    , '1956-03-06', 'américaine'   ),
+    (24, 'Lynn'     , 'COOK'       , '1989-05-23', 'britannique'  ),
+    (25, 'Merle'    , 'FLOYD'      , '1976-08-19', 'britannique'  ),
+    (26, 'Marcella' , 'LARSON'     , '1986-07-26', 'britannique'  ),
+    (27, 'William'  , 'COLLIER'    , '1989-04-02', 'française'    ),
+    (28, 'Priscilla', 'LITTLE'     , '1991-09-09', 'américaine'   ),
+    (29, 'Orlando'  , 'RODRIGUEZ'  , '1968-08-23', 'espagnole'    ),
+    (30, 'Dianne'   , 'BREWER'     , '1987-09-09', 'américaine'   );
 
 --
 -- Dumping data for table `Movie_has_Type`
@@ -133,26 +149,62 @@ VALUES
 --
 -- Dumping data for table `Movie_has_People`
 --
-INSERT INTO `Movie_has_People` (`Movie_id`, `People_id`, `role`)
+INSERT INTO `Movie_has_People` (`Movie_id`, `People_id`, `role`, `significance`)
 VALUES
-    (1, 1 , 'actrice'    ),
-    (1, 2 , 'acteur'     ),
-    (1, 3 , 'acteur'     ),
-    (1, 4 , 'réalisateur'),
-    (2, 5 , 'réalisateur'),
-    (2, 6 , 'acteur'     ),
-    (2, 7 , 'actrice'    ),
-    (2, 8 , 'acteur'     ),
-    (3, 9 , 'producteur' ),
-    (3, 10, 'actrice'    ),
-    (3, 11, 'acteur'     ),
-    (4, 12, 'réalisateur'),
-    (4, 13, 'acteur'     ),
-    (4, 14, 'actrice'    ),
-    (4, 15, 'acteur'     ),
-    (5, 16, 'réalisateur'),
-    (5, 17, 'acteur'     ),
-    (5, 18, 'actrice'    );
+    (1 , 1 , 'actrice'    , 'principal' ),
+    (1 , 2 , 'acteur'     , 'principal' ),
+    (1 , 3 , 'acteur'     , 'secondaire'),
+    (1 , 4 , 'réalisateur', null        ),
+    (2 , 5 , 'réalisateur', null        ),
+    (2 , 6 , 'acteur'     , 'principal' ),
+    (2 , 7 , 'actrice'    , 'principal' ),
+    (2 , 8 , 'acteur'     , 'secondaire'),
+    (3 , 9 , 'producteur' , null        ),
+    (3 , 10, 'actrice'    , 'principal' ),
+    (3 , 11, 'acteur'     , 'secondaire'),
+    (4 , 12, 'réalisateur', null        ),
+    (4 , 13, 'acteur'     , 'principal' ),
+    (4 , 14, 'actrice'    , 'principal' ),
+    (4 , 15, 'acteur'     , 'secondaire'),
+    (5 , 16, 'réalisateur', null        ),
+    (5 , 17, 'acteur'     , 'principal' ),
+    (5 , 18, 'actrice'    , 'principal' ),
+    (5 , 1 , 'producteur' , null        ),
+    (6 , 19, 'acteur'     , 'principal' ),
+    (6 , 20, 'actrice'    , 'principal' ),
+    (6 , 21, 'acteur'     , 'secondaire'),
+    (6 , 22, 'actrice'    , 'secondaire'),
+    (7 , 23, 'acteur'     , 'principal' ),
+    (7 , 24, 'actrice'    , 'principal' ),
+    (7 , 19, 'acteur'     , 'secondaire'),
+    (7 , 20, 'actrice'    , 'secondaire'),
+    (8 , 25, 'acteur'     , 'principal' ),
+    (8 , 26, 'actrice'    , 'principal' ),
+    (8 , 27, 'acteur'     , 'secondaire'),
+    (8 , 24, 'actrice'    , 'secondaire'),
+    (9 , 27, 'acteur'     , 'principal' ),
+    (9 , 28, 'actrice'    , 'principal' ),
+    (9 , 23, 'acteur'     , 'secondaire'),
+    (9 , 22, 'actrice'    , 'secondaire'),
+    (10, 29, 'acteur'     , 'principal' ),
+    (10, 30, 'actrice'    , 'principal' ),
+    (10, 19, 'acteur'     , 'secondaire'),
+    (10, 21, 'acteur'     , 'secondaire'),
+    (11, 23, 'acteur'     , 'principal' ),
+    (11, 29, 'acteur'     , 'principal' ),
+    (11, 22, 'actrice'    , 'secondaire'),
+    (11, 26, 'actrice'    , 'secondaire'),
+    (12, 28, 'actrice'    , 'principal' ),
+    (12, 21, 'acteur'     , 'secondaire'),
+    (12, 27, 'acteur'     , 'secondaire'),
+    (12, 20, 'actrice'    , 'secondaire'),
+    (13, 30, 'actrice'    , 'principal' ),
+    (13, 23, 'acteur'     , 'secondaire'),
+    (13, 26, 'actrice'    , 'secondaire'),
+    (13, 24, 'actrice'    , 'secondaire'),
+    (14, 25, 'acteur'     , 'principal' ),
+    (14, 21, 'acteur'     , 'secondaire'),
+    (14, 22, 'actrice'    , 'secondaire');
 
 --
 -- Dumping data for table `Order`

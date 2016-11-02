@@ -25,12 +25,18 @@ class Price implements \JsonSerializable
      */
     protected $value;
 
+    /**
+     * @Column(type="boolean", name="current", options={"default"=0})
+     */
+    protected $current;
+
     public function toArray()
     {
         return [
-            "id"    => $this->getId(),
-            "type"  => $this->getType(),
-            "value" => $this->getValue()
+            "id"      => $this->getId(),
+            "type"    => $this->getType(),
+            "value"   => $this->getValue(),
+            "current" => $this->getCurrent()
         ];
     }
 
@@ -60,6 +66,17 @@ class Price implements \JsonSerializable
     {
         return $this->value;
     }
+
+    /**
+     * Gets the value of current
+     *
+     * @return boolean
+     */
+    public function getCurrent()
+    {
+        return $this->current;
+    }
+
 // ------ Setters ------
 
     /**
@@ -86,6 +103,20 @@ class Price implements \JsonSerializable
     public function setValue($value)
     {
         $this->value = $value;
+
+        return $this;
+    }
+
+    /**
+     * Sets the value of current
+     *
+     * @param boolean $current
+     *
+     * @return self
+     */
+    public function setCurrent($current)
+    {
+        $this->current = $current;
 
         return $this;
     }

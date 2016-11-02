@@ -22,6 +22,8 @@ class PriceController implements ControllerProviderInterface
 
         $controllers->get('/prices', [$this, 'getPrices']);
 
+        $controllers->get('/prices/current', [$this, 'getCurrentPrices']);
+
         return $controllers;
     }
 
@@ -38,5 +40,21 @@ class PriceController implements ControllerProviderInterface
         $prices = $app["repositories"]("Price")->findAll();
 
         return $app->json($prices, 200);
+    }
+
+    /**
+     * Récupère les prix en cours
+     *
+     * @param  Application   $app     Silex application
+     *
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     */
+    public function getCurrentPrices(Application $app)
+    {
+        $current_prices = $app["repositories"]("Price")->findBy([
+            "current" => true
+        ]);
+
+        return $app->json($current_prices, 200);
     }
 }
