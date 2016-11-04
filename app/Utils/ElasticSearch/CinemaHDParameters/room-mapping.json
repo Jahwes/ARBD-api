@@ -1,0 +1,13 @@
+{
+    "room": {
+        "dynamic": "strict",
+        "properties": {
+            "id": {
+                "type": "long"
+            },
+            "nb_places":{
+                "type":"long"
+            }
+        }
+    }
+}

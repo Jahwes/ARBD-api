@@ -123,10 +123,10 @@ class CinemaHDElasticsearchIndexer extends AbstractIndexer
 
     protected function indexOrder()
     {
-        $dql = "SELECT order
-            FROM     CinemaHD\Entities\Order order
-            WHERE    order.id > :min_id
-            ORDER BY order.id ASC";
+        $dql = "SELECT o
+            FROM     CinemaHD\Entities\Order o
+            WHERE    o.id > :min_id
+            ORDER BY o.id ASC";
 
         self::index($dql, "order");
     }

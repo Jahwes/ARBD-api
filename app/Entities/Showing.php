@@ -175,21 +175,4 @@ class Showing implements \JsonSerializable
 
         return $this;
     }
-
-    // ----------- ES ------------
-    public function putDocument($type)
-    {
-        if (false === in_array($type, $this->app["elasticsearch.cinemahd.types"])) {
-            throw new \Exception("Cannot put document on unconfigured type {$type} in index cinemahd");
-        }
-
-        $index_params = [
-            "index" => $this->app["elasticsearch.cinemahd.index"],
-            "type"  => $type,
-            "id"    => $this->getId(),
-            "body"  => $this->toIndex()
-        ];
-
-        return $this->app["elasticsearch.cinemahd"]->index($index_params);
-    }
 }
