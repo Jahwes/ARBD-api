@@ -6,8 +6,8 @@
                 "type":"long"
             },
             "date":{
-                "type":"date",
-                "format":"dateOptionalTime"
+                "index":"not_analyzed",
+                "type":"string"
             },
             "is_3D":{
                 "type":"boolean"
@@ -28,7 +28,7 @@
                         "type":"long"
                     },
                     "title":{
-                        "type":"string",
+                        "type":"string"
                     },
                     "duration":{
                         "type":"integer"

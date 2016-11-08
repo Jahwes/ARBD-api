@@ -1,9 +1,9 @@
 {
     "ticket": {
-        "dynamic": "strict",
+        "dynamic":"strict",
         "properties": {
             "id": {
-                "type": "long"
+                "type":"long"
             },
             "price": {
                 "properties":{
@@ -14,21 +14,24 @@
                         "type":"string"
                     },
                     "value": {
-                        "type": "float"
+                        "type":"float"
+                    },
+                    "current": {
+                        "type":"boolean"
                     }
                 }
             },
             "showing": {
                 "properties": {
                     "id": {
-                        "type": "long"
+                        "type":"long"
                     },
                     "date": {
-                        "type": "date",
-                        "format": "dateOptionalTime"
+                        "index":"not_analyzed",
+                        "type":"string"
                     },
                     "is_3D":{
-                        "type": "boolean"
+                        "type":"boolean"
                     },
                     "room": {
                         "properties":{
@@ -46,10 +49,10 @@
                                 "type":"long"
                             },
                             "title": {
-                                "type": "string",
+                                "type":"string"
                             },
                             "duration": {
-                                "type": "integer"
+                                "type":"integer"
                             }
                         }
                     }
@@ -58,20 +61,20 @@
             "spectator": {
                 "properties": {
                     "id": {
-                        "type": "long"
+                        "type":"long"
                     },
                     "lastname":{
-                        "type": "string",
-                        "index_analyzer": "custom_analyzer",
-                        "search_analyzer": "custom_search_analyzer"
+                        "type":"string",
+                        "index_analyzer":"custom_analyzer",
+                        "search_analyzer":"custom_search_analyzer"
                     },
                     "firstname":{
-                        "type": "string",
-                        "index_analyzer": "custom_analyzer",
-                        "search_analyzer": "custom_search_analyzer"
+                        "type":"string",
+                        "index_analyzer":"custom_analyzer",
+                        "search_analyzer":"custom_search_analyzer"
                     },
                     "age":{
-                        "type": "integer"
+                        "type":"integer"
                     },
                     "title":{
                         "type":"string"
@@ -81,11 +84,11 @@
             "order": {
                 "properties": {
                     "id": {
-                        "type": "long"
+                        "type":"long"
                     },
                     "created_at": {
-                        "type": "date",
-                        "format": "dateOptionalTime"
+                        "type":"date",
+                        "format":"dateOptionalTime"
                     },
                     "user": {
                         "properties":{
@@ -93,17 +96,17 @@
                                 "type":"long"
                             },
                             "lastname":{
-                                "type": "string",
-                                "index_analyzer": "custom_analyzer",
-                                "search_analyzer": "custom_search_analyzer"
+                                "type":"string",
+                                "index_analyzer":"custom_analyzer",
+                                "search_analyzer":"custom_search_analyzer"
                             },
                             "firstname":{
-                                "type": "string",
-                                "index_analyzer": "custom_analyzer",
-                                "search_analyzer": "custom_search_analyzer"
+                                "type":"string",
+                                "index_analyzer":"custom_analyzer",
+                                "search_analyzer":"custom_search_analyzer"
                             },
                             "date_of_birth":{
-                                "type": "date"
+                                "type":"date"
                             },
                             "title":{
                                 "type":"string"

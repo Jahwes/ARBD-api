@@ -211,7 +211,7 @@ class CinemaHDElasticsearchIndexer extends AbstractIndexer
         self::index($dql, "user");
     }
 
-    public function putDocument($type, $entity)
+    public function putDocument($type, $entity = null)
     {
         if (false === in_array($type, $this->app["elasticsearch.cinemahd.types"])) {
             throw new \Exception("Cannot put document on unconfigured type {$type} in index cinemahd");

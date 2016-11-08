@@ -58,6 +58,11 @@ abstract class AbstractIndexer
     }
 
     /**
+     * @return array
+     */
+    abstract public function putDocument($type);
+
+    /**
      * @return void
      */
     abstract public function removeDocument($type);

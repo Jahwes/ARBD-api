@@ -1,18 +1,12 @@
 {
-    "price": {
+    "type": {
         "dynamic": "strict",
         "properties": {
             "id": {
                 "type": "long"
             },
-            "type": {
+            "name": {
                 "type": "string"
-            },
-            "value": {
-                "type": "float"
-            },
-            "current": {
-                "type": "boolean"
             }
         }
     }
