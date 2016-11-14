@@ -41,7 +41,7 @@ class People implements \JsonSerializable
             "id"            => $this->getId(),
             "lastname"      => $this->getLastname(),
             "firstname"     => $this->getFirstname(),
-            "date_of_birth" => $this->getDateOfBirth(),
+            "date_of_birth" => $this->getDateOfBirth('Y-m-d'),
             "nationality"   => $this->getNationality()
         ];
     }
@@ -83,9 +83,18 @@ class People implements \JsonSerializable
      *
      * @return date
      */
-    public function getDateOfBirth()
+    public function getDateOfBirth($format = null)
     {
-        return $this->date_of_birth;
+        switch (true) {
+            case is_string($this->date_of_birth):
+            case is_object($this->date_of_birth) && 'DateTime' !== get_class($this->date_of_birth):
+                throw new \Exception("date_of_birth is not a datetime", 400);
+            case null === $this->date_of_birth:
+            case null === $format:
+                return $this->date_of_birth;
+            default:
+                return $this->date_of_birth->format($format);
+        }
     }
 
     /**
