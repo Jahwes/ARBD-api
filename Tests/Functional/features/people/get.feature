@@ -21,11 +21,7 @@ Scénario: Get un people par son ID
         "id": 1,
         "lastname": "GREEN",
         "firstname": "Eva",
-        "date_of_birth": {
-            "date": "1980-07-06 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe\/Paris"
-        },
+        "date_of_birth": "1980-07-06",
         "nationality": "française"
     }
     """

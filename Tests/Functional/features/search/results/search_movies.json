@@ -1,0 +1,56 @@
+{
+    "total": 14,
+    "max_score": 1,
+    "hits": [
+        {
+            "id": 4,
+            "title": "Mechanic R\u00e9surrection",
+            "duration": 99
+        },
+        {
+            "id": 9,
+            "title": "Coup de foudre \u00e0 Shanghai",
+            "duration": 120
+        },
+        {
+            "id": 11,
+            "title": "Le Donjon de la mort 4",
+            "duration": 120
+        },
+        {
+            "id": 5,
+            "title": "Pacific Rim",
+            "duration": 130
+        },
+        {
+            "id": 12,
+            "title": "Master of Assassination",
+            "duration": 120
+        },
+        {
+            "id": 1,
+            "title": "Miss Peregrine et les enfants particuliers",
+            "duration": 127
+        },
+        {
+            "id": 6,
+            "title": "Fatal Punishment",
+            "duration": 120
+        },
+        {
+            "id": 13,
+            "title": "Microcosmos",
+            "duration": 120
+        },
+        {
+            "id": 2,
+            "title": "Deepwater",
+            "duration": 107
+        },
+        {
+            "id": 7,
+            "title": "Sudden Blood",
+            "duration": 120
+        }
+    ]
+}

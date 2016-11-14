@@ -3,330 +3,210 @@
         "id": 1,
         "lastname": "GREEN",
         "firstname": "Eva",
-        "date_of_birth": {
-            "date": "1980-07-06 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1980-07-06",
         "nationality": "française"
     },
     {
         "id": 2,
         "lastname": "BUTTERFIELD",
         "firstname": "Asa",
-        "date_of_birth": {
-            "date": "1997-04-01 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1997-04-01",
         "nationality": "britannique"
     },
     {
         "id": 3,
         "lastname": "JACKSON",
         "firstname": "Samuel",
-        "date_of_birth": {
-            "date": "1948-12-21 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1948-12-21",
         "nationality": "américaine"
     },
     {
         "id": 4,
         "lastname": "BURTON",
         "firstname": "Tim",
-        "date_of_birth": {
-            "date": "1958-08-25 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1958-08-25",
         "nationality": "américaine"
     },
     {
         "id": 5,
         "lastname": "BERG",
         "firstname": "Peter",
-        "date_of_birth": {
-            "date": "1964-03-11 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1964-03-11",
         "nationality": "américaine"
     },
     {
         "id": 6,
         "lastname": "WAHLBERG",
         "firstname": "Marc",
-        "date_of_birth": {
-            "date": "1971-06-05 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1971-06-05",
         "nationality": "américaine"
     },
     {
         "id": 7,
         "lastname": "HUDSON",
         "firstname": "Kate",
-        "date_of_birth": {
-            "date": "1979-04-19 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1979-04-19",
         "nationality": "américaine"
     },
     {
         "id": 8,
         "lastname": "O'BRIAN",
         "firstname": "Dylan",
-        "date_of_birth": {
-            "date": "1991-08-26 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1991-08-26",
         "nationality": "américaine"
     },
     {
         "id": 9,
         "lastname": "KNIGHT",
         "firstname": "Travis",
-        "date_of_birth": {
-            "date": "1978-11-07 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1978-11-07",
         "nationality": "américaine"
     },
     {
         "id": 10,
         "lastname": "THERON",
         "firstname": "Charlize",
-        "date_of_birth": {
-            "date": "1975-08-07 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1975-08-07",
         "nationality": "sud-africaine"
     },
     {
         "id": 11,
         "lastname": "PARKINSON",
         "firstname": "Art",
-        "date_of_birth": {
-            "date": "2001-10-19 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "2001-10-19",
         "nationality": "irlandaise"
     },
     {
         "id": 12,
         "lastname": "GANSEL",
         "firstname": "Denis",
-        "date_of_birth": {
-            "date": "1973-10-04 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1973-10-04",
         "nationality": "allemande"
     },
     {
         "id": 13,
         "lastname": "STATHAM",
         "firstname": "Jason",
-        "date_of_birth": {
-            "date": "1967-07-26 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1967-07-26",
         "nationality": "britannique"
     },
     {
         "id": 14,
         "lastname": "ALBA",
         "firstname": "Jessica",
-        "date_of_birth": {
-            "date": "1981-04-28 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1981-04-28",
         "nationality": "américaine"
     },
     {
         "id": 15,
         "lastname": "LEE JONES",
         "firstname": "Tommy",
-        "date_of_birth": {
-            "date": "1946-09-15 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1946-09-15",
         "nationality": "américaine"
     },
     {
         "id": 16,
         "lastname": "DEL TORO",
         "firstname": "Guillermo",
-        "date_of_birth": {
-            "date": "1964-10-09 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1964-10-09",
         "nationality": "mexicaine"
     },
     {
         "id": 17,
         "lastname": "HUNNAM",
         "firstname": "Charlie",
-        "date_of_birth": {
-            "date": "1980-04-10 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1980-04-10",
         "nationality": "britannique"
     },
     {
         "id": 18,
         "lastname": "KIKUCHI",
         "firstname": "Rinko",
-        "date_of_birth": {
-            "date": "1981-01-06 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1981-01-06",
         "nationality": "japonaise"
     },
     {
         "id": 19,
         "lastname": "GRANT",
         "firstname": "Norman",
-        "date_of_birth": {
-            "date": "1980-09-10 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1980-09-10",
         "nationality": "américaine"
     },
     {
         "id": 20,
         "lastname": "BRADY",
         "firstname": "Rhonda",
-        "date_of_birth": {
-            "date": "1965-06-23 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1965-06-23",
         "nationality": "américaine"
     },
     {
         "id": 21,
         "lastname": "PAYNE",
         "firstname": "Frankie",
-        "date_of_birth": {
-            "date": "1976-12-12 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1976-12-12",
         "nationality": "britannique"
     },
     {
         "id": 22,
         "lastname": "WELCH",
         "firstname": "Kayla",
-        "date_of_birth": {
-            "date": "1987-10-26 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1987-10-26",
         "nationality": "allemande"
     },
     {
         "id": 23,
         "lastname": "HOPKINS",
         "firstname": "Dean",
-        "date_of_birth": {
-            "date": "1956-03-06 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1956-03-06",
         "nationality": "américaine"
     },
     {
         "id": 24,
         "lastname": "COOK",
         "firstname": "Lynn",
-        "date_of_birth": {
-            "date": "1989-05-23 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1989-05-23",
         "nationality": "britannique"
     },
     {
         "id": 25,
         "lastname": "FLOYD",
         "firstname": "Merle",
-        "date_of_birth": {
-            "date": "1976-08-19 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1976-08-19",
         "nationality": "britannique"
     },
     {
         "id": 26,
         "lastname": "LARSON",
         "firstname": "Marcella",
-        "date_of_birth": {
-            "date": "1986-07-26 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1986-07-26",
         "nationality": "britannique"
     },
     {
         "id": 27,
         "lastname": "COLLIER",
         "firstname": "William",
-        "date_of_birth": {
-            "date": "1989-04-02 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1989-04-02",
         "nationality": "française"
     },
     {
         "id": 28,
         "lastname": "LITTLE",
         "firstname": "Priscilla",
-        "date_of_birth": {
-            "date": "1991-09-09 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1991-09-09",
         "nationality": "américaine"
     },
     {
         "id": 29,
         "lastname": "RODRIGUEZ",
         "firstname": "Orlando",
-        "date_of_birth": {
-            "date": "1968-08-23 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1968-08-23",
         "nationality": "espagnole"
     },
     {
         "id": 30,
         "lastname": "BREWER",
         "firstname": "Dianne",
-        "date_of_birth": {
-            "date": "1987-09-09 00:00:00.000000",
-            "timezone_type": 3,
-            "timezone": "Europe/Paris"
-        },
+        "date_of_birth": "1987-09-09",
         "nationality": "américaine"
     }
 ]
