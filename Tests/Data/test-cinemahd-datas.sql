@@ -21,7 +21,7 @@ VALUES
     (11, 'Le Donjon de la mort 4'                    , 120),
     (12, 'Master of Assassination'                   , 120),
     (13, 'Microcosmos'                               , 120),
-    (14, 'L\'horreur dans le miroir'                  , 120);
+    (14, 'L\’horreur dans le miroir'                 , 120);
 
 --
 -- Dumping data for table `User`
