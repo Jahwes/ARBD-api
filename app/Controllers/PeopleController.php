@@ -82,7 +82,7 @@ class PeopleController implements ControllerProviderInterface
     {
         $datas = $req->request->all();
 
-        $errors = ValidatorUtils::validateEntity($app, People::getConstraints());
+        $errors = ValidatorUtils::validateEntity($app, People::getConstraints(), $datas);
         if (count($errors) > 0) {
             return $app->json($errors, 400);
         }

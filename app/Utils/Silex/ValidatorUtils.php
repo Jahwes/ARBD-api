@@ -14,12 +14,13 @@ class ValidatorUtils
      *
      * @param Application     $app                  Silex Application
      * @param array           $constraints          les contraintes qu'on veut appliquer
+     * @param array           $datas                les données à vérifier
      *
      * @return array
      */
-    public static function validateEntity(Application $app, array $constraints)
+    public static function validateEntity(Application $app, array $constraints, array $datas)
     {
-        $errors = $app['validator']->validate($data, $constraints);
+        $errors = $app['validator']->validate($datas, $constraints);
 
         if (0 < count($errors)) {
             $error_msg = [];
