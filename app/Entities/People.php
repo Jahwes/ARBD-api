@@ -56,6 +56,39 @@ class People implements \JsonSerializable
         return $this->toArray();
     }
 
+    public static function getConstraints()
+    {
+        $constraints = [
+            new Assert\Collection([
+                'fields' => [
+                    "lastname" => array_merge(
+                        ValidatorUtils::notBlank(),
+                        ValidatorUtils::typeIs('string'),
+                        ValidatorUtils::maxLength(50)
+                    ),
+                    "firstname" => array_merge(
+                        ValidatorUtils::notBlank(),
+                        ValidatorUtils::typeIs('string'),
+                        ValidatorUtils::maxLength(50)
+                    ),
+                    "date_of_birth" => array_merge(
+                        ValidatorUtils::notBlank(),
+                        ValidatorUtils::isDate()
+                    ),
+                    "nationality" => array_merge(
+                        ValidatorUtils::notBlank(),
+                        ValidatorUtils::typeIs('string'),
+                        ValidatorUtils::maxLength(50)
+                    )
+                ],
+                'allowExtraFields'   => false,
+                'allowMissingFields' => false
+            ])
+        ];
+
+        return $constraints;
+    }
+
 // ------ Getters ------
 
     /**
