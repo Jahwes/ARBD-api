@@ -63,6 +63,11 @@ class Ticket implements \JsonSerializable
         ];
     }
 
+    public function toIndex()
+    {
+        return $this->toArray();
+    }
+
     public function jsonSerialize()
     {
         return $this->toArray();

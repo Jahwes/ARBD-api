@@ -1,0 +1,13 @@
+{
+    "type": {
+        "dynamic": "strict",
+        "properties": {
+            "id": {
+                "type": "long"
+            },
+            "name": {
+                "type": "string"
+            }
+        }
+    }
+}
