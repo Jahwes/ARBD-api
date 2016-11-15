@@ -8,6 +8,8 @@ use Silex\Api\ControllerProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+use CinemaHD\Utils\Silex\ValidatorUtils;
+
 use CinemaHD\Entities\Movie;
 
 class MovieController implements ControllerProviderInterface
@@ -21,6 +23,8 @@ class MovieController implements ControllerProviderInterface
         $controllers = $app['controllers_factory'];
 
         $controllers->get('/movies', [$this, 'getMovies']);
+
+        $controllers->post("/movies", [$this, 'createMovie']);
 
         $controllers->get('/movies/{movie}', [$this, 'getMovie'])
             ->assert("movie", "\d+")
@@ -66,6 +70,32 @@ class MovieController implements ControllerProviderInterface
     public function getMovie(Application $app, Movie $movie)
     {
         return $app->json($movie, 200);
+    }
+
+    /**
+     * Créé un movie
+     *
+     * @param  Application   $app         Silex application
+     * @param  Request       $req         Requête
+     *
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     */
+    public function createMovie(Application $app, Request $req)
+    {
+        $datas = $req->request->all();
+
+        $errors = ValidatorUtils::validateEntity($app, Movie::getConstraints(), $datas);
+        if (count($errors) > 0) {
+            return $app->json($errors, 400);
+        }
+
+        $movie = new Movie();
+        $movie->setProperties($datas);
+
+        $app["orm.em"]->persist($movie);
+        $app["orm.em"]->flush();
+
+        return $app->json($movie, 201);
     }
 
     /**

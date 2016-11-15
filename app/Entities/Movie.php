@@ -3,6 +3,9 @@
 namespace CinemaHD\Entities;
 
 use Doctrine\ORM\EntityManager;
+use Symfony\Component\Validator\Constraints as Assert;
+use CinemaHD\Utils\Silex\ValidatorUtils;
+use CinemaHD\Utils\SetPropertiesTrait;
 
 use CinemaHD\Utils\Doctrine\AutoIncrementId;
 
@@ -19,6 +22,7 @@ use CinemaHD\Utils\Doctrine\AutoIncrementId;
 class Movie implements \JsonSerializable
 {
     use AutoIncrementId;
+    use SetPropertiesTrait;
 
     /**
      * @Column(type="string", name="title", length=70, nullable=true)
@@ -57,6 +61,29 @@ class Movie implements \JsonSerializable
     public function jsonSerialize()
     {
         return $this->toArray();
+    }
+
+    public static function getConstraints()
+    {
+        $constraints = [
+            new Assert\Collection([
+                'fields' => [
+                    "title" => array_merge(
+                        ValidatorUtils::notBlank(),
+                        ValidatorUtils::typeIs('string'),
+                        ValidatorUtils::maxLength(70)
+                    ),
+                    "duration" => array_merge(
+                        ValidatorUtils::notBlank(),
+                        ValidatorUtils::typeIs('integer')
+                    )
+                ],
+                'allowExtraFields'   => false,
+                'allowMissingFields' => false
+            ])
+        ];
+
+        return $constraints;
     }
 
 // ------ Getters ------
