@@ -1,27 +1,27 @@
 # language: fr
 
-@feature/create_people
-Fonctionnalité: Création d'un people
+@feature/update_people
+Fonctionnalité: Update d'un people
 
-@POST
-Scénario: Créer un people avec les bonnes infos
-    Quand       je fais un POST sur /peoples avec le corps contenu dans "add_people.json"
-    Alors       le status HTTP devrait être 201
+@PUT
+Scénario: Update un people avec les bonnes infos
+    Quand       je fais un PUT sur /peoples/1 avec le corps contenu dans "update_people.json"
+    Alors       le status HTTP devrait être 200
     Et          je devrais avoir un résultat d'API en JSON
     Et          le résultat devrait être identique au JSON suivant :
     """
     {
-        "id":"#^\\d+$#",
-        "lastname": "NEWPORT",
-        "firstname": "Biche",
-        "date_of_birth": "1955-02-21",
+        "id": 1,
+        "lastname": "GREEN",
+        "firstname": "Eva",
+        "date_of_birth": "1957-02-21",
         "nationality": "américaine"
     }
     """
 
-@POST
-Scénario: Créer un people avec des infos caca
-    Quand       je fais un POST sur /peoples avec le corps contenu dans "add_people_wrong.json"
+@PUT
+Scénario: Update un people avec des infos caca
+    Quand       je fais un PUT sur /peoples/1 avec le corps contenu dans "add_people_wrong.json"
     Alors       le status HTTP devrait être 400
     Et          je devrais avoir un résultat d'API en JSON
     Et          le résultat devrait être identique au JSON suivant :
