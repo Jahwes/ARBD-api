@@ -8,11 +8,17 @@ use Silex\Provider;
 use Pimple\Container;
 use Pimple\ServiceProviderInterface;
 
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\ParameterBag;
+
 use Silex\Provider\DoctrineServiceProvider;
 use JDesrosiers\Silex\Provider\CorsServiceProvider;
 use Dflydev\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
 use Saxulum\Console\Provider\ConsoleProvider;
 use Saxulum\DoctrineOrmManagerRegistry\Provider\DoctrineOrmManagerRegistryProvider;
+
+use Saxulum\Validator\Provider\SaxulumValidatorProvider;
+use Silex\Provider\ValidatorServiceProvider;
 
 use CinemaHD\Utils\Elasticsearch\Elasticsearch;
 use CinemaHD\Utils\Elasticsearch\CinemaHDElasticsearchIndexer;
@@ -46,6 +52,7 @@ class Config implements ServiceProviderInterface
         $this->registerServiceProviders($app);
         $this->registerRoutes($app);
         $app->after($app["cors"]);
+        $this->registerAppBefore($app);
     }
 
     /**
@@ -110,6 +117,8 @@ class Config implements ServiceProviderInterface
         $app->register(new ConsoleProvider());
         $app->register(new DoctrineOrmManagerRegistryProvider());
         $app->register(new CorsServiceProvider());
+        $app->register(new ValidatorServiceProvider());
+        $app->register(new SaxulumValidatorProvider());
 
 
         // Doctrine (db)
@@ -202,5 +211,24 @@ class Config implements ServiceProviderInterface
                 $app->mount('/', $app[$controller_name]);
             }
         }
+    }
+
+    private function registerAppBefore(Application $app)
+    {
+        // On peut faire $req->request->all() ou $req->request->get('mavariable')
+        // au lieu de faire un json_decode($req->getContent(), true) d'abord
+        $app->before(function (Request $request) {
+            // on ne s'interese qu'aux requêtes de type "application/json"
+            if (0 !== strpos($request->headers->get('Content-Type'), 'application/json')) {
+                return;
+            }
+
+            $params = json_decode($request->getContent(), true);
+            if (false === is_array($params)) {
+                $this->app->abort(400, "Invalid JSON data");
+            }
+
+            $request->request->replace($params);
+        });
     }
 }

@@ -8,6 +8,8 @@ use Silex\Api\ControllerProviderInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
+use CinemaHD\Utils\Silex\ValidatorUtils;
+
 use CinemaHD\Entities\People;
 
 class PeopleController implements ControllerProviderInterface
@@ -25,6 +27,8 @@ class PeopleController implements ControllerProviderInterface
         $controllers->get('/peoples/{people}', [$this, 'getPeople'])
             ->assert("people", "\d+")
             ->convert("people", $app["findOneOr404"]('People', 'id'));
+
+        $controllers->post("/peoples", [$this, 'createPeople']);
 
         $controllers->get('/peoples/{people}/movies', [$this, 'getMoviesForPeople'])
             ->assert("people", "\d+")
@@ -64,6 +68,32 @@ class PeopleController implements ControllerProviderInterface
     public function getPeople(Application $app, People $people)
     {
         return $app->json($people, 200);
+    }
+
+    /**
+     * Créé un people
+     *
+     * @param  Application   $app         Silex application
+     * @param  Request       $req         Requête
+     *
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     */
+    public function createPeople(Application $app, Request $req)
+    {
+        $datas = $req->request->all();
+
+        $errors = ValidatorUtils::validateEntity($app, People::getConstraints(), $datas);
+        if (count($errors) > 0) {
+            return $app->json($errors, 400);
+        }
+
+        $people = new People();
+        $people->setProperties($datas);
+
+        $app["orm.em"]->persist($people);
+        $app["orm.em"]->flush();
+
+        return $app->json($people, 201);
     }
 
     /**

@@ -4,8 +4,6 @@ namespace CinemaHD\Utils\Elasticsearch;
 
 use Doctrine\ORM\Tools\Pagination\Paginator;
 
-use CinemaHD\Utils\Elasticsearch\AbstractIndexer;
-
 use Silex\Application;
 
 /**
