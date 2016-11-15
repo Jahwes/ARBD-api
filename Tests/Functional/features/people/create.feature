@@ -14,7 +14,7 @@ Scénario: Créer un people avec les bonnes infos
         "id":"#^\\d+$#",
         "lastname": "NEWPORT",
         "firstname": "Biche",
-        "date_of_birth": "1955-02-21T00:00:00+02:00",
+        "date_of_birth": "1955-02-21",
         "nationality": "américaine"
     }
     """

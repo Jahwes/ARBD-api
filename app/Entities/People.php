@@ -5,6 +5,9 @@ namespace CinemaHD\Entities;
 use Doctrine\ORM\EntityManager;
 
 use CinemaHD\Utils\Doctrine\AutoIncrementId;
+use Symfony\Component\Validator\Constraints as Assert;
+use CinemaHD\Utils\Silex\ValidatorUtils;
+use CinemaHD\Utils\SetPropertiesTrait;
 
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\PeopleRepository")
@@ -14,6 +17,7 @@ use CinemaHD\Utils\Doctrine\AutoIncrementId;
 class People implements \JsonSerializable
 {
     use AutoIncrementId;
+    use SetPropertiesTrait;
 
     /**
      * @Column(type="string", name="lastname", length=50, nullable=true)
@@ -179,7 +183,7 @@ class People implements \JsonSerializable
      */
     public function setDateOfBirth($birth_date)
     {
-        $this->date_of_birth = $birth_date;
+        $this->date_of_birth = new \DateTime(date($birth_date));
 
         return $this;
     }

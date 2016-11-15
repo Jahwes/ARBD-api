@@ -88,7 +88,7 @@ class ValidatorUtils
     {
         return [
             new Assert\Regex([
-                'pattern' => '/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/',
+                'pattern' => '/\d{4}-\d{2}-\d{2}/',
                 'message' => 'This value is not a valid date.'
             ])
         ];

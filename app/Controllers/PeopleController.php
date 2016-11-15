@@ -87,7 +87,13 @@ class PeopleController implements ControllerProviderInterface
             return $app->json($errors, 400);
         }
 
-        return $app->json($datas, 201);
+        $people = new People();
+        $people->setProperties($datas);
+
+        $app["orm.em"]->persist($people);
+        $app["orm.em"]->flush();
+
+        return $app->json($people, 201);
     }
 
     /**

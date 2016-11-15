@@ -17,6 +17,9 @@ use Dflydev\Provider\DoctrineOrm\DoctrineOrmServiceProvider;
 use Saxulum\Console\Provider\ConsoleProvider;
 use Saxulum\DoctrineOrmManagerRegistry\Provider\DoctrineOrmManagerRegistryProvider;
 
+use Saxulum\Validator\Provider\SaxulumValidatorProvider;
+use Silex\Provider\ValidatorServiceProvider;
+
 use CinemaHD\Utils\Elasticsearch\Elasticsearch;
 use CinemaHD\Utils\Elasticsearch\CinemaHDElasticsearchIndexer;
 
@@ -114,6 +117,8 @@ class Config implements ServiceProviderInterface
         $app->register(new ConsoleProvider());
         $app->register(new DoctrineOrmManagerRegistryProvider());
         $app->register(new CorsServiceProvider());
+        $app->register(new ValidatorServiceProvider());
+        $app->register(new SaxulumValidatorProvider());
 
 
         // Doctrine (db)
