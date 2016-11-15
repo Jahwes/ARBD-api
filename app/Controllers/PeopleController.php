@@ -30,6 +30,10 @@ class PeopleController implements ControllerProviderInterface
 
         $controllers->post("/peoples", [$this, 'createPeople']);
 
+        $controllers->put('/peoples/{people}', [$this, 'updatePeople'])
+            ->assert("people", "\d+")
+            ->convert("people", $app["findOneOr404"]('People', 'id'));
+
         $controllers->get('/peoples/{people}/movies', [$this, 'getMoviesForPeople'])
             ->assert("people", "\d+")
             ->convert("people", $app["findOneOr404"]('People', 'id'));
@@ -94,6 +98,32 @@ class PeopleController implements ControllerProviderInterface
         $app["orm.em"]->flush();
 
         return $app->json($people, 201);
+    }
+
+    /**
+     * Update un people
+     *
+     * @param  Application   $app         Silex application
+     * @param  Request       $req         Requête
+     * @param  People        $people      L'entité du people
+     *
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     */
+    public function updatePeople(Application $app, Request $req, People $people)
+    {
+        $datas = $req->request->all();
+
+        $errors = ValidatorUtils::validateEntity($app, People::getConstraints(), $datas);
+        if (count($errors) > 0) {
+            return $app->json($errors, 400);
+        }
+
+        $people->setProperties($datas);
+
+        $app["orm.em"]->persist($people);
+        $app["orm.em"]->flush();
+
+        return $app->json($people, 200);
     }
 
     /**
