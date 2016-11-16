@@ -26,6 +26,10 @@ class MovieController implements ControllerProviderInterface
 
         $controllers->post("/movies", [$this, 'createMovie']);
 
+        $controllers->put('/movies/{movie}', [$this, 'updateMovie'])
+            ->assert("movie", "\d+")
+            ->convert("movie", $app["findOneOr404"]('Movie', 'id'));
+
         $controllers->get('/movies/{movie}', [$this, 'getMovie'])
             ->assert("movie", "\d+")
             ->convert("movie", $app["findOneOr404"]('Movie', 'id'));
@@ -96,6 +100,32 @@ class MovieController implements ControllerProviderInterface
         $app["orm.em"]->flush();
 
         return $app->json($movie, 201);
+    }
+
+    /**
+     * Update un movie
+     *
+     * @param  Application   $app         Silex application
+     * @param  Request       $req         Requête
+     * @param  Movie         $movie       L'entité movie
+     *
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     */
+    public function updateMovie(Application $app, Request $req, Movie $movie)
+    {
+        $datas = $req->request->all();
+
+        $errors = ValidatorUtils::validateEntity($app, Movie::getConstraints(), $datas);
+        if (count($errors) > 0) {
+            return $app->json($errors, 400);
+        }
+
+        $movie->setProperties($datas);
+
+        $app["orm.em"]->persist($movie);
+        $app["orm.em"]->flush();
+
+        return $app->json($movie, 200);
     }
 
     /**
