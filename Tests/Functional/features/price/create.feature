@@ -59,6 +59,6 @@ Scénario: Créer un price avec des infos caca
     """
     [
         "[type]: The value you selected is not a valid choice.",
-        "[value]: This value should be of type integer."
+        "[value]: This value should be of type float."
     ]
     """

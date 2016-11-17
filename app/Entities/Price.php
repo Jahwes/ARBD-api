@@ -69,7 +69,7 @@ class Price implements \JsonSerializable
                     ),
                     "value" => array_merge(
                         ValidatorUtils::notBlank(),
-                        ValidatorUtils::typeIs('integer')
+                        ValidatorUtils::typeIs('float')
                     )
                 ],
                 'allowExtraFields'   => false,
