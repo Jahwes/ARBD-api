@@ -61,10 +61,6 @@ class PriceController implements ControllerProviderInterface
             return $app->json($errors, 400);
         }
 
-        $price = new Price();
-        $price->setProperties($datas);
-        $price->setCurrent(true);
-
         $current_prices = $app["repositories"]("Price")->findBy([
             "type"    => $datas["type"],
             "current" => true
@@ -74,6 +70,10 @@ class PriceController implements ControllerProviderInterface
             $current_price->setCurrent(false);
             $app["orm.em"]->persist($current_price);
         }
+
+        $price = new Price();
+        $price->setProperties($datas);
+        $price->setCurrent(true);
 
         $app["orm.em"]->persist($price);
         $app["orm.em"]->flush();
