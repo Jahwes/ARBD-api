@@ -5,6 +5,9 @@ namespace CinemaHD\Entities;
 use Doctrine\ORM\EntityManager;
 
 use CinemaHD\Utils\Doctrine\AutoIncrementId;
+use Symfony\Component\Validator\Constraints as Assert;
+use CinemaHD\Utils\Silex\ValidatorUtils;
+use CinemaHD\Utils\SetPropertiesTrait;
 
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\PriceRepository")
@@ -14,6 +17,7 @@ use CinemaHD\Utils\Doctrine\AutoIncrementId;
 class Price implements \JsonSerializable
 {
     use AutoIncrementId;
+    use SetPropertiesTrait;
 
     /**
      * @Column(type="string", name="type_name", nullable=true)
@@ -48,6 +52,32 @@ class Price implements \JsonSerializable
     public function jsonSerialize()
     {
         return $this->toArray();
+    }
+
+    public static function getConstraints()
+    {
+        $constraints = [
+            new Assert\Collection([
+                'fields' => [
+                    "type" => array_merge(
+                        ValidatorUtils::notBlank(),
+                        ValidatorUtils::typeIs('string'),
+                        ValidatorUtils::maxLength(100),
+                        ValidatorUtils::isOneOf([
+                            "Plein tarif", "Tarif reduit", "Senior", "Tarif etudiant"
+                        ])
+                    ),
+                    "value" => array_merge(
+                        ValidatorUtils::notBlank(),
+                        ValidatorUtils::typeIs('integer')
+                    )
+                ],
+                'allowExtraFields'   => false,
+                'allowMissingFields' => false
+            ])
+        ];
+
+        return $constraints;
     }
 
 // ------ Getters ------
