@@ -11,6 +11,7 @@ use CinemaHD\Utils\Doctrine\AutoIncrementId;
 
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\MovieRepository")
+ * @EntityListeners({"CinemaHD\Utils\Doctrine\Listeners\MovieIndexerListener"})
  * @Table(
  *     name="Movie",
  *     indexes={

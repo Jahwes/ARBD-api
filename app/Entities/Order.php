@@ -11,6 +11,7 @@ use CinemaHD\Entities\User;
 
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\OrderRepository")
+ * @EntityListeners({"CinemaHD\Utils\Doctrine\Listeners\OrderIndexerListener"})
  * @Table(
  *     name="`Order`",
  *     indexes={

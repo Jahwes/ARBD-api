@@ -53,6 +53,7 @@ class Config implements ServiceProviderInterface
         $this->registerRoutes($app);
         $app->after($app["cors"]);
         $this->registerAppBefore($app);
+        $this->registerListeners($app);
     }
 
     /**
@@ -230,5 +231,30 @@ class Config implements ServiceProviderInterface
 
             $request->request->replace($params);
         });
+    }
+
+    private function registerListeners(Application $app)
+    {
+        $movie_index_listener     = new Utils\Doctrine\Listeners\MovieIndexerListener($app);
+        $order_index_listener     = new Utils\Doctrine\Listeners\OrderIndexerListener($app);
+        $people_index_listener    = new Utils\Doctrine\Listeners\PeopleIndexerListener($app);
+        $price_index_listener     = new Utils\Doctrine\Listeners\PriceIndexerListener($app);
+        $room_index_listener      = new Utils\Doctrine\Listeners\RoomIndexerListener($app);
+        $showing_index_listener   = new Utils\Doctrine\Listeners\ShowingIndexerListener($app);
+        $spectator_index_listener = new Utils\Doctrine\Listeners\SpectatorIndexerListener($app);
+        $ticket_index_listener    = new Utils\Doctrine\Listeners\TicketIndexerListener($app);
+        $type_index_listener      = new Utils\Doctrine\Listeners\TypeIndexerListener($app);
+        $user_index_listener      = new Utils\Doctrine\Listeners\UserIndexerListener($app);
+
+        $app['orm.em']->getConfiguration()->getEntityListenerResolver()->register($movie_index_listener);
+        $app['orm.em']->getConfiguration()->getEntityListenerResolver()->register($order_index_listener);
+        $app['orm.em']->getConfiguration()->getEntityListenerResolver()->register($people_index_listener);
+        $app['orm.em']->getConfiguration()->getEntityListenerResolver()->register($price_index_listener);
+        $app['orm.em']->getConfiguration()->getEntityListenerResolver()->register($room_index_listener);
+        $app['orm.em']->getConfiguration()->getEntityListenerResolver()->register($showing_index_listener);
+        $app['orm.em']->getConfiguration()->getEntityListenerResolver()->register($spectator_index_listener);
+        $app['orm.em']->getConfiguration()->getEntityListenerResolver()->register($ticket_index_listener);
+        $app['orm.em']->getConfiguration()->getEntityListenerResolver()->register($type_index_listener);
+        $app['orm.em']->getConfiguration()->getEntityListenerResolver()->register($user_index_listener);
     }
 }
