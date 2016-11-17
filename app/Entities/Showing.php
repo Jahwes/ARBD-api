@@ -11,6 +11,7 @@ use CinemaHD\Entities\Movie;
 
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\ShowingRepository")
+ * @EntityListeners({"CinemaHD\Utils\Doctrine\Listeners\ShowingIndexerListener"})
  * @Table(
  *     name="Showing",
  *     indexes={

@@ -11,6 +11,7 @@ use CinemaHD\Utils\SetPropertiesTrait;
 
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\PriceRepository")
+ * @EntityListeners({"CinemaHD\Utils\Doctrine\Listeners\PriceIndexerListener"})
  * @Table(name="Price")
  * @HasLifecycleCallbacks
  */

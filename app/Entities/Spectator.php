@@ -8,6 +8,7 @@ use CinemaHD\Utils\Doctrine\AutoIncrementId;
 
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\SpectatorRepository")
+ * @EntityListeners({"CinemaHD\Utils\Doctrine\Listeners\SpectatorIndexerListener"})
  * @Table(name="Spectator")
  * @HasLifecycleCallbacks
  */

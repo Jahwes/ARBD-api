@@ -11,6 +11,7 @@ use CinemaHD\Utils\SetPropertiesTrait;
 
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\PeopleRepository")
+ * @EntityListeners({"CinemaHD\Utils\Doctrine\Listeners\PeopleIndexerListener"})
  * @Table(name="People")
  * @HasLifecycleCallbacks
  */

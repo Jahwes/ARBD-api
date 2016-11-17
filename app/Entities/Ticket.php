@@ -13,6 +13,7 @@ use CinemaHD\Entities\Order;
 
 /**
  * @Entity(repositoryClass="CinemaHD\Repositories\TicketRepository")
+ * @EntityListeners({"CinemaHD\Utils\Doctrine\Listeners\TicketIndexerListener"})
  * @Table(
  *     name="Ticket",
  *     indexes={

@@ -1,5 +1,5 @@
 {
-    "total": 14,
+    "total": 15,
     "max_score": 1,
     "hits": [
         {
@@ -28,11 +28,6 @@
             "duration": 120
         },
         {
-            "id": 1,
-            "title": "Miss Peregrine et les enfants particuliers",
-            "duration": 127
-        },
-        {
             "id": 6,
             "title": "Fatal Punishment",
             "duration": 120
@@ -41,6 +36,11 @@
             "id": 13,
             "title": "Microcosmos",
             "duration": 120
+        },
+        {
+            "id": 1,
+            "title": "Miss Peregrine et les enfants particuliers",
+            "duration": 127
         },
         {
             "id": 2,
