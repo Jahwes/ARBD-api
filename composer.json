@@ -24,7 +24,8 @@
         "behat/behat": "3.x",
         "phpunit/php-code-coverage": "3.x",
         "phpunit/phpcov": "3.x",
-        "texthtml/whoops-silex": "~1.0"
+        "texthtml/whoops-silex": "~1.0",
+        "sorien/silex-dbal-profiler": "~2.0@dev"
     },
     "authors": [
         {
