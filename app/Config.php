@@ -167,11 +167,11 @@ class Config implements ServiceProviderInterface
         $app['console.commands'] = $app->extend('console.commands', function ($commands) use ($app) {
             // Ajout des commandes Elasticsearch
             foreach ($app["elasticsearch.names"] as $index_name) {
-                $command = new Utils\Elasticsearch\SpecificIndexCommand($index_name);
+                $command = new ElasticsearchCommand\SpecificIndexCommand($index_name);
                 $command->setContainer($app);
                 $commands[] = $command;
                 foreach ($app["elasticsearch.{$index_name}.types"] as $type) {
-                    $command = new Utils\Elasticsearch\SpecificIndexTypeCommand($index_name, $type);
+                    $command = new ElasticsearchCommand\SpecificIndexTypeCommand($index_name, $type);
                     $command->setContainer($app);
                     $commands[] = $command;
                 }
