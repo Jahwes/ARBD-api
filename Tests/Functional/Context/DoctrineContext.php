@@ -15,6 +15,7 @@ class DoctrineContext extends BaseContext
      */
     public static function dump()
     {
+        echo "dropping database";
         passthru("vendor/doctrine/orm/bin/doctrine orm:schema-tool:drop --force --full-database");
         passthru("./bin/dump ./Tests/Data/test*.sql");
     }

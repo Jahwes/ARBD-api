@@ -66,12 +66,16 @@ class Ticket implements \JsonSerializable
 
     public function toIndex()
     {
+
         $price     = $this->getPrice();
         $showing   = $this->getShowing();
         $spectator = $this->getSpectator();
         $order     = $this->getOrder();
+        $company = [];
+        preg_match_all("/^.*@(.*)\.\w/m", $order->getUser()->getEmail(), $company);
 
         return [
+            "id"               => $this->getId(),
             "price_type"       => $price->getType(),
             "price_value"      => $price->getValue(),
             "price_current"    => $price->getCurrent(),
@@ -82,7 +86,8 @@ class Ticket implements \JsonSerializable
             "spectator_title"  => $spectator->getTitle(),
             "order_created_at" => $order->getCreatedAt('Y-m-d'),
             "user_title"       => $order->getUser()->getTitle(),
-            "user_email"       => $order->getUser()->getEmail()
+            "user_email"       => $order->getUser()->getEmail(),
+            "company"          => $company[1][0]
         ];
     }
 

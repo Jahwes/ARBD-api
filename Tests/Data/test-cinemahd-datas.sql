@@ -1,14 +1,27 @@
+--
+-- Database: `test_cinemahd`
+--
+
+
+--
+-- Dumping data for table `Movie`
+--
 INSERT INTO `Movie` (`id`, `title`, `duration`)
 VALUES
-    (1, 'Fatal Punishment'         , 120),
-    (2, 'Sudden Blood'             , 120),
-    (3, 'Le Grand Vert'            , 120),
-    (4, "Coup de foudre à Shanghai", 120),
-    (5, 'Star Fight'                , 120),
-    (6, 'Le Donjon de la mort 4'    , 120),
-    (7, 'Master of Assassination'   , 120),
-    (8, 'Microcosmos'               , 120),
-    (9, 'L\'horreur dans le miroir' , 120);
+    (1,  'Miss Peregrine et les enfants particuliers', 127),
+    (2,  'Deepwater'                                 , 107),
+    (3,  'Kubo et l\'armure magique'                 , 102),
+    (4,  'Mechanic Résurrection'                     , 99 ),
+    (5,  'Pacific Rim'                               , 130),
+    (6,  'Fatal Punishment'                          , 120),
+    (7,  'Sudden Blood'                              , 120),
+    (8,  'Le Grand Vert'                             , 120),
+    (9,  'Coup de foudre à Shanghai'                 , 120),
+    (10, 'Star Fight'                                , 120),
+    (11, 'Le Donjon de la mort 4'                    , 120),
+    (12, 'Master of Assassination'                   , 120),
+    (13, 'Microcosmos'                               , 120),
+    (14, 'L\’horreur dans le miroir'                 , 120);
 
 --
 -- Dumping data for table `User`
@@ -71,30 +84,50 @@ VALUES
 --
 INSERT INTO `Price` (`id`, `type_name`, `value`, `current`)
 VALUES
-    (1, 'Plein tarif'   , 9.4, 1),
-    (2, 'Tarif reduit'  , 7.4, 1),
-    (3, 'Senior'        , 6.8, 1),
-    (4, 'Tarif etudiant', 6.8, 1);
+    (1, 'Plein tarif'   , 9.4, 0),
+    (2, 'Tarif reduit'  , 7.4, 0),
+    (3, 'Senior'        , 6.8, 0),
+    (4, 'Tarif etudiant', 6.8, 0),
+    (5, 'Plein tarif'   , 10 , 1),
+    (6, 'Tarif reduit'  , 8  , 1),
+    (7, 'Senior'        , 7  , 1),
+    (8, 'Tarif etudiant', 7  , 1);
 
 --
 -- Dumping data for table `People`
 --
 INSERT INTO `People` (`id`, `firstname`, `lastname`, `date_of_birth`, `nationality`)
 VALUES
-    (1,  'Norman'   , 'GRANT'    , '1980-09-10', 'américaine' ),
-    (2,  'Rhonda'   , 'BRADY'    , '1965-06-23', 'américaine' ),
-    (3,  'Frankie'  , 'PAYNE'    , '1976-12-12', 'britannique'),
-    (4,  'Kayla'    , 'WELCH'    , '1987-10-26', 'allemande'  ),
-    (5,  'Dean'     , 'HOPKINS'  , '1956-03-06', 'américaine' ),
-    (6,  'Lynn'     , 'COOK'     , '1989-05-23', 'britannique'),
-    (7,  'Merle'    , 'FLOYD'    , '1976-08-19', 'britannique'),
-    (8,  'Marcella' , 'LARSON'   , '1986-07-26', 'britannique'),
-    (9,  'William'  , 'COLLIER'  , '1989-04-02', 'française'  ),
-    (10, 'Orlando'  , 'RODRIGUEZ', '1968-08-23', 'espagnole'  ),
-    (11, 'Dianne'   , 'BREWER'   , '1987-09-09', 'américaine' ),
-    (12, 'Priscilla', 'LITTLE'   , '1991-09-09', 'américaine' );
-
-
+    (1 , 'Eva'      , 'GREEN'      , '1980-07-06', 'française'    ),
+    (2 , 'Asa'      , 'BUTTERFIELD', '1997-04-01', 'britannique'  ),
+    (3 , 'Samuel'   , 'JACKSON'    , '1948-12-21', 'américaine'   ),
+    (4 , 'Tim'      , 'BURTON'     , '1958-08-25', 'américaine'   ),
+    (5 , 'Peter'    , 'BERG'       , '1964-03-11', 'américaine'   ),
+    (6 , 'Marc'     , 'WAHLBERG'   , '1971-06-05', 'américaine'   ),
+    (7 , 'Kate'     , 'HUDSON'     , '1979-04-19', 'américaine'   ),
+    (8 , 'Dylan'    , 'O\'BRIAN'   , '1991-08-26', 'américaine'   ),
+    (9 , 'Travis'   , 'KNIGHT'     , '1978-11-07', 'américaine'   ),
+    (10, 'Charlize' , 'THERON'     , '1975-08-07', 'sud-africaine'),
+    (11, 'Art'      , 'PARKINSON'  , '2001-10-19', 'irlandaise'   ),
+    (12, 'Denis'    , 'GANSEL'     , '1973-10-04', 'allemande'    ),
+    (13, 'Jason'    , 'STATHAM'    , '1967-07-26', 'britannique'  ),
+    (14, 'Jessica'  , 'ALBA'       , '1981-04-28', 'américaine'   ),
+    (15, 'Tommy'    , 'LEE JONES'  , '1946-09-15', 'américaine'   ),
+    (16, 'Guillermo', 'DEL TORO'   , '1964-10-09', 'mexicaine'    ),
+    (17, 'Charlie'  , 'HUNNAM'     , '1980-04-10', 'britannique'  ),
+    (18, 'Rinko'    , 'KIKUCHI'    , '1981-01-06', 'japonaise'    ),
+    (19, 'Norman'   , 'GRANT'      , '1980-09-10', 'américaine'   ),
+    (20, 'Rhonda'   , 'BRADY'      , '1965-06-23', 'américaine'   ),
+    (21, 'Frankie'  , 'PAYNE'      , '1976-12-12', 'britannique'  ),
+    (22, 'Kayla'    , 'WELCH'      , '1987-10-26', 'allemande'    ),
+    (23, 'Dean'     , 'HOPKINS'    , '1956-03-06', 'américaine'   ),
+    (24, 'Lynn'     , 'COOK'       , '1989-05-23', 'britannique'  ),
+    (25, 'Merle'    , 'FLOYD'      , '1976-08-19', 'britannique'  ),
+    (26, 'Marcella' , 'LARSON'     , '1986-07-26', 'britannique'  ),
+    (27, 'William'  , 'COLLIER'    , '1989-04-02', 'française'    ),
+    (28, 'Priscilla', 'LITTLE'     , '1991-09-09', 'américaine'   ),
+    (29, 'Orlando'  , 'RODRIGUEZ'  , '1968-08-23', 'espagnole'    ),
+    (30, 'Dianne'   , 'BREWER'     , '1987-09-09', 'américaine'   );
 
 --
 -- Dumping data for table `Movie_has_Type`
@@ -118,41 +151,60 @@ VALUES
 --
 INSERT INTO `Movie_has_People` (`Movie_id`, `People_id`, `role`, `significance`)
 VALUES
-    (1,  1, 'acteur' ,  'principal'),
-    (1,  2, 'actrice',  'principal'),
-    (1,  3, 'acteur' , 'secondaire'),
-    (1,  4, 'actrice', 'secondaire'),
-    (2,  5, 'acteur' ,  'principal'),
-    (2,  6, 'actrice',  'principal'),
-    (2,  1, 'acteur' , 'secondaire'),
-    (2,  2, 'actrice', 'secondaire'),
-    (3,  7, 'acteur' ,  'principal'),
-    (3,  8, 'actrice',  'principal'),
-    (3,  9, 'acteur' , 'secondaire'),
-    (3,  6, 'actrice', 'secondaire'),
-    (4,  9, 'acteur' ,  'principal'),
-    (4, 12, 'actrice',  'principal'),
-    (4,  5, 'acteur' , 'secondaire'),
-    (4,  4, 'actrice', 'secondaire'),
-    (5, 10, 'acteur' ,  'principal'),
-    (5, 11, 'actrice',  'principal'),
-    (5,  1, 'acteur' , 'secondaire'),
-    (5,  3, 'acteur' , 'secondaire'),
-    (6,  5,  'acteur',  'principal'),
-    (6, 10,  'acteur',  'principal'),
-    (6,  4, 'actrice', 'secondaire'),
-    (6,  8, 'actrice', 'secondaire'),
-    (7, 12, 'actrice', 'principal'),
-    (7,  3,  'acteur', 'secondaire'),
-    (7,  9,  'acteur', 'secondaire'),
-    (7,  2, 'actrice', 'secondaire'),
-    (8, 11, 'actrice', 'principal'),
-    (8,  5,  'acteur', 'secondaire'),
-    (8,  6, 'actrice', 'secondaire'),
-    (8,  8, 'actrice', 'secondaire'),
-    (9,  7,  'acteur',  'principal'),
-    (9,  3, 'actrice', 'secondaire'),
-    (9,  4,  'acteur', 'secondaire');
+    (1 , 1 , 'actrice'    , 'principal' ),
+    (1 , 2 , 'acteur'     , 'principal' ),
+    (1 , 3 , 'acteur'     , 'secondaire'),
+    (1 , 4 , 'réalisateur', null        ),
+    (2 , 5 , 'réalisateur', null        ),
+    (2 , 6 , 'acteur'     , 'principal' ),
+    (2 , 7 , 'actrice'    , 'principal' ),
+    (2 , 8 , 'acteur'     , 'secondaire'),
+    (3 , 9 , 'producteur' , null        ),
+    (3 , 10, 'actrice'    , 'principal' ),
+    (3 , 11, 'acteur'     , 'secondaire'),
+    (4 , 12, 'réalisateur', null        ),
+    (4 , 13, 'acteur'     , 'principal' ),
+    (4 , 14, 'actrice'    , 'principal' ),
+    (4 , 15, 'acteur'     , 'secondaire'),
+    (5 , 16, 'réalisateur', null        ),
+    (5 , 17, 'acteur'     , 'principal' ),
+    (5 , 18, 'actrice'    , 'principal' ),
+    (5 , 1 , 'producteur' , null        ),
+    (6 , 19, 'acteur'     , 'principal' ),
+    (6 , 20, 'actrice'    , 'principal' ),
+    (6 , 21, 'acteur'     , 'secondaire'),
+    (6 , 22, 'actrice'    , 'secondaire'),
+    (7 , 23, 'acteur'     , 'principal' ),
+    (7 , 24, 'actrice'    , 'principal' ),
+    (7 , 19, 'acteur'     , 'secondaire'),
+    (7 , 20, 'actrice'    , 'secondaire'),
+    (8 , 25, 'acteur'     , 'principal' ),
+    (8 , 26, 'actrice'    , 'principal' ),
+    (8 , 27, 'acteur'     , 'secondaire'),
+    (8 , 24, 'actrice'    , 'secondaire'),
+    (9 , 27, 'acteur'     , 'principal' ),
+    (9 , 28, 'actrice'    , 'principal' ),
+    (9 , 23, 'acteur'     , 'secondaire'),
+    (9 , 22, 'actrice'    , 'secondaire'),
+    (10, 29, 'acteur'     , 'principal' ),
+    (10, 30, 'actrice'    , 'principal' ),
+    (10, 19, 'acteur'     , 'secondaire'),
+    (10, 21, 'acteur'     , 'secondaire'),
+    (11, 23, 'acteur'     , 'principal' ),
+    (11, 29, 'acteur'     , 'principal' ),
+    (11, 22, 'actrice'    , 'secondaire'),
+    (11, 26, 'actrice'    , 'secondaire'),
+    (12, 28, 'actrice'    , 'principal' ),
+    (12, 21, 'acteur'     , 'secondaire'),
+    (12, 27, 'acteur'     , 'secondaire'),
+    (12, 20, 'actrice'    , 'secondaire'),
+    (13, 30, 'actrice'    , 'principal' ),
+    (13, 23, 'acteur'     , 'secondaire'),
+    (13, 26, 'actrice'    , 'secondaire'),
+    (13, 24, 'actrice'    , 'secondaire'),
+    (14, 25, 'acteur'     , 'principal' ),
+    (14, 21, 'acteur'     , 'secondaire'),
+    (14, 22, 'actrice'    , 'secondaire');
 
 --
 -- Dumping data for table `Order`

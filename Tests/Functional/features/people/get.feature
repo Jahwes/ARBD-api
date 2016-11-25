@@ -40,7 +40,7 @@ Scénario: Get le score d'un people
     Et          je devrais avoir un résultat d'API en JSON
     Et          le résultat devrait être identique au JSON suivant :
     """
-    5
+    4
     """
 
 @GET
@@ -51,10 +51,17 @@ Scénario: Get le top des acteurs
     Et          le résultat devrait être identique au JSON suivant :
     """
     {
-        "GRANT Norman": 5,
-        "PAYNE Frankie": 2,
-        "WELCH Kayla": 2,
-        "HOPKINS Dean": 2,
+        "BUTTERFIELD Asa": 4,
+        "JACKSON Samuel": 2,
+        "WAHLBERG Marc": 2,
+        "O'BRIAN Dylan": 1,
+        "PARKINSON Art": 0,
+        "STATHAM Jason": 0,
+        "LEE JONES Tommy": 0,
+        "HUNNAM Charlie": 0,
+        "GRANT Norman": 0,
+        "PAYNE Frankie": 0,
+        "HOPKINS Dean": 0,
         "FLOYD Merle": 0,
         "COLLIER William": 0,
         "RODRIGUEZ Orlando": 0
@@ -69,17 +76,30 @@ Scénario: Get le top mixte
     Et          le résultat devrait être identique au JSON suivant :
     """
     {
-        "GRANT Norman": 5,
-        "BRADY Rhonda": 5,
-        "PAYNE Frankie": 2,
-        "WELCH Kayla": 2,
-        "HOPKINS Dean": 2,
-        "COOK Lynn": 2,
-        "FLOYD Merle": 0,
-        "LARSON Marcella": 0,
-        "COLLIER William": 0,
+        "BUTTERFIELD Asa": 4,
+        "GREEN Eva": 4,
+        "JACKSON Samuel": 2,
+        "WAHLBERG Marc": 2,
+        "HUDSON Kate": 2,
+        "O'BRIAN Dylan": 1,
+        "WELCH Kayla": 0,
         "RODRIGUEZ Orlando": 0,
-        "BREWER Dianne": 0,
-        "LITTLE Priscilla": 0
+        "LITTLE Priscilla": 0,
+        "COLLIER William": 0,
+        "LARSON Marcella": 0,
+        "FLOYD Merle": 0,
+        "COOK Lynn": 0,
+        "HOPKINS Dean": 0,
+        "KIKUCHI Rinko": 0,
+        "PAYNE Frankie": 0,
+        "BRADY Rhonda": 0,
+        "GRANT Norman": 0,
+        "HUNNAM Charlie": 0,
+        "LEE JONES Tommy": 0,
+        "ALBA Jessica": 0,
+        "STATHAM Jason": 0,
+        "PARKINSON Art": 0,
+        "THERON Charlize": 0,
+        "BREWER Dianne": 0
     }
     """

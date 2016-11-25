@@ -125,6 +125,7 @@ class OrderController implements ControllerProviderInterface
     {
         $is_3D        = "Oui" === $movie["3D"];
         $date         = new \DateTime("{$movie["Jour"]} {$movie["Horaire"]}:00");
+
         $movie_entity = $app["repositories"]("Movie")->findOneBy(["title" => $movie["Titre"]]);
 
         $showing = $app["repositories"]("Showing")->findOneBy([

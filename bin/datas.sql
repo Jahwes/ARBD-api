@@ -4,11 +4,11 @@ VALUES
     (2, 'Sudden Blood'             , 120),
     (3, 'Le Grand Vert'            , 120),
     (4, "Coup de foudre à Shanghai", 120),
-    (5, 'Star Fight'                , 120),
-    (6, 'Le Donjon de la mort 4'    , 120),
-    (7, 'Master of Assassination'   , 120),
-    (8, 'Microcosmos'               , 120),
-    (9, 'L\'horreur dans le miroir' , 120);
+    (5, 'Star Fight'               , 120),
+    (6, 'Le Donjon de la mort 4'   , 120),
+    (7, 'Master of Assassination'  , 120),
+    (8, 'Microcosmos'              , 120),
+    (9, 'L\'horreur dans le miroir', 120);
 
 --
 -- Dumping data for table `User`

@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `cinemahd`.`User` (
   `email` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC))
-ENGINE = InnoDB AUTO_INCREMENT=6;
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `cinemahd`.`Order` (
     REFERENCES `cinemahd`.`User` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB AUTO_INCREMENT=7;
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -76,7 +76,7 @@ CREATE TABLE IF NOT EXISTS `cinemahd`.`Movie` (
   `title` VARCHAR(70) CHARACTER SET utf8 NULL,
   `duration` INT NULL,
   PRIMARY KEY (`id`))
-ENGINE = InnoDB AUTO_INCREMENT=15;
+ENGINE = InnoDB AUTO_INCREMENT=9;
 
 
 -- -----------------------------------------------------
@@ -153,7 +153,7 @@ CREATE TABLE IF NOT EXISTS `cinemahd`.`Showing` (
     REFERENCES `cinemahd`.`Movie` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB AUTO_INCREMENT=6;
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -168,7 +168,7 @@ CREATE TABLE IF NOT EXISTS `cinemahd`.`Spectator` (
   `age` INT NULL,
   `title` ENUM('Monsieur', 'Madame', 'Mademoiselle') NULL,
   PRIMARY KEY (`id`))
-ENGINE = InnoDB AUTO_INCREMENT=10;
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -207,7 +207,7 @@ CREATE TABLE IF NOT EXISTS `cinemahd`.`Ticket` (
     REFERENCES `cinemahd`.`Order` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB AUTO_INCREMENT=4;
+ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
@@ -222,7 +222,7 @@ CREATE TABLE IF NOT EXISTS `cinemahd`.`People` (
   `date_of_birth` DATE NULL,
   `nationality` VARCHAR(50) NULL,
   PRIMARY KEY (`id`))
-ENGINE = InnoDB AUTO_INCREMENT=19;
+ENGINE = InnoDB AUTO_INCREMENT=12;
 
 -- -----------------------------------------------------
 -- Table `cinemahd`.`Movie_has_People`
@@ -258,29 +258,17 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- Database: `cinemahd`
 --
 
-
 INSERT IGNORE INTO `Movie` (`id`, `title`, `duration`)
 VALUES
     (1, 'Fatal Punishment'         , 120),
     (2, 'Sudden Blood'             , 120),
     (3, 'Le Grand Vert'            , 120),
     (4, "Coup de foudre à Shanghai", 120),
-    (5, 'Star Fight'                , 120),
-    (6, 'Le Donjon de la mort 4'    , 120),
-    (7, 'Master of Assassination'   , 120),
-    (8, 'Microcosmos'               , 120),
-    (9, 'L\'horreur dans le miroir' , 120);
-
---
--- Dumping data for table `User`
---
-INSERT IGNORE INTO `User` (`id`, `lastname`, `firstname`, `date_of_birth`, `title`, `email`)
-VALUES
-    (1, 'HEART'   , 'Kingston' , '1994-02-15', 'Monsieur'    , 'heart_k@etna.io'                 ),
-    (2, 'BELANGER', 'Angélique', '1970-04-11', 'Madame'      , 'AngeliqueBelanger@jourrapide.com'),
-    (3, 'TALON'   , 'Faure'    , '1986-04-06', 'Monsieur'    , 'TalonFaure@redbearstavern.com'   ),
-    (4, 'NOUEL'   , 'Soucy'    , '1941-06-17', 'Madame'      , 'NouelSoucy@rhyta.com'            ),
-    (5, 'MELVILLE', 'Lamy'     , '1957-12-04', 'Mademoiselle', 'MelvilleLamy@dayrep.com'         );
+    (5, 'Star Fight'               , 120),
+    (6, 'Le Donjon de la mort 4'   , 120),
+    (7, 'Master of Assassination'  , 120),
+    (8, 'Microcosmos'              , 120),
+    (9, 'L\'horreur dans le miroir', 120);
 
 --
 -- Dumping data for table `Type`
@@ -300,32 +288,11 @@ VALUES
     (11, 'romantique' );
 
 --
--- Dumping data for table `Spectator`
---
-INSERT IGNORE INTO `Spectator` (`id`, `lastname`, `firstname`, `age`, `title`)
-VALUES
-    (1, 'HEART'   , 'Kingston' , 25, 'Monsieur'    ),
-    (2, 'BELANGER', 'Angélique', 25, 'Madame'      ),
-    (3, 'TALON'   , 'Faure'    , 25, 'Monsieur'    ),
-    (4, 'NOUEL'   , 'Soucy'    , 25, 'Madame'      ),
-    (5, 'MELVILLE', 'Lamy'     , 25, 'Mademoiselle'),
-    (6, 'IGNACE'  , 'Béland'   , 25, 'Monsieur'    ),
-    (7, 'AUCLAIR' , 'Diane'    , 25, 'Mademoiselle'),
-    (8, 'FOREST'  , 'Barry'    , 25, 'Monsieur'    ),
-    (9, 'CLOUTIER', 'Minette'  , 25, 'Mademoiselle');
-
---
 -- Dumping data for table `Room`
 --
 INSERT IGNORE INTO `Room` (`id`, `nb_places`)
 VALUES
-    (1, 50 ),
-    (2, 35 ),
-    (3, 78 ),
-    (4, 90 ),
-    (5, 25 ),
-    (6, 129),
-    (7, 157);
+    (1, 50);
 
 --
 -- Dumping data for table `Price`
@@ -412,35 +379,3 @@ VALUES
     (9,  7,  'acteur',  'principal'),
     (9,  3, 'actrice', 'secondaire'),
     (9,  4,  'acteur', 'secondaire');
-
---
--- Dumping data for table `Order`
---
-INSERT IGNORE INTO `Order` (`id`, `created_at`, `User_id`)
-VALUES
-    (1, '2016-10-18', 1),
-    (2, '2016-09-28', 1),
-    (3, '2016-09-27', 2),
-    (4, '2016-09-17', 3),
-    (5, '2016-09-15', 4),
-    (6, '2016-09-13', 4);
-
---
--- Dumping data for table `Showing`
---
-INSERT IGNORE INTO `Showing` (`id`, `date`, `3D`, `Room_id`, `Movie_id`)
-VALUES
-    (1, '2016-11-18 10:00:00', 1, 1, 1),
-    (2, '2016-11-16 09:35:00', 0, 2, 2),
-    (3, '2016-11-24 14:50:00', 1, 3, 2),
-    (4, '2016-11-28 15:45:00', 0, 4, 3),
-    (5, '2016-12-01 13:35:00', 1, 5, 4);
-
---
--- Dumping data for table `Ticket`
---
-INSERT IGNORE INTO `Ticket` (`id`, `Price_id`, `Showing_id`, `Spectator_id`, `Order_id`)
-VALUES
-    (1, 1, 1, 1, 1),
-    (2, 2, 1, 3, 2),
-    (3, 3, 3, 4, 3);

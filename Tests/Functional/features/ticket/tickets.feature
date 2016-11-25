@@ -23,7 +23,7 @@ Scénario: Get un ticket par son ID
             "id": 1,
             "type": "Plein tarif",
             "value": 9.4,
-            "current": true
+            "current": false
         },
         "showing": {
             "id": 1,
@@ -35,8 +35,8 @@ Scénario: Get un ticket par son ID
             },
             "movie": {
                 "id": 1,
-                "title": "Fatal Punishment",
-                "duration": 120
+                "title": "Miss Peregrine et les enfants particuliers",
+                "duration": 127
             }
         },
         "spectator": {
@@ -59,4 +59,5 @@ Scénario: Get un ticket par son ID
             }
         }
     }
+
     """

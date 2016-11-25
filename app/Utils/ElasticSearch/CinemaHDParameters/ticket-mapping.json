@@ -41,6 +41,10 @@
             "user_email":{
                 "index": "not_analyzed",
                 "type": "string"
+            },
+            "company":{
+                "index": "not_analyzed",
+                "type": "string"
             }
         }
     }

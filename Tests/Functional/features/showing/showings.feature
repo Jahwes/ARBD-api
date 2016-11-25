@@ -27,8 +27,8 @@ Scénario: Get un showing par son ID
         },
         "movie": {
             "id": 1,
-            "title": "Fatal Punishment",
-            "duration": 120
+            "title": "Miss Peregrine et les enfants particuliers",
+            "duration": 127
         }
     }
     """
