@@ -20,12 +20,6 @@ use Saxulum\DoctrineOrmManagerRegistry\Provider\DoctrineOrmManagerRegistryProvid
 use Saxulum\Validator\Provider\SaxulumValidatorProvider;
 use Silex\Provider\ValidatorServiceProvider;
 
-use CinemaHD\Utils\Elasticsearch\Elasticsearch;
-use CinemaHD\Utils\Elasticsearch\CinemaHDElasticsearchIndexer;
-
-use CinemaHD\ElasticsearchCommand\SpecificIndexCommand;
-use CinemaHD\ElasticsearchCommand\SpecificIndexTypeCommand;
-
 /**
  * Configuration principale de l'application
  */
@@ -167,17 +161,17 @@ class Config implements ServiceProviderInterface
             return $commands;
         });
 
-        $app["elasticsearch.cinemahd.indexer"] = new CinemaHDElasticsearchIndexer($app);
-        $app->register(new Elasticsearch(['cinemahd']));
+        $app["elasticsearch.cinemahd.indexer"] = new Utils\Elasticsearch\CinemaHDElasticsearchIndexer($app);
+        $app->register(new Utils\Elasticsearch\Elasticsearch(['cinemahd']));
 
         $app['console.commands'] = $app->extend('console.commands', function ($commands) use ($app) {
             // Ajout des commandes Elasticsearch
             foreach ($app["elasticsearch.names"] as $index_name) {
-                $command = new SpecificIndexCommand($index_name);
+                $command = new Utils\Elasticsearch\SpecificIndexCommand($index_name);
                 $command->setContainer($app);
                 $commands[] = $command;
                 foreach ($app["elasticsearch.{$index_name}.types"] as $type) {
-                    $command = new SpecificIndexTypeCommand($index_name, $type);
+                    $command = new Utils\Elasticsearch\SpecificIndexTypeCommand($index_name, $type);
                     $command->setContainer($app);
                     $commands[] = $command;
                 }
