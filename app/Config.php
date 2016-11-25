@@ -161,8 +161,8 @@ class Config implements ServiceProviderInterface
             return $commands;
         });
 
-        $app["elasticsearch.cinemahd.indexer"] = new Utils\Elasticsearch\CinemaHDElasticsearchIndexer($app);
-        $app->register(new Utils\Elasticsearch\Elasticsearch(['cinemahd']));
+        $app["elasticsearch.cinemahd.indexer"] = new Utils\ElasticSearch\CinemaHDElasticsearchIndexer($app);
+        $app->register(new Utils\ElasticSearch\ElasticSearch(['cinemahd']));
 
         $app['console.commands'] = $app->extend('console.commands', function ($commands) use ($app) {
             // Ajout des commandes Elasticsearch

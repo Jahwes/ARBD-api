@@ -1,6 +1,6 @@
 <?php
 
-namespace CinemaHD\Utils\Elasticsearch;
+namespace CinemaHD\Utils\ElasticSearch;
 
 use Doctrine\ORM\Tools\Pagination\Paginator;
 

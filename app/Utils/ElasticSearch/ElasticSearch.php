@@ -1,6 +1,6 @@
 <?php
 
-namespace CinemaHD\Utils\Elasticsearch;
+namespace CinemaHD\Utils\ElasticSearch;
 
 use Silex\Application;
 use Pimple\Container;
@@ -9,7 +9,7 @@ use Pimple\ServiceProviderInterface;
 /**
 *
 */
-class Elasticsearch implements ServiceProviderInterface
+class ElasticSearch implements ServiceProviderInterface
 {
     private $es_options;
     private $app;

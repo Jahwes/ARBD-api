@@ -1,6 +1,6 @@
 <?php
 
-namespace CinemaHD\Utils\Elasticsearch;
+namespace CinemaHD\Utils\ElasticSearch;
 
 use Silex\Application;
 
