@@ -1,6 +1,6 @@
 <?php
 
-namespace CinemaHD\ElasticsearchCommand;
+namespace CinemaHD\ElasticSearchCommand;
 
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;

@@ -58,7 +58,7 @@ class ElasticSearch implements ServiceProviderInterface
         foreach ($this->es_options as $name => $es_option) {
             // On vérifie qu'on a bien un indexer
             if (false === isset($app["elasticsearch.{$name}.indexer"]) ||
-                false === is_subclass_of($app["elasticsearch.{$name}.indexer"], "CinemaHD\Utils\Elasticsearch\AbstractIndexer")) {
+                false === is_subclass_of($app["elasticsearch.{$name}.indexer"], "CinemaHD\Utils\ElasticSearch\AbstractIndexer")) {
                 throw new \Exception('You must provide $app["elasticsearch.{$name}.indexer"] see AbstractIndexer');
             }
 
@@ -69,7 +69,7 @@ class ElasticSearch implements ServiceProviderInterface
             $app["elasticsearch.{$name}.index"]  = $index;
             $app["elasticsearch.{$name}.types"]  = $es_option['types'];
 
-            $app["elasticsearch.{$name}"] = \Elasticsearch\ClientBuilder::create()
+            $app["elasticsearch.{$name}"] = \ElasticSearch\ClientBuilder::create()
                 ->setHosts([$app["elasticsearch.{$name}.server"]])
                 ->build();
         }

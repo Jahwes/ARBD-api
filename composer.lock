@@ -759,7 +759,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Elasticsearch\\": "src/Elasticsearch/"
+                    "ElasticSearch\\": "src/ElasticSearch/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -771,7 +771,7 @@
                     "name": "Zachary Tong"
                 }
             ],
-            "description": "PHP Client for Elasticsearch",
+            "description": "PHP Client for ElasticSearch",
             "keywords": [
                 "client",
                 "elasticsearch",

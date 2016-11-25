@@ -9,7 +9,7 @@ use Silex\Application;
 /**
 *
 */
-class CinemaHDElasticsearchIndexer extends AbstractIndexer
+class CinemaHDElasticSearchIndexer extends AbstractIndexer
 {
     public function __construct(Application $app)
     {

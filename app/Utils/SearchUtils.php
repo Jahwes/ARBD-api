@@ -9,7 +9,7 @@ use CinemaHD\Utils\CookieUtils;
 class SearchUtils
 {
     /**
-     * Envoie une requête à Elasticsearch pour faire de la recherche
+     * Envoie une requête à ElasticSearch pour faire de la recherche
      *
      * @param  Application $app        Silex application
      * @param  string      $query      La query de la recherche
@@ -17,7 +17,7 @@ class SearchUtils
      * @param  integer     $size       Taille de la page de résultats
      * @param  string      $type       Nom du type sur lequel faire la recherche
      *
-     * @return array                   Les resultats de la recherche Elasticsearch
+     * @return array                   Les resultats de la recherche ElasticSearch
      */
     public static function search(Application $app, $query, $from, $size, $type, $sort = null)
     {

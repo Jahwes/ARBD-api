@@ -74,7 +74,7 @@ class Config implements ServiceProviderInterface
         $app['db_password'] = getenv("CINEMAHD_DATABASE_PWD");
 
         $app["elasticsearch_cinemahd_parameters_path"] = realpath(
-            __DIR__ . "/Utils/Elasticsearch/CinemaHDParameters"
+            __DIR__ . "/Utils/ElasticSearch/CinemaHDParameters"
         );
 
         switch ($app['application_env']) {
@@ -161,17 +161,17 @@ class Config implements ServiceProviderInterface
             return $commands;
         });
 
-        $app["elasticsearch.cinemahd.indexer"] = new Utils\ElasticSearch\CinemaHDElasticsearchIndexer($app);
+        $app["elasticsearch.cinemahd.indexer"] = new Utils\ElasticSearch\CinemaHDElasticSearchIndexer($app);
         $app->register(new Utils\ElasticSearch\ElasticSearch(['cinemahd']));
 
         $app['console.commands'] = $app->extend('console.commands', function ($commands) use ($app) {
-            // Ajout des commandes Elasticsearch
+            // Ajout des commandes ElasticSearch
             foreach ($app["elasticsearch.names"] as $index_name) {
-                $command = new ElasticsearchCommand\SpecificIndexCommand($index_name);
+                $command = new ElasticSearchCommand\SpecificIndexCommand($index_name);
                 $command->setContainer($app);
                 $commands[] = $command;
                 foreach ($app["elasticsearch.{$index_name}.types"] as $type) {
-                    $command = new ElasticsearchCommand\SpecificIndexTypeCommand($index_name, $type);
+                    $command = new ElasticSearchCommand\SpecificIndexTypeCommand($index_name, $type);
                     $command->setContainer($app);
                     $commands[] = $command;
                 }
