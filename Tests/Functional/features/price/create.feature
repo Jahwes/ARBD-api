@@ -24,25 +24,25 @@ Scénario: Création d'un nouveau prix pour le tarif étudiant
     """
     [
         {
-            "id": 5,
+            "id": 1,
             "type": "Plein tarif",
-            "value": 10,
+            "value": 9.4,
             "current": true
         },
         {
-            "id": 6,
+            "id": 2,
             "type": "Tarif reduit",
-            "value": 8,
+            "value": 7.4,
             "current": true
         },
         {
-            "id": 7,
+            "id": 3,
             "type": "Senior",
-            "value": 7,
+            "value": 6.8,
             "current": true
         },
         {
-            "id": "#^\\d+$#",
+            "id": 5,
             "type": "Tarif etudiant",
             "value": 5,
             "current": true

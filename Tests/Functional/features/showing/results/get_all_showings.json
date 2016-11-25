@@ -9,8 +9,8 @@
         },
         "movie": {
             "id": 1,
-            "title": "Miss Peregrine et les enfants particuliers",
-            "duration": 127
+            "title": "Fatal Punishment",
+            "duration": 120
         }
     },
     {
@@ -23,8 +23,8 @@
         },
         "movie": {
             "id": 2,
-            "title": "Deepwater",
-            "duration": 107
+            "title": "Sudden Blood",
+            "duration": 120
         }
     },
     {
@@ -37,8 +37,8 @@
         },
         "movie": {
             "id": 2,
-            "title": "Deepwater",
-            "duration": 107
+            "title": "Sudden Blood",
+            "duration": 120
         }
     },
     {
@@ -51,8 +51,8 @@
         },
         "movie": {
             "id": 3,
-            "title": "Kubo et l'armure magique",
-            "duration": 102
+            "title": "Le Grand Vert",
+            "duration": 120
         }
     },
     {
@@ -65,8 +65,8 @@
         },
         "movie": {
             "id": 4,
-            "title": "Mechanic R\u00e9surrection",
-            "duration": 99
+            "title": "Coup de foudre \u00e0 Shanghai",
+            "duration": 120
         }
     }
 ]

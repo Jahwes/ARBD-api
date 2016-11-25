@@ -103,7 +103,6 @@ class OrderController implements ControllerProviderInterface
 
             $app['orm.em']->flush();
             $app["orm.em"]->commit();
-
         } catch (\Exception $exception) {
             $app["orm.em"]->rollBack();
             return $app->abort(400, $exception->getMessage());
@@ -124,7 +123,7 @@ class OrderController implements ControllerProviderInterface
      */
     private function findOrCreateShowing(Application $app, array $movie)
     {
-        $is_3D        = "oui" === $movie["3D"];
+        $is_3D        = "Oui" === $movie["3D"];
         $date         = new \DateTime("{$movie["Jour"]} {$movie["Horaire"]}:00");
         $movie_entity = $app["repositories"]("Movie")->findOneBy(["title" => $movie["Titre"]]);
 
@@ -133,6 +132,8 @@ class OrderController implements ControllerProviderInterface
                 "is_3D" => $is_3D,
                 "movie" => $movie_entity
             ]);
+
+        $is_3D = $is_3D ? 1 : 0;
 
         if (null === $showing) {
             $room    = $app["repositories"]("Room")->findOneById(1);

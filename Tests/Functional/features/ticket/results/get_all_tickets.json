@@ -5,7 +5,7 @@
             "id": 1,
             "type": "Plein tarif",
             "value": 9.4,
-            "current": false
+            "current": true
         },
         "showing": {
             "id": 1,
@@ -17,8 +17,8 @@
             },
             "movie": {
                 "id": 1,
-                "title": "Miss Peregrine et les enfants particuliers",
-                "duration": 127
+                "title": "Fatal Punishment",
+                "duration": 120
             }
         },
         "spectator": {
@@ -47,7 +47,7 @@
             "id": 2,
             "type": "Tarif reduit",
             "value": 7.4,
-            "current": false
+            "current": true
         },
         "showing": {
             "id": 1,
@@ -59,8 +59,8 @@
             },
             "movie": {
                 "id": 1,
-                "title": "Miss Peregrine et les enfants particuliers",
-                "duration": 127
+                "title": "Fatal Punishment",
+                "duration": 120
             }
         },
         "spectator": {
@@ -89,7 +89,7 @@
             "id": 3,
             "type": "Senior",
             "value": 6.8,
-            "current": false
+            "current": true
         },
         "showing": {
             "id": 3,
@@ -101,8 +101,8 @@
             },
             "movie": {
                 "id": 2,
-                "title": "Deepwater",
-                "duration": 107
+                "title": "Sudden Blood",
+                "duration": 120
             }
         },
         "spectator": {

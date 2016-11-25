@@ -15,48 +15,24 @@ Scénario: GET sur /prices
             "id": 1,
             "type": "Plein tarif",
             "value": 9.4,
-            "current": false
+            "current": true
         },
         {
             "id": 2,
             "type": "Tarif reduit",
             "value": 7.4,
-            "current": false
+            "current": true
         },
         {
             "id": 3,
             "type": "Senior",
             "value": 6.8,
-            "current": false
+            "current": true
         },
         {
             "id": 4,
             "type": "Tarif etudiant",
             "value": 6.8,
-            "current": false
-        },
-        {
-            "id": 5,
-            "type": "Plein tarif",
-            "value": 10,
-            "current": true
-        },
-        {
-            "id": 6,
-            "type": "Tarif reduit",
-            "value": 8,
-            "current": true
-        },
-        {
-            "id": 7,
-            "type": "Senior",
-            "value": 7,
-            "current": true
-        },
-        {
-            "id": 8,
-            "type": "Tarif etudiant",
-            "value": 7,
             "current": true
         }
     ]
@@ -71,27 +47,27 @@ Scénario: GET des prix en cours
     """
     [
         {
-            "id": 5,
+            "id": 1,
             "type": "Plein tarif",
-            "value": 10,
+            "value": 9.4,
             "current": true
         },
         {
-            "id": 6,
+            "id": 2,
             "type": "Tarif reduit",
-            "value": 8,
+            "value": 7.4,
             "current": true
         },
         {
-            "id": 7,
+            "id": 3,
             "type": "Senior",
-            "value": 7,
+            "value": 6.8,
             "current": true
         },
         {
-            "id": 8,
+            "id": 4,
             "type": "Tarif etudiant",
-            "value": 7,
+            "value": 6.8,
             "current": true
         }
     ]

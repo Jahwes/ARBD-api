@@ -1,122 +1,46 @@
 {
     "ticket": {
-        "dynamic":"strict",
         "properties": {
             "id": {
-                "type":"long"
+                "type": "long"
             },
-            "price": {
-                "properties":{
-                    "id":{
-                        "type":"long"
-                    },
-                    "type": {
-                        "type":"string"
-                    },
-                    "value": {
-                        "type":"float"
-                    },
-                    "current": {
-                        "type":"boolean"
-                    }
-                }
+            "price_type": {
+                "index": "not_analyzed",
+                "type": "string"
             },
-            "showing": {
-                "properties": {
-                    "id": {
-                        "type":"long"
-                    },
-                    "date": {
-                        "index":"not_analyzed",
-                        "type":"string"
-                    },
-                    "is_3D":{
-                        "type":"boolean"
-                    },
-                    "room": {
-                        "properties":{
-                            "id":{
-                                "type":"long"
-                            },
-                            "nb_places":{
-                                "type":"long"
-                            }
-                        }
-                    },
-                    "movie": {
-                        "properties":{
-                            "id":{
-                                "type":"long"
-                            },
-                            "title": {
-                                "type":"string"
-                            },
-                            "duration": {
-                                "type":"integer"
-                            }
-                        }
-                    }
-                }
+            "price_value": {
+                "type": "float"
             },
-            "spectator": {
-                "properties": {
-                    "id": {
-                        "type":"long"
-                    },
-                    "lastname":{
-                        "type":"string",
-                        "index_analyzer":"custom_analyzer",
-                        "search_analyzer":"custom_search_analyzer"
-                    },
-                    "firstname":{
-                        "type":"string",
-                        "index_analyzer":"custom_analyzer",
-                        "search_analyzer":"custom_search_analyzer"
-                    },
-                    "age":{
-                        "type":"integer"
-                    },
-                    "title":{
-                        "type":"string"
-                    }
-                }
+            "price_current": {
+                "type": "boolean"
             },
-            "order": {
-                "properties": {
-                    "id": {
-                        "type":"long"
-                    },
-                    "created_at": {
-                        "type":"date",
-                        "format":"dateOptionalTime"
-                    },
-                    "user": {
-                        "properties":{
-                            "id":{
-                                "type":"long"
-                            },
-                            "lastname":{
-                                "type":"string",
-                                "index_analyzer":"custom_analyzer",
-                                "search_analyzer":"custom_search_analyzer"
-                            },
-                            "firstname":{
-                                "type":"string",
-                                "index_analyzer":"custom_analyzer",
-                                "search_analyzer":"custom_search_analyzer"
-                            },
-                            "date_of_birth":{
-                                "type":"date"
-                            },
-                            "title":{
-                                "type":"string"
-                            },
-                            "email":{
-                                "type":"string"
-                            }
-                        }
-                    }
-                }
+            "showing_date": {
+                "index": "not_analyzed",
+                "type": "string"
+            },
+            "is_3D":{
+                "type": "boolean"
+            },
+            "movie_title": {
+                "index": "not_analyzed",
+                "type": "string"
+            },
+            "spectator_age": {
+                "type": "long"
+            },
+            "spectator_title": {
+                "type": "string"
+            },
+            "order_created_at": {
+                "type": "date",
+                "format": "dateOptionalTime"
+            },
+            "user_title": {
+                "type": "string"
+            },
+            "user_email":{
+                "index": "not_analyzed",
+                "type": "string"
             }
         }
     }

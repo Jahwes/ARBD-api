@@ -11,8 +11,8 @@ Scénario: search tous les movies
     Et          le résultat devrait être identique au fichier "search_movies.json"
 
 @GET
-Scénario: search les movies avec l'id 11
-    Quand       je fais un GET sur /movies/search?q=+id:11
+Scénario: search les movies avec l'id 6
+    Quand       je fais un GET sur /movies/search?q=+id:6
     Alors       le status HTTP devrait être 200
     Et          je devrais avoir un résultat d'API en JSON
     Et          le résultat devrait être identique au JSON suivant :
@@ -22,7 +22,7 @@ Scénario: search les movies avec l'id 11
         "max_score": 1,
         "hits": [
             {
-                "id": 11,
+                "id": 6,
                 "title": "Le Donjon de la mort 4",
                 "duration": 120
             }
@@ -43,10 +43,10 @@ Scénario: search les people avec l'id 11
         "hits": [
             {
                 "id": 11,
-                "lastname": "PARKINSON",
-                "firstname": "Art",
-                "date_of_birth": "2001-10-19",
-                "nationality": "irlandaise"
+                "lastname": "BREWER",
+                "firstname": "Dianne",
+                "date_of_birth": "1987-09-09",
+                "nationality": "am\u00e9ricaine"
             }
         ]
     }
@@ -61,7 +61,7 @@ Scénario: search les spectator célibataires
     """
     {
         "total": 3,
-        "max_score": 3.3513753,
+        "max_score": 3.3978953,
         "hits": [
             {
                 "id": 7,
