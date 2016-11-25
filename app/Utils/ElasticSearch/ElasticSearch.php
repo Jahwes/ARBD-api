@@ -69,7 +69,7 @@ class ElasticSearch implements ServiceProviderInterface
             $app["elasticsearch.{$name}.index"]  = $index;
             $app["elasticsearch.{$name}.types"]  = $es_option['types'];
 
-            $app["elasticsearch.{$name}"] = \ElasticSearch\ClientBuilder::create()
+            $app["elasticsearch.{$name}"] = \Elasticsearch\ClientBuilder::create()
                 ->setHosts([$app["elasticsearch.{$name}.server"]])
                 ->build();
         }
