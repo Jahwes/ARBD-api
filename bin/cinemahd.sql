@@ -259,7 +259,7 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 --
 
 
-INSERT INTO `Movie` (`id`, `title`, `duration`)
+INSERT IGNORE INTO `Movie` (`id`, `title`, `duration`)
 VALUES
     (1, 'Fatal Punishment'         , 120),
     (2, 'Sudden Blood'             , 120),
@@ -274,7 +274,7 @@ VALUES
 --
 -- Dumping data for table `User`
 --
-INSERT INTO `User` (`id`, `lastname`, `firstname`, `date_of_birth`, `title`, `email`)
+INSERT IGNORE INTO `User` (`id`, `lastname`, `firstname`, `date_of_birth`, `title`, `email`)
 VALUES
     (1, 'HEART'   , 'Kingston' , '1994-02-15', 'Monsieur'    , 'heart_k@etna.io'                 ),
     (2, 'BELANGER', 'Angélique', '1970-04-11', 'Madame'      , 'AngeliqueBelanger@jourrapide.com'),
@@ -285,7 +285,7 @@ VALUES
 --
 -- Dumping data for table `Type`
 --
-INSERT INTO `Type` (`id`, `name`)
+INSERT IGNORE INTO `Type` (`id`, `name`)
 VALUES
     (1 , 'fantastique'),
     (2 , 'horreur'    ),
@@ -302,7 +302,7 @@ VALUES
 --
 -- Dumping data for table `Spectator`
 --
-INSERT INTO `Spectator` (`id`, `lastname`, `firstname`, `age`, `title`)
+INSERT IGNORE INTO `Spectator` (`id`, `lastname`, `firstname`, `age`, `title`)
 VALUES
     (1, 'HEART'   , 'Kingston' , 25, 'Monsieur'    ),
     (2, 'BELANGER', 'Angélique', 25, 'Madame'      ),
@@ -317,7 +317,7 @@ VALUES
 --
 -- Dumping data for table `Room`
 --
-INSERT INTO `Room` (`id`, `nb_places`)
+INSERT IGNORE INTO `Room` (`id`, `nb_places`)
 VALUES
     (1, 50 ),
     (2, 35 ),
@@ -330,7 +330,7 @@ VALUES
 --
 -- Dumping data for table `Price`
 --
-INSERT INTO `Price` (`id`, `type_name`, `value`, `current`)
+INSERT IGNORE INTO `Price` (`id`, `type_name`, `value`, `current`)
 VALUES
     (1, 'Plein tarif'   , 9.4, 1),
     (2, 'Tarif reduit'  , 7.4, 1),
@@ -340,7 +340,7 @@ VALUES
 --
 -- Dumping data for table `People`
 --
-INSERT INTO `People` (`id`, `firstname`, `lastname`, `date_of_birth`, `nationality`)
+INSERT IGNORE INTO `People` (`id`, `firstname`, `lastname`, `date_of_birth`, `nationality`)
 VALUES
     (1,  'Norman'   , 'GRANT'    , '1980-09-10', 'américaine' ),
     (2,  'Rhonda'   , 'BRADY'    , '1965-06-23', 'américaine' ),
@@ -355,12 +355,10 @@ VALUES
     (11, 'Dianne'   , 'BREWER'   , '1987-09-09', 'américaine' ),
     (12, 'Priscilla', 'LITTLE'   , '1991-09-09', 'américaine' );
 
-
-
 --
 -- Dumping data for table `Movie_has_Type`
 --
-INSERT INTO `Movie_has_Type` (`Movie_id`, `Type_id`)
+INSERT IGNORE INTO `Movie_has_Type` (`Movie_id`, `Type_id`)
 VALUES
     (1, 1 ),
     (2, 1 ),
@@ -377,7 +375,7 @@ VALUES
 --
 -- Dumping data for table `Movie_has_People`
 --
-INSERT INTO `Movie_has_People` (`Movie_id`, `People_id`, `role`, `significance`)
+INSERT IGNORE INTO `Movie_has_People` (`Movie_id`, `People_id`, `role`, `significance`)
 VALUES
     (1,  1, 'acteur' ,  'principal'),
     (1,  2, 'actrice',  'principal'),
@@ -418,7 +416,7 @@ VALUES
 --
 -- Dumping data for table `Order`
 --
-INSERT INTO `Order` (`id`, `created_at`, `User_id`)
+INSERT IGNORE INTO `Order` (`id`, `created_at`, `User_id`)
 VALUES
     (1, '2016-10-18', 1),
     (2, '2016-09-28', 1),
@@ -430,7 +428,7 @@ VALUES
 --
 -- Dumping data for table `Showing`
 --
-INSERT INTO `Showing` (`id`, `date`, `3D`, `Room_id`, `Movie_id`)
+INSERT IGNORE INTO `Showing` (`id`, `date`, `3D`, `Room_id`, `Movie_id`)
 VALUES
     (1, '2016-11-18 10:00:00', 1, 1, 1),
     (2, '2016-11-16 09:35:00', 0, 2, 2),
@@ -441,7 +439,7 @@ VALUES
 --
 -- Dumping data for table `Ticket`
 --
-INSERT INTO `Ticket` (`id`, `Price_id`, `Showing_id`, `Spectator_id`, `Order_id`)
+INSERT IGNORE INTO `Ticket` (`id`, `Price_id`, `Showing_id`, `Spectator_id`, `Order_id`)
 VALUES
     (1, 1, 1, 1, 1),
     (2, 2, 1, 3, 2),
