@@ -181,16 +181,16 @@ class PeopleController implements ControllerProviderInterface
 
         $peoples = $app["repositories"]("People")->getPeoplesByRole($type);
 
-        $scores = [];
+        $scores = ['top' => []];
         foreach ($peoples as $people) {
             $ln  = $people->getLastname();
             $fn  = $people->getFirstname();
             $key = "{$ln} {$fn}";
 
-            $scores[$key] = $app["repositories"]("People")->getScoreForPeople($people);
+            $scores['top'][$key] = $app["repositories"]("People")->getScoreForPeople($people);
         }
 
-        arsort($scores);
+        arsort($scores['top']);
 
         return $app->json($scores, 200);
     }

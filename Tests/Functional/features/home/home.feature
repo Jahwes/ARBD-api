@@ -11,14 +11,5 @@ Scénario: GET sur /
     Et    je devrais avoir un résultat d'API en JSON
     Et    le résultat devrait être identique au JSON suivant :
     """
-    {
-        "Bonjour": "Je suis un test",
-        "Hello": 4242,
-        "Cinema": "du turfu",
-        "Plein de trucs": {
-            "un truc": 1,
-            "deux trucs": "bonjour",
-            "trois trucs": 4938475
-        }
-    }
+    IT WORKS !
     """

@@ -25,17 +25,6 @@ class HomeController implements ControllerProviderInterface
 
     public function index(Application $app)
     {
-        $test = [
-            "Bonjour"        => "Je suis un test",
-            "Hello"          => 4242,
-            "Cinema"         => "du turfu",
-            "Plein de trucs" => [
-                "un truc"     => 1,
-                "deux trucs"  => "bonjour",
-                "trois trucs" => 4938475
-            ]
-        ];
-
-        return $app->json($test, 200);
+        return $app->json("IT WORKS !", 200);
     }
 }

@@ -79,7 +79,7 @@ class Ticket implements \JsonSerializable
             "price_type"       => $price->getType(),
             "price_value"      => $price->getValue(),
             "price_current"    => $price->getCurrent(),
-            "showing_date"     => $showing->getDate('Y-m-d H:i:s'),
+            "showing_date"     => $showing->getDate('l, F d H:i:s'),
             "is_3D"            => $showing->getIs3D(),
             "movie_title"      => $showing->getMovie()->getTitle(),
             "spectator_age"    => $spectator->getAge(),
