@@ -66,6 +66,8 @@ class ElasticSearch implements ServiceProviderInterface
             $index      = ltrim($parsed_url['path'], '/');
 
             $app["elasticsearch.{$name}.server"] = str_replace($parsed_url['path'], '', $es_option['host']) . "/";
+            file_put_contents("/tmp/hassan.txt", str_replace($parsed_url['path'], '', $es_option['host']) . "/");
+            file_put_contents("/tmp/prod.txt", getenv("APPLICATION_ENV"));
             $app["elasticsearch.{$name}.index"]  = $index;
             $app["elasticsearch.{$name}.types"]  = $es_option['types'];
 
