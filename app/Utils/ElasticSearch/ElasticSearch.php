@@ -104,6 +104,7 @@ class ElasticSearch implements ServiceProviderInterface
                     ["index" => "{$app["elasticsearch.$name.index"]}-{$app["version"]}"]
                 );
             } catch (\Exception $exception) {
+                file_put_contents("/tmp/un.txt", $exception->getMessage());
                 echo "Index {$app["elasticsearch.$name.index"]}-{$app["version"]} doesn't exist... \n";
             }
 
